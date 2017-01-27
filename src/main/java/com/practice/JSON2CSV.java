@@ -77,7 +77,5 @@ public class JSON2CSV {
             System.err.println("Unable to process JSON -> " + e.getLocalizedMessage());
             e.printStackTrace();
         }
-        int i=0;
-        System.out.println(i);
     }
 }
