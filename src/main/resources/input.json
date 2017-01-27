@@ -1,0 +1,13 @@
+{
+  "map": [
+    [{
+      "table": "eventbrite",
+      "column": "Shipping City"
+    },
+      [{
+        "table": "address",
+        "column": "City:Shipping"
+      }]
+    ]
+  ]
+}
