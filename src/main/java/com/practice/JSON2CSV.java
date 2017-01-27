@@ -1,15 +1,14 @@
+package com.practice;
+
 import java.io.File;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.nio.file.OpenOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.json.CDL;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -23,7 +22,7 @@ public class JSON2CSV {
             return;
         }
 
-        if( new File(args[0]).isFile() == false) {
+        if( ! new File(args[0]).isFile()) {
             System.out.println( "Input file does not exist. " + args[0]);
             return;
         }
@@ -45,10 +44,10 @@ public class JSON2CSV {
             }
 
             JSONArray mapArray = output.getJSONArray("map");
-            JSONArray innerArr = null;
-            JSONObject aIFMappingObj = null;
-            JSONObject udfMappingObj = null;
-            JSONArray udfMappingArr = null;
+            JSONArray innerArr;
+            JSONObject aIFMappingObj;
+            JSONObject udfMappingObj;
+            JSONArray udfMappingArr;
 
             List<String> list = new ArrayList<>();
             list.add("AIFTable,AIFColumn,UDMTable,UDMColumn");
@@ -71,18 +70,14 @@ public class JSON2CSV {
                 }
             }
 
-            for( String str : list) {
-//                System.out.println(str);
-            }
-
             Path outputFile = Paths.get(args[1]);
-//            FileUtils.writeStringToFile(file, csv);
             Files.write( outputFile, list);
 
-        } catch (JSONException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (JSONException | IOException e) {
+            System.err.println("Unable to process JSON -> " + e.getLocalizedMessage());
             e.printStackTrace();
         }
+        int i=0;
+        System.out.println(i);
     }
 }
