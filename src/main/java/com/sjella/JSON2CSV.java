@@ -1,4 +1,4 @@
-package com.practice;
+package com.sjella;
 
 import java.io.File;
 import java.io.IOException;
@@ -34,7 +34,6 @@ public class JSON2CSV {
         JSONObject output;
 
         try {
-//            jsonString = FileUtils.readFileToString(new File(args[0]), StandardCharsets.UTF_8);
             {
                 String jsonString;
                 Path path = Paths.get(args[0]);
@@ -58,7 +57,7 @@ public class JSON2CSV {
                 aIFMappingObj = innerArr.getJSONObject(0);
                 udfMappingArr = innerArr.getJSONArray(1);
 
-                String aifMappingStr = aIFMappingObj.getString("table") + "," + aIFMappingObj.getString("column");
+                String aifMappingStr = aIFMappingObj.getString("table") + "," + aIFMappingObj.getString("column").replace(',','|');
 //                System.out.println(aifTable + ", " + aifColumn) ;
 
                 for( int j=0 ; j<udfMappingArr.length() ; ++j) {
@@ -66,7 +65,7 @@ public class JSON2CSV {
                     String udfTable = udfMappingObj.getString("table");
                     String udfColumn = udfMappingObj.getString("column");
 //                    System.out.println(udfTable + ", " + udfColumn) ;
-                    list.add( aifMappingStr + "," + udfTable + "," + udfColumn);
+                    list.add( aifMappingStr + "," + udfTable + "," + udfColumn.replace(',','|'));
                 }
             }
 
