@@ -1,12 +1,3331 @@
 {
-  "map": [
+  "connectorId": 145,
+  "name": "BD2 ADW SFTP Connector",
+  "connectorIncrement": 5,
+  "parameters": [{
+    "type": "PASSWORD",
+    "name": "sftp.password",
+    "value": "********",
+    "required": true
+  }, {
+    "type": "STRING",
+    "name": "sftp.null.values",
+    "value": "",
+    "required": true
+  }, {
+    "type": "STRING",
+    "name": "sftp.pattern",
+    "value": "^([A-Z0-9]{3}_[A-Z]*)_(\\d{8,16}|\\d{8}_\\d{8}|\\d{8}_\\d{8}_\\d{14})(|\\.csv|\\.txt)(|\\.zip|\\.gz)(|\\.pgp|\\.gpg)$",
+    "required": true
+  }, {
+    "type": "STRING",
+    "name": "sftp.encoding",
+    "value": "",
+    "required": true
+  }, {
+    "type": "NUMERIC",
+    "name": "sftp.port",
+    "value": "22",
+    "required": true
+  }, {
+    "type": "STRING",
+    "name": "custom.date.formats",
+    "value": "",
+    "required": true
+  }, {
+    "type": "STRING",
+    "name": "sftp.host",
+    "value": "sftp1.agilone.com",
+    "required": true
+  }, {
+    "type": "STRING",
+    "name": "sftp.default.timezone",
+    "value": "America/Los_Angeles",
+    "required": true
+  }, {
+    "type": "PASSWORD",
+    "name": "sftp.pem",
+    "value": "",
+    "required": true
+  }, {
+    "type": "STRING",
+    "name": "sftp.folder",
+    "value": "aif_feeds_testing/Phase3_Promo",
+    "required": true
+  }, {
+    "type": "PASSWORD",
+    "name": "encryption.pgp.password",
+    "value": "",
+    "required": true
+  }, {
+    "type": "STRING",
+    "name": "sftp.username",
+    "value": "athleta",
+    "required": true
+  }, {
+    "type": "STRING",
+    "name": "sftp.delimiter",
+    "value": "|",
+    "required": true
+  }, {
+    "type": "PASSWORD",
+    "name": "encryption.pgp.key",
+    "value": "",
+    "required": true
+  }, {
+    "type": "STRING",
+    "name": "sftp.csv",
+    "value": "true",
+    "required": true
+  }, {
+    "type": "NUMERIC",
+    "name": "max.connections",
+    "value": "",
+    "required": true
+  }],
+  "active": true,
+  "dateStarted": 1499466139097,
+  "errorThreshold": 0.95,
+  "tenantId": 60,
+  "lastExecuted": 0,
+  "connectorDef": {
+    "connectorName": "SFTP CSV Connector",
+    "connectorClass": "com.agilone.aif.impl.SFtpConnector",
+    "connectorJar": "/jars/aif/aif-sftp.jar",
+    "ssidPrefix": "FTP_CSV",
+    "active": true,
+    "epochBacktrack": 126144000000,
+    "epochMaxInterval": 126144000000,
+    "epochMinInterval": 0,
+    "iconUrl": "icon.ico",
+    "parameters": [{
+      "type": "PASSWORD",
+      "defaultValue": "",
+      "name": "sftp.password",
+      "required": true
+    }, {
+      "type": "STRING",
+      "defaultValue": "",
+      "name": "sftp.null.values",
+      "required": true
+    }, {
+      "type": "STRING",
+      "defaultValue": "",
+      "name": "sftp.pattern",
+      "required": true
+    }, {
+      "type": "STRING",
+      "defaultValue": "",
+      "name": "sftp.encoding",
+      "required": true
+    }, {
+      "type": "NUMERIC",
+      "defaultValue": "",
+      "name": "sftp.port",
+      "required": true
+    }, {
+      "type": "STRING",
+      "defaultValue": "",
+      "name": "custom.date.formats",
+      "required": true
+    }, {
+      "type": "STRING",
+      "defaultValue": "",
+      "name": "sftp.host",
+      "required": true
+    }, {
+      "type": "STRING",
+      "defaultValue": "",
+      "name": "sftp.default.timezone",
+      "required": true
+    }, {
+      "type": "PASSWORD",
+      "defaultValue": "",
+      "name": "sftp.pem",
+      "required": true
+    }, {
+      "type": "STRING",
+      "defaultValue": "",
+      "name": "sftp.folder",
+      "required": true
+    }, {
+      "type": "PASSWORD",
+      "defaultValue": "",
+      "name": "encryption.pgp.password",
+      "required": true
+    }, {
+      "type": "STRING",
+      "defaultValue": "",
+      "name": "sftp.username",
+      "required": true
+    }, {
+      "type": "STRING",
+      "defaultValue": "",
+      "name": "sftp.delimiter",
+      "required": true
+    }, {
+      "type": "PASSWORD",
+      "defaultValue": "",
+      "name": "encryption.pgp.key",
+      "required": true
+    }, {
+      "type": "STRING",
+      "defaultValue": "",
+      "name": "sftp.csv",
+      "required": true
+    }, {
+      "type": "NUMERIC",
+      "defaultValue": "",
+      "name": "max.connections",
+      "required": true
+    }],
+    "tenantId": 0,
+    "mapping": [],
+    "id": 1
+  },
+  "mapping": [
     [{
-      "table": "eventbrite",
-      "column": "Shipping City"
+      "table": "ADW_TRANSACTION",
+      "column": "SOURCEORGANIZATIONNUMBER"
+    },
+      [{
+        "table": "transaction",
+        "column": "SourceOrganizationNumber"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERATTRIBUTES",
+      "column": "C_STORE_OF_LOYALTY"
+    },
+      [{
+        "table": "customer",
+        "column": "c_storeOfLoyalty"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_PRUM_BNK_CRD_IND"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_premiumBankCard"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERLINEAGE",
+      "column": "C_CUSTOMERNUMBER"
+    },
+      [{
+        "table": "c_CUSTOMERLINEAGE",
+        "column": "c_CUSTOMERNUMBER"
+      }, {
+        "table": "customer",
+        "column": "c_customerNumber"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "SALEREVENUE"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "SaleRevenue"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTION",
+      "column": "C_TRACKING_ID"
+    },
+      [{
+        "table": "transaction",
+        "column": "c_TRACKING_ID"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTION",
+      "column": "C_FLW_KEY"
+    },
+      [{
+        "table": "transaction",
+        "column": "c_FLW_KEY"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_HHLD_CR_LN_CNT"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_numCreditLines"
+      }]
+    ],
+    [{
+      "table": "BD2_PRODUCT",
+      "column": "LISTPRICE"
+    },
+      [{
+        "table": "product",
+        "column": "ListPrice"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_SPNDX_PLUS_NBR"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_spendexPlus"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERTRANSACTION",
+      "column": "SOURCETRANSACTIONNUMBER"
+    },
+      [{
+        "table": "transaction",
+        "column": "SourceTransactionNumber"
+      }]
+    ],
+    [{
+      "table": "BD2_PRODUCT",
+      "column": "SIZE"
+    },
+      [{
+        "table": "product",
+        "column": "Size"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_ETHN_GRP_CD"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_ethnicGroupCode"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "C_EPOC_ID"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "c_EPOC_ID"
+      }]
+    ],
+    [{
+      "table": "ATN_CUSTOMER",
+      "column": "FIRST NAME"
+    },
+      [{
+        "table": "customer",
+        "column": "FirstName"
+      }, {
+        "table": "customeraddressxref",
+        "column": "c_individualMatchCode:FN"
+      }]
+    ],
+    [{
+      "table": "MDS_ATTRITION",
+      "column": "C_DECILERANK"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Attrition_decileRank"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_SPKN_LANG_DESC"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_spokenLanguage"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERLINEAGE",
+      "column": "C_MDSCUSTOMERID"
+    },
+      [{
+        "table": "c_CUSTOMERLINEAGE",
+        "column": "c_MDSCUSTOMERID"
+      }, {
+        "table": "customer",
+        "column": "c_mdsCustomerID"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTION",
+      "column": "DISCOUNT"
+    },
+      [{
+        "table": "transaction",
+        "column": "Discount"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTION",
+      "column": "C_CUSTOMERNUMBER"
+    },
+      [{
+        "table": "transaction",
+        "column": "c_CUSTOMERNUMBER"
+      }, {
+        "table": "customer",
+        "column": "c_customerNumber"
+      }, {
+        "table": "customer",
+        "column": "SourceCustomerNumber:adwCustNum"
+      }, {
+        "table": "customer",
+        "column": "c_source#'ADW Transaction'"
+      }, {
+        "table": "transaction",
+        "column": "SourceCustomerNumber:adwCustNum"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_CHL_0_3_YR_GNDR_TYP_CD"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_children0_3Years"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "SOURCETRANSACTIONITEMNUMBER"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "SourceTransactionItemNumber"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERATTRIBUTES",
+      "column": "C_GIRLS_SEGMENT_CUST_IND"
+    },
+      [{
+        "table": "customer",
+        "column": "c_girlCustomer"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTION",
+      "column": "CURRENCY"
+    },
+      [{
+        "table": "transaction",
+        "column": "Currency"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_ACT_IND"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_accIndicator"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_DMA_CD"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_DMACode"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_CHL_8_12_YR_GNDR_TYP_CD"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_children8_12Years"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_MRKL_MKT_IDX_NBR"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_marketingIndex"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTION",
+      "column": "C_SOURCE"
+    },
+      [{
+        "table": "transaction",
+        "column": "c_SOURCE"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "SHIPPINGCOST"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "ShippingCost"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_GNDR_TYP_CD"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_gender"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "C_EPOC_ID"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "c_EPOC_ID"
+      }]
+    ],
+    [{
+      "table": "BD2_ORGANIZATION",
+      "column": "ZIP"
+    },
+      [{
+        "table": "organization",
+        "column": "Zip"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "SOURCETRANSACTIONNUMBER"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "SourceTransactionNumber"
+      }, {
+        "table": "transaction",
+        "column": "SourceTransactionNumber"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "TAX"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "Tax"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_MEGA_EDUC_LVL_ID"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_megaEducation"
+      }]
+    ],
+    [{
+      "table": "ATN_CUSTOMER",
+      "column": "ZIP"
     },
       [{
         "table": "address",
-        "column": "City:Shipping"
+        "column": "Zip"
+      }, {
+        "table": "customeraddressxref",
+        "column": "c_individualMatchCode:ZIP"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "VOLUME"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "Volume"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTION",
+      "column": "C_TRACKING_ID"
+    },
+      [{
+        "table": "transaction",
+        "column": "c_TRACKING_ID"
+      }]
+    ],
+    [{
+      "table": "MDS_CUSTOMER",
+      "column": "UUID"
+    },
+      [{
+        "table": "customer",
+        "column": "UUID"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_NEW_CR_RNGE_NBR"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_newCreditRange"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "INVOICEDATE"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "InvoiceDate"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "C_CHECKOUT_LOC"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "c_CHECKOUT_LOC"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTION",
+      "column": "C_CUSTOMER_HASH"
+    },
+      [{
+        "table": "transaction",
+        "column": "c_CUSTOMER_HASH"
+      }, {
+        "table": "customer",
+        "column": "c_customer_hash"
+      }, {
+        "table": "customer",
+        "column": "SourceCustomerNumber"
+      }, {
+        "table": "customer",
+        "column": "c_source#'BD2 Transaction'"
+      }, {
+        "table": "transaction",
+        "column": "SourceCustomerNumber"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "WEIGHT"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "Weight"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_PRB_ORD_THR_INT_RAT"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_probOrderThroughInternet"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_HHLD_EDUC_TYP_STAT_CD"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_megaTypeEducation"
+      }]
+    ],
+    [{
+      "table": "BD2_ORGANIZATION",
+      "column": "COUNTRY"
+    },
+      [{
+        "table": "organization",
+        "column": "Country"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "C_PRICE_STATUS"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "c_PRICE_STATUS"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_CHL_13_18_YR_GNDR_TYP_CD"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_children13_18Years"
+      }]
+    ],
+    [{
+      "table": "MDS_CUSTOMER",
+      "column": "CITY"
+    },
+      [{
+        "table": "address",
+        "column": "City"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "SHIPPINGDISCOUNT"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "ShippingDiscount"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "CURRENCY"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "Currency"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "CURRENCY"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "Currency"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_SOC_IQ_TWTR_ID"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_socialIQTwitter"
+      }]
+    ],
+    [{
+      "table": "ATN_CUSTOMER",
+      "column": "ADDRESSTYPE"
+    },
+      [{
+        "table": "address",
+        "column": "Type"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_LEN_OF_RSD_YR_CNT"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_lengthOfResidence"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "C_CUSTOMER_HASH"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "c_CUSTOMER_HASH"
+      }, {
+        "table": "customer",
+        "column": "c_customer_hash"
+      }, {
+        "table": "customer",
+        "column": "SourceCustomerNumber"
+      }, {
+        "table": "customer",
+        "column": "c_source#'BD2 TransactionItem'"
+      }, {
+        "table": "transaction",
+        "column": "c_CUSTOMER_HASH"
+      }, {
+        "table": "transaction",
+        "column": "SourceCustomerNumber"
+      }]
+    ],
+    [{
+      "table": "BD2_PROMODIMENSION",
+      "column": "PMOTN_DESC"
+    },
+      [{
+        "table": "message",
+        "column": "Subject"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_INDV_CNT"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_individualCount"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_HHLD_EST_HM_VAL_AMT"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_homeValue"
+      }]
+    ],
+    [{
+      "table": "MDS_CATEGORYPREFERENCE",
+      "column": "C_PREF1"
+    },
+      [{
+        "table": "customer",
+        "column": "c_categoryPreference1"
+      }]
+    ],
+    [{
+      "table": "BD2_PROMOFACTHISTORY",
+      "column": "C_EPOC_ID"
+    },
+      [{
+        "table": "transactionitemmessagexref",
+        "column": "c_epocID"
+      }]
+    ],
+    [{
+      "table": "MDS_CATEGORYPREFERENCE",
+      "column": "C_PREF2"
+    },
+      [{
+        "table": "customer",
+        "column": "c_categoryPreference2"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTION",
+      "column": "C_CHANNEL"
+    },
+      [{
+        "table": "transaction",
+        "column": "c_CHANNEL"
+      }]
+    ],
+    [{
+      "table": "MDS_CATEGORYPREFERENCE",
+      "column": "C_PREF3"
+    },
+      [{
+        "table": "customer",
+        "column": "c_categoryPreference3"
+      }]
+    ],
+    [{
+      "table": "MDS_CUSTOMER",
+      "column": "ADDRESSTYPE"
+    },
+      [{
+        "table": "address",
+        "column": "Type"
+      }]
+    ],
+    [{
+      "table": "MDS_CUSTOMER",
+      "column": "PRIMARYPHONE"
+    },
+      [{
+        "table": "customer",
+        "column": "PrimaryPhone"
+      }]
+    ],
+    [{
+      "table": "MDS_CATEGORYPREFERENCE",
+      "column": "C_PREF4"
+    },
+      [{
+        "table": "customer",
+        "column": "c_categoryPreference4"
+      }]
+    ],
+    [{
+      "table": "BD2_PRODUCT",
+      "column": "BRANDNAME"
+    },
+      [{
+        "table": "product",
+        "column": "BrandName"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "TYPE"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "Type"
+      }]
+    ],
+    [{
+      "table": "MDS_CATEGORYPREFERENCE",
+      "column": "C_PREF5"
+    },
+      [{
+        "table": "customer",
+        "column": "c_categoryPreference5"
+      }]
+    ],
+    [{
+      "table": "MDS_CATEGORYPREFERENCE",
+      "column": "C_PREF6"
+    },
+      [{
+        "table": "customer",
+        "column": "c_categoryPreference6"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "DISCOUNT"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "Discount"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "C_CUSTOMERNUMBER"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "c_CUSTOMERNUMBER"
+      }, {
+        "table": "transaction",
+        "column": "c_CUSTOMERNUMBER"
+      }]
+    ],
+    [{
+      "table": "MDS_CATEGORYPREFERENCE",
+      "column": "C_PREF7"
+    },
+      [{
+        "table": "customer",
+        "column": "c_categoryPreference7"
+      }]
+    ],
+    [{
+      "table": "MDS_CATEGORYPREFERENCE",
+      "column": "C_PREF8"
+    },
+      [{
+        "table": "customer",
+        "column": "c_categoryPreference8"
+      }]
+    ],
+    [{
+      "table": "MDS_CATEGORYPREFERENCE",
+      "column": "C_PREF9"
+    },
+      [{
+        "table": "customer",
+        "column": "c_categoryPreference9"
+      }]
+    ],
+    [{
+      "table": "MDS_CUSTOMER",
+      "column": "LASTNAME"
+    },
+      [{
+        "table": "customer",
+        "column": "LastName"
+      }, {
+        "table": "customeraddressxref",
+        "column": "c_individualMatchCode:LN"
+      }]
+    ],
+    [{
+      "table": "BD2_PRODUCT",
+      "column": "SALECONDITION"
+    },
+      [{
+        "table": "product",
+        "column": "SaleCondition"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTION",
+      "column": "SOURCETRANSACTIONNUMBER"
+    },
+      [{
+        "table": "transaction",
+        "column": "SourceTransactionNumber"
+      }]
+    ],
+    [{
+      "table": "BD2_PRODUCT",
+      "column": "NAME"
+    },
+      [{
+        "table": "product",
+        "column": "Name"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "C_PRICE_STATUS"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "c_PRICE_STATUS"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_HHLD_XCRS_FIT_TYP_STAT_CD"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_megaTypeFitness"
+      }]
+    ],
+    [{
+      "table": "BD2_FILEMAKER",
+      "column": "C_GLOBAL_SKU"
+    },
+      [{
+        "table": "product",
+        "column": "SourceProductNumber"
+      }, {
+        "table": "product",
+        "column": "c_source#'BD2 File Maker'"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_MRKL_RSP_RAT_NBR"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_responderRating"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_PRB_ORD_THR_PHN_RAT"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_probOrderThroughPhone"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_CUST_HASH_KEY"
+    },
+      [{
+        "table": "customer",
+        "column": "c_customer_hash"
+      }, {
+        "table": "customer",
+        "column": "SourceCustomerNumber"
+      }, {
+        "table": "customer",
+        "column": "c_source#'BD2 Customer Demographics'"
+      }]
+    ],
+    [{
+      "table": "ATN_CUSTOMER",
+      "column": "CITY"
+    },
+      [{
+        "table": "address",
+        "column": "City"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "C_CHANNEL"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "c_CHANNEL"
+      }]
+    ],
+    [{
+      "table": "ADW_CUSTOMERLINEAGE",
+      "column": "C_CUSTOMER_HASH"
+    },
+      [{
+        "table": "c_CUSTOMERLINEAGE",
+        "column": "c_CUSTOMER_HASH"
+      }, {
+        "table": "customer",
+        "column": "c_customer_hash"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "OTHERCOST"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "OtherCost"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTION",
+      "column": "TAX"
+    },
+      [{
+        "table": "transaction",
+        "column": "Tax"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "C_FULFILLMENT_LOC"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "c_FULFILLMENT_LOC"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTION",
+      "column": "TOTAL"
+    },
+      [{
+        "table": "transaction",
+        "column": "Total"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERLINEAGE",
+      "column": "C_CUSTOMER_HASH"
+    },
+      [{
+        "table": "c_CUSTOMERLINEAGE",
+        "column": "c_CUSTOMER_HASH"
+      }, {
+        "table": "customer",
+        "column": "SourceCustomerNumber"
+      }, {
+        "table": "customer",
+        "column": "c_source#'BD2 Customer Lineage'"
+      }, {
+        "table": "customer",
+        "column": "c_customer_hash"
+      }, {
+        "table": "c_CUSTOMERLINEAGE",
+        "column": "Sourcec_CUSTOMERLINEAGENumber"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTION",
+      "column": "DELETEFLAG"
+    },
+      [{
+        "table": "transaction",
+        "column": "DeleteFlag"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "OTHERREVENUE"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "OtherRevenue"
+      }]
+    ],
+    [{
+      "table": "BD2_PROMODIMENSION",
+      "column": "PMOTN_CATG_DESC"
+    },
+      [{
+        "table": "message",
+        "column": "c_promoCategoryDesc"
+      }]
+    ],
+    [{
+      "table": "MDS_LIFETIMEVALUE",
+      "column": "C_LTVR12"
+    },
+      [{
+        "table": "customer",
+        "column": "c_LTV_score12m"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_HHLD_XCRS_FIT_IND"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_megaFitness"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "SHIPPINGREVENUE"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "ShippingRevenue"
+      }]
+    ],
+    [{
+      "table": "BD2_PROMOFACTHISTORY",
+      "column": "DISCOUNT"
+    },
+      [{
+        "table": "transactionitemmessagexref",
+        "column": "c_discount"
+      }]
+    ],
+    [{
+      "table": "MDS_CUSTOMER",
+      "column": "STATE"
+    },
+      [{
+        "table": "address",
+        "column": "State"
+      }]
+    ],
+    [{
+      "table": "BD2_PRODUCT",
+      "column": "MSRP"
+    },
+      [{
+        "table": "product",
+        "column": "MSRP"
+      }]
+    ],
+    [{
+      "table": "BD2_FILEMAKER",
+      "column": "C_END_USE"
+    },
+      [{
+        "table": "product",
+        "column": "c_endUse"
+      }]
+    ],
+    [{
+      "table": "BD2_PRODUCT",
+      "column": "SOURCEPRODUCTCATEGORYNUMBER"
+    },
+      [{
+        "table": "productcategoryxref",
+        "column": "SourceProductCategoryNumber"
+      }]
+    ],
+    [{
+      "table": "BD2_PRODUCT",
+      "column": "BUNDLENUMBER"
+    },
+      [{
+        "table": "product",
+        "column": "BundleNumber"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "VOLUME"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "Volume"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_MEGA_NBR_OF_CHL_CNT"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_megaNumberChildren"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_HHLD_INCM_RNGE_DESC"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_megaHouseholdIncome"
+      }]
+    ],
+    [{
+      "table": "BD2_ORGANIZATION",
+      "column": "DELETEFLAG"
+    },
+      [{
+        "table": "organization",
+        "column": "DeleteFlag"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_HHLD_AGE_RNGE_DESC"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_megaAge"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_HHLD_OCC_TYP_STAT_CD"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_megaTypeOccupation"
+      }]
+    ],
+    [{
+      "table": "MDS_LIFETIMEVALUE",
+      "column": "C_LTVR18"
+    },
+      [{
+        "table": "customer",
+        "column": "c_LTV_score18m"
+      }]
+    ],
+    [{
+      "table": "BD2_PRODUCT",
+      "column": "COLOR"
+    },
+      [{
+        "table": "product",
+        "column": "Color"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTION",
+      "column": "SOURCETRANSACTIONNUMBER"
+    },
+      [{
+        "table": "transaction",
+        "column": "SourceTransactionNumber"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_PRB_ORD_THR_ML_RAT"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_probOrderThroughMail"
+      }]
+    ],
+    [{
+      "table": "MDS_CUSTOMER",
+      "column": "ZIP"
+    },
+      [{
+        "table": "address",
+        "column": "Zip"
+      }, {
+        "table": "customeraddressxref",
+        "column": "c_individualMatchCode:ZIP"
+      }]
+    ],
+    [{
+      "table": "MDS_ATTRITION",
+      "column": "C_MEDIANSCORE"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Attrition_medianScore"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_ADJ_NET_WRTH_AMT"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_adjustedNetWorth"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "GIFT"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "Gift"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "COSTBASIS"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "CostBasis"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTION",
+      "column": "SOURCEORGANIZATIONNUMBER"
+    },
+      [{
+        "table": "transaction",
+        "column": "SourceOrganizationNumber"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_INS_DT_HASH_KEY"
+    },
+      [{
+        "table": "customer",
+        "column": "c_merkle_insertDate"
+      }]
+    ],
+    [{
+      "table": "BD2_ORGANIZATION",
+      "column": "PARENTSOURCEORGANIZATIONNUMBER"
+    },
+      [{
+        "table": "organization",
+        "column": "ParentSourceOrganizationNumber"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTION",
+      "column": "SOURCETRANSACTIONNUMBERALT"
+    },
+      [{
+        "table": "transaction",
+        "column": "SourceTransactionNumberAlt"
+      }]
+    ],
+    [{
+      "table": "ATN_CUSTOMER",
+      "column": "PREFERENCES"
+    },
+      [{
+        "table": "customer",
+        "column": "Preferences"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTION",
+      "column": "C_EPOC_ID"
+    },
+      [{
+        "table": "transaction",
+        "column": "c_EPOC_ID"
+      }]
+    ],
+    [{
+      "table": "BD2_ORGANIZATION",
+      "column": "SOURCEORGANIZATIONNUMBER"
+    },
+      [{
+        "table": "organization",
+        "column": "SourceOrganizationNumber"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_RTL_CRD_IND"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_retailCard"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "QUANTITY"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "Quantity"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTION",
+      "column": "TRANSACTIONTIMESTAMP"
+    },
+      [{
+        "table": "transaction",
+        "column": "TransactionTimeStamp"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "SOURCEORGANIZATIONNUMBER"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "SourceOrganizationNumber"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTION",
+      "column": "DATECREATED"
+    },
+      [{
+        "table": "transaction",
+        "column": "DateCreated"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "SHIPPINGREVENUE"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "ShippingRevenue"
+      }]
+    ],
+    [{
+      "table": "BD2_PRODUCT",
+      "column": "SOURCEPRODUCTNUMBER"
+    },
+      [{
+        "table": "product",
+        "column": "SourceProductNumber"
+      }, {
+        "table": "product",
+        "column": "c_source#'BD2 Product'"
+      }, {
+        "table": "productcategoryxref",
+        "column": "SourceProductNumber"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTION",
+      "column": "TYPE"
+    },
+      [{
+        "table": "transaction",
+        "column": "Type"
+      }]
+    ],
+    [{
+      "table": "BD2_PRODUCTCATEGORY",
+      "column": "DELETEFLAG"
+    },
+      [{
+        "table": "productcategory",
+        "column": "DeleteFlag"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTION",
+      "column": "C_FLW_KEY"
+    },
+      [{
+        "table": "transaction",
+        "column": "c_FLW_KEY"
+      }]
+    ],
+    [{
+      "table": "BD2_PRODUCTCATEGORY",
+      "column": "NAME"
+    },
+      [{
+        "table": "productcategory",
+        "column": "Name"
+      }]
+    ],
+    [{
+      "table": "ATN_CUSTOMER",
+      "column": "MIDDLENAME"
+    },
+      [{
+        "table": "customer",
+        "column": "MiddleName"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_ETHN_TYP_CD"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_ethnicTypeCode"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTION",
+      "column": "DATECREATED"
+    },
+      [{
+        "table": "transaction",
+        "column": "DateCreated"
+      }]
+    ],
+    [{
+      "table": "BD2_PRODUCT",
+      "column": "IMAGEURL"
+    },
+      [{
+        "table": "product",
+        "column": "ImageURL"
+      }]
+    ],
+    [{
+      "table": "BD2_PROMOFACTHISTORY",
+      "column": "SOURCETRANSACTIONITEMNUMBER"
+    },
+      [{
+        "table": "transactionitemmessagexref",
+        "column": "SourceTransactionItemNumber"
+      }]
+    ],
+    [{
+      "table": "MDS_ATTRITION",
+      "column": "SOURCECUSTOMERNUMBER"
+    },
+      [{
+        "table": "customer",
+        "column": "SourceCustomerNumber"
+      }, {
+        "table": "customer",
+        "column": "c_mdsCustomerID"
+      }, {
+        "table": "customer",
+        "column": "c_source#'MDS Attrition'"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERATTRIBUTES",
+      "column": "C_MDSCUSTOMERID"
+    },
+      [{
+        "table": "customer",
+        "column": "SourceCustomerNumber"
+      }, {
+        "table": "customer",
+        "column": "c_mdsCustomerID"
+      }, {
+        "table": "customer",
+        "column": "c_source#'BD2 Customer Attributes'"
+      }]
+    ],
+    [{
+      "table": "BD2_PROMODIMENSION",
+      "column": "MKT_PMOTN_TYP_DESC"
+    },
+      [{
+        "table": "message",
+        "column": "c_promoMarketTypeDesc"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTION",
+      "column": "DISCOUNT"
+    },
+      [{
+        "table": "transaction",
+        "column": "Discount"
+      }]
+    ],
+    [{
+      "table": "BD2_PROMODIMENSION",
+      "column": "PMOTN_LVL_NM"
+    },
+      [{
+        "table": "message",
+        "column": "c_promoLevelName"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_HHLD_BNK_CRD_IND"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_bankCard"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_PRIM_NM_GNDR_TYP_CD"
+    },
+      [{
+        "table": "customer",
+        "column": "c_merkle_primGender"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "C_RETURN_LOC"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "c_RETURN_LOC"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "LISTPRICE"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "ListPrice"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "TYPE"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "Type"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "C_CUSTOMERNUMBER"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "c_CUSTOMERNUMBER"
+      }, {
+        "table": "transaction",
+        "column": "c_CUSTOMERNUMBER"
+      }, {
+        "table": "customer",
+        "column": "c_customerNumber"
+      }, {
+        "table": "customer",
+        "column": "SourceCustomerNumber:adwCustNum"
+      }, {
+        "table": "customer",
+        "column": "c_source#'ADW TransactionItem'"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_HHLD_INCM_TYP_STAT_CD"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_megaTypeHouseholdIncome"
+      }]
+    ],
+    [{
+      "table": "ATN_CUSTOMER",
+      "column": "PRIMARYPHONE"
+    },
+      [{
+        "table": "customer",
+        "column": "PrimaryPhone"
+      }]
+    ],
+    [{
+      "table": "MDS_CUSTOMER",
+      "column": "DATECREATED"
+    },
+      [{
+        "table": "customer",
+        "column": "DateCreated"
+      }]
+    ],
+    [{
+      "table": "ATN_CUSTOMER",
+      "column": "ADDRESS1"
+    },
+      [{
+        "table": "address",
+        "column": "Address1"
+      }, {
+        "table": "address",
+        "column": "SourceAddressNumber:A1"
+      }, {
+        "table": "customeraddressxref",
+        "column": "SourceAddressNumber:A1"
+      }, {
+        "table": "customeraddressxref",
+        "column": "c_individualMatchCode:A1"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "OTHERREVENUE"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "OtherRevenue"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "DISCOUNT"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "Discount"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_HHLD_AGE_RNGE_NBR"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_ageRangeHousehold"
+      }]
+    ],
+    [{
+      "table": "ATN_CUSTOMER",
+      "column": "ADDRESS2"
+    },
+      [{
+        "table": "address",
+        "column": "Address2"
+      }]
+    ],
+    [{
+      "table": "ADW_CUSTOMERLINEAGE",
+      "column": "C_MDSCUSTOMERID"
+    },
+      [{
+        "table": "c_CUSTOMERLINEAGE",
+        "column": "c_MDSCUSTOMERID"
+      }, {
+        "table": "customer",
+        "column": "c_mdsCustomerID"
+      }]
+    ],
+    [{
+      "table": "BD2_PROMODIMENSION",
+      "column": "MKT_PMOTN_TYP_NM"
+    },
+      [{
+        "table": "message",
+        "column": "c_promoMarketTypeName"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTION",
+      "column": "TAX"
+    },
+      [{
+        "table": "transaction",
+        "column": "Tax"
+      }]
+    ],
+    [{
+      "table": "BD2_FILEMAKER",
+      "column": "C_COLL_PGM_NM"
+    },
+      [{
+        "table": "product",
+        "column": "c_program"
+      }]
+    ],
+    [{
+      "table": "BD2_FILEMAKER",
+      "column": "C_ACTV_DESC"
+    },
+      [{
+        "table": "product",
+        "column": "c_activity"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTION",
+      "column": "TYPE"
+    },
+      [{
+        "table": "transaction",
+        "column": "Type"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "C_CUSTOMER_HASH"
+    },
+      [{
+        "table": "transaction",
+        "column": "c_CUSTOMER_HASH"
+      }, {
+        "table": "transactionitem",
+        "column": "c_CUSTOMER_HASH"
+      }, {
+        "table": "customer",
+        "column": "c_customer_hash"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "SHIPPINGDISCOUNT"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "ShippingDiscount"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_RRL_URBN_CNTY_SZ_CD"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_ruralUrbanCountySizeCode"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "DATECREATED"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "DateCreated"
+      }]
+    ],
+    [{
+      "table": "BD2_ORGANIZATION",
+      "column": "STATE"
+    },
+      [{
+        "table": "organization",
+        "column": "State"
+      }]
+    ],
+    [{
+      "table": "BD2_FILEMAKER",
+      "column": "C_SUPER_CLS_NM"
+    },
+      [{
+        "table": "product",
+        "column": "c_superClass"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "SOURCEORGANIZATIONNUMBER"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "SourceOrganizationNumber"
+      }]
+    ],
+    [{
+      "table": "ATN_CUSTOMER",
+      "column": "LAST NAME"
+    },
+      [{
+        "table": "customer",
+        "column": "LastName"
+      }, {
+        "table": "customeraddressxref",
+        "column": "c_individualMatchCode:LN"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_MSA_CD"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_geoMSACode"
+      }]
+    ],
+    [{
+      "table": "MDS_CUSTOMER",
+      "column": "SOURCECUSTOMERNUMBER"
+    },
+      [{
+        "table": "customer",
+        "column": "SourceCustomerNumber"
+      }, {
+        "table": "customer",
+        "column": "c_source#'MDS Customer'"
+      }, {
+        "table": "customer",
+        "column": "c_mdsCustomerID"
+      }, {
+        "table": "address",
+        "column": "SourceAddressNumber:SCN"
+      }, {
+        "table": "address",
+        "column": "c_source#'MDS Customer'"
+      }, {
+        "table": "customeraddressxref",
+        "column": "SourceAddressNumber:SCN"
+      }, {
+        "table": "customeraddressxref",
+        "column": "SourceCustomerNumber"
+      }, {
+        "table": "customeraddressxref",
+        "column": "c_source#'MDS Customer'"
+      }]
+    ],
+    [{
+      "table": "BD2_ORGANIZATION",
+      "column": "STATUS"
+    },
+      [{
+        "table": "organization",
+        "column": "Status"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTION",
+      "column": "C_SOURCE"
+    },
+      [{
+        "table": "transaction",
+        "column": "c_SOURCE"
+      }]
+    ],
+    [{
+      "table": "BD2_PRODUCT",
+      "column": "SALEPRICE"
+    },
+      [{
+        "table": "product",
+        "column": "SalePrice"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "SOURCEPRODUCTNUMBER"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "SourceProductNumber"
+      }, {
+        "table": "product",
+        "column": "SourceProductNumber"
+      }, {
+        "table": "product",
+        "column": "c_source#'BD2 TransactionItem'"
+      }]
+    ],
+    [{
+      "table": "BD2_PRODUCT",
+      "column": "DESCRIPTION"
+    },
+      [{
+        "table": "product",
+        "column": "Description"
+      }]
+    ],
+    [{
+      "table": "ATN_CUSTOMER",
+      "column": "DELETEFLAG"
+    },
+      [{
+        "table": "customer",
+        "column": "DeleteFlag"
+      }]
+    ],
+    [{
+      "table": "ATN_CUSTOMER",
+      "column": "STATE"
+    },
+      [{
+        "table": "address",
+        "column": "State"
+      }]
+    ],
+    [{
+      "table": "BD2_OBSOLETESURVIVINGCUSTOMER",
+      "column": "C_OLD_CUSTOMER_KEY"
+    },
+      [{
+        "table": "c_obsoleteSurvivingCustomer",
+        "column": "c_oldCustomerKey"
+      }, {
+        "table": "c_obsoleteSurvivingCustomer",
+        "column": "Sourcec_obsoleteSurvivingCustomerNumber"
+      }, {
+        "table": "customer",
+        "column": "SourceCustomerNumber"
+      }, {
+        "table": "customer",
+        "column": "c_source#'BD2 Obsolete Surviving'"
+      }]
+    ],
+    [{
+      "table": "BD2_PROMOFACTHISTORY",
+      "column": "C_SOURCE"
+    },
+      [{
+        "table": "transactionitemmessagexref",
+        "column": "c_BD2source"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTION",
+      "column": "TRANSACTIONTIMESTAMP"
+    },
+      [{
+        "table": "transaction",
+        "column": "TransactionTimeStamp"
+      }]
+    ],
+    [{
+      "table": "MDS_CUSTOMER",
+      "column": "FIRSTNAME"
+    },
+      [{
+        "table": "customer",
+        "column": "FirstName"
+      }, {
+        "table": "customeraddressxref",
+        "column": "c_individualMatchCode:FN"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "C_SOR_TRANSACTION_ID"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "c_SOR_TRANSACTION_ID"
+      }]
+    ],
+    [{
+      "table": "BD2_PRODUCT",
+      "column": "DELETEFLAG"
+    },
+      [{
+        "table": "product",
+        "column": "DeleteFlag"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTION",
+      "column": "CURRENCY"
+    },
+      [{
+        "table": "transaction",
+        "column": "Currency"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_HHLD_AGE_TYP_STAT_CD"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_megaTypeAge"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERTRANSACTION",
+      "column": "C_CHANNEL"
+    },
+      [{
+        "table": "transaction",
+        "column": "c_CHANNEL"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTION",
+      "column": "TOTAL"
+    },
+      [{
+        "table": "transaction",
+        "column": "Total"
+      }]
+    ],
+    [{
+      "table": "BD2_FILEMAKER",
+      "column": "C_COLL_NM"
+    },
+      [{
+        "table": "product",
+        "column": "c_collection"
+      }]
+    ],
+    [{
+      "table": "MDS_LIFETIMEVALUE",
+      "column": "SOURCECUSTOMERNUMBER"
+    },
+      [{
+        "table": "customer",
+        "column": "SourceCustomerNumber"
+      }, {
+        "table": "customer",
+        "column": "c_mdsCustomerID"
+      }, {
+        "table": "customer",
+        "column": "c_source#'MDS Lifetime Value'"
+      }]
+    ],
+    [{
+      "table": "BD2_PROMOFACTHISTORY",
+      "column": "SUBTYPE"
+    },
+      [{
+        "table": "transactionitemmessagexref",
+        "column": "c_subtype"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "QUANTITY"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "Quantity"
+      }]
+    ],
+    [{
+      "table": "ATN_CUSTOMER",
+      "column": "UUID"
+    },
+      [{
+        "table": "customer",
+        "column": "UUID"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "WEIGHT"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "Weight"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "C_CHECKOUT_LOC"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "c_CHECKOUT_LOC"
+      }]
+    ],
+    [{
+      "table": "BD2_CARDHOLDER",
+      "column": "C_STR_LOC"
+    },
+      [{
+        "table": "customer",
+        "column": "c_cardATOpenStore"
+      }]
+    ],
+    [{
+      "table": "BD2_PRODUCT",
+      "column": "SOURCEBRANDNUMBER"
+    },
+      [{
+        "table": "product",
+        "column": "SourceBrandNumber"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "C_SOURCE"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "c_SOURCE"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "C_PRICE_ADJUSTMENT_IND"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "c_PRICE_ADJUSTMENT_IND"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_CR_RATE_RNGE_CD"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_creditRanges"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_PRIM_NM_BDAY_DT_HASH_KEY"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_birthdate"
+      }]
+    ],
+    [{
+      "table": "ATN_CUSTOMER",
+      "column": "EMAIL"
+    },
+      [{
+        "table": "customer",
+        "column": "Email"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "SHIPDATE"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "ShipDate"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "SOURCETRANSACTIONITEMNUMBER"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "SourceTransactionItemNumber"
+      }]
+    ],
+    [{
+      "table": "BD2_PROMODIMENSION",
+      "column": "PMOTN_START_DT"
+    },
+      [{
+        "table": "message",
+        "column": "DateCreated"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_HHLD_HM_OWNR_TYP_STAT_CD"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_megaTypeHomeowner"
+      }]
+    ],
+    [{
+      "table": "BD2_PRODUCTCATEGORY",
+      "column": "IMAGEURL"
+    },
+      [{
+        "table": "productcategory",
+        "column": "ImageURL"
+      }]
+    ],
+    [{
+      "table": "INF_MODELSCORE",
+      "column": "CUST NUM"
+    },
+      [{
+        "table": "customer",
+        "column": "c_customerNumber"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_FLW_KEY"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_flwKey"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "C_SOURCE"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "c_SOURCE"
+      }, {
+        "table": "transaction",
+        "column": "c_SOURCE"
+      }]
+    ],
+    [{
+      "table": "BD2_ORGANIZATION",
+      "column": "ADDRESS1"
+    },
+      [{
+        "table": "organization",
+        "column": "Address1"
+      }]
+    ],
+    [{
+      "table": "INF_MODELSCORE",
+      "column": "CUST CRCRD NBR"
+    },
+      [{
+        "table": "customer",
+        "column": "SourceCustomerNumber"
+      }, {
+        "table": "customer",
+        "column": "c_mdsCustomerID"
+      }, {
+        "table": "customer",
+        "column": "c_source#'Infogroup ModelScore'"
+      }]
+    ],
+    [{
+      "table": "BD2_ORGANIZATION",
+      "column": "ADDRESS2"
+    },
+      [{
+        "table": "organization",
+        "column": "Address2"
+      }]
+    ],
+    [{
+      "table": "BD2_PROMOFACTHISTORY",
+      "column": "C_CHANNEL"
+    },
+      [{
+        "table": "transactionitemmessagexref",
+        "column": "c_channel"
+      }]
+    ],
+    [{
+      "table": "BD2_ORGANIZATION",
+      "column": "NAME"
+    },
+      [{
+        "table": "organization",
+        "column": "Name"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "C_SOR_TRANSACTION_ID"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "c_SOR_TRANSACTION_ID"
+      }]
+    ],
+    [{
+      "table": "BD2_CARDHOLDER",
+      "column": "C_CRD_TYP_CD"
+    },
+      [{
+        "table": "customer",
+        "column": "c_card"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "TAX"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "Tax"
+      }]
+    ],
+    [{
+      "table": "ATN_CUSTOMER",
+      "column": "SOURCECUSTOMERNUMBER"
+    },
+      [{
+        "table": "customer",
+        "column": "SourceCustomerNumber"
+      }, {
+        "table": "address",
+        "column": "SourceAddressNumber:SCN"
+      }, {
+        "table": "customeraddressxref",
+        "column": "SourceAddressNumber:SCN"
+      }, {
+        "table": "customeraddressxref",
+        "column": "SourceCustomerNumber"
+      }, {
+        "table": "customeraddressxref",
+        "column": "c_source#'ATN Customer'"
+      }, {
+        "table": "customer",
+        "column": "c_source#'ATN Customer'"
+      }, {
+        "table": "address",
+        "column": "c_source#'ATN Customer'"
+      }, {
+        "table": "customer",
+        "column": "c_mdsCustomerID"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_CHL_4_7_YR_GNDR_TYP_CD"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_children4_7Years"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_MRKL_MKT_RNK_NBR"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_marketingRank"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "SUBTYPE"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "Subtype"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_HHLD_HM_OWNR_TYP_CD"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_megaHomeowner"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_SOC_IQ_FB_ID"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_socialIQFacebook"
+      }]
+    ],
+    [{
+      "table": "BD2_FILEMAKER",
+      "column": "C_ATTR_YR_NBR"
+    },
+      [{
+        "table": "product",
+        "column": "c_year"
+      }]
+    ],
+    [{
+      "table": "BD2_PROMODIMENSION",
+      "column": "DSCT_ALW_NM"
+    },
+      [{
+        "table": "message",
+        "column": "c_promoDiscountAllowName"
+      }]
+    ],
+    [{
+      "table": "MDS_CUSTOMER",
+      "column": "EMAIL"
+    },
+      [{
+        "table": "customer",
+        "column": "Email"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "DELETEFLAG"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "DeleteFlag"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "OTHERCOST"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "OtherCost"
+      }]
+    ],
+    [{
+      "table": "ATN_CUSTOMER",
+      "column": "SOURCE CUSTOMER NUMBER"
+    },
+      [{
+        "table": "customer",
+        "column": "SourceCustomerNumber"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERATTRIBUTES",
+      "column": "C_STORE_PREF"
+    },
+      [{
+        "table": "customer",
+        "column": "c_storePreference"
+      }]
+    ],
+    [{
+      "table": "MDS_CUSTOMER",
+      "column": "DELETEFLAG"
+    },
+      [{
+        "table": "customer",
+        "column": "DeleteFlag"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTION",
+      "column": "C_EPOC_ID"
+    },
+      [{
+        "table": "transaction",
+        "column": "c_EPOC_ID"
+      }]
+    ],
+    [{
+      "table": "MDS_CUSTOMER",
+      "column": "MIDDLENAME"
+    },
+      [{
+        "table": "customer",
+        "column": "MiddleName"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "SOURCEPRODUCTNUMBER"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "SourceProductNumber"
+      }, {
+        "table": "product",
+        "column": "SourceProductNumber"
+      }, {
+        "table": "product",
+        "column": "c_source#'ADW TransactionItem'"
+      }]
+    ],
+    [{
+      "table": "BD2_PROMODIMENSION",
+      "column": "PMOTN_NM"
+    },
+      [{
+        "table": "message",
+        "column": "Name"
+      }]
+    ],
+    [{
+      "table": "BD2_PROMODIMENSION",
+      "column": "PRC_APPL_TYP_NM"
+    },
+      [{
+        "table": "message",
+        "column": "c_promoPriceAppliedTypeName"
+      }]
+    ],
+    [{
+      "table": "MDS_CUSTOMER",
+      "column": "COUNTRY"
+    },
+      [{
+        "table": "address",
+        "column": "Country"
+      }, {
+        "table": "customeraddressxref",
+        "column": "c_individualMatchCode:CNTRY"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTION",
+      "column": "C_CUSTOMERNUMBER"
+    },
+      [{
+        "table": "transaction",
+        "column": "c_CUSTOMERNUMBER"
+      }, {
+        "table": "customer",
+        "column": "c_customerNumber"
+      }]
+    ],
+    [{
+      "table": "BD2_ORGANIZATION",
+      "column": "TYPE"
+    },
+      [{
+        "table": "organization",
+        "column": "Type"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "SHIPPINGCOST"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "ShippingCost"
+      }]
+    ],
+    [{
+      "table": "BD2_CARDHOLDER",
+      "column": "C_CUST_HASH_KEY"
+    },
+      [{
+        "table": "customer",
+        "column": "c_customer_hash"
+      }, {
+        "table": "customer",
+        "column": "SourceCustomerNumber"
+      }, {
+        "table": "customer",
+        "column": "c_source#'BD2 Cardholder'"
+      }]
+    ],
+    [{
+      "table": "MDS_CUSTOMER",
+      "column": "ADDRESS1"
+    },
+      [{
+        "table": "address",
+        "column": "Address1"
+      }, {
+        "table": "address",
+        "column": "SourceAddressNumber:A1"
+      }, {
+        "table": "customeraddressxref",
+        "column": "SourceAddressNumber:A1"
+      }, {
+        "table": "customeraddressxref",
+        "column": "c_individualMatchCode:A1"
+      }]
+    ],
+    [{
+      "table": "BD2_ORGANIZATION",
+      "column": "SUBTYPE"
+    },
+      [{
+        "table": "organization",
+        "column": "SubType"
+      }]
+    ],
+    [{
+      "table": "MDS_CUSTOMER",
+      "column": "ADDRESS2"
+    },
+      [{
+        "table": "address",
+        "column": "Address2"
+      }]
+    ],
+    [{
+      "table": "BD2_PROMODIMENSION",
+      "column": "PMOTN_SCATG_DESC"
+    },
+      [{
+        "table": "message",
+        "column": "c_promoSubCategoryDesc"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "SUBTYPE"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "Subtype"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_UP_SCL_RTL_CRD_IND"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_upscaleRetailCard"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "GIFT"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "Gift"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERTRANSACTION",
+      "column": "C_CUSTOMER_HASH"
+    },
+      [{
+        "table": "transaction",
+        "column": "c_CUSTOMER_HASH"
+      }, {
+        "table": "customer",
+        "column": "c_customer_hash"
+      }, {
+        "table": "customer",
+        "column": "SourceCustomerNumber"
+      }, {
+        "table": "customer",
+        "column": "c_source#'BD2 CustomerTransaction'"
+      }, {
+        "table": "transaction",
+        "column": "SourceCustomerNumber"
+      }]
+    ],
+    [{
+      "table": "BD2_PROMODIMENSION",
+      "column": "PMOTN_SCATG_NM"
+    },
+      [{
+        "table": "message",
+        "column": "c_promoSubCategoryName"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERTRANSACTION",
+      "column": "C_FLW_KEY"
+    },
+      [{
+        "table": "transaction",
+        "column": "c_FLW_KEY"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "C_CHANNEL"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "c_CHANNEL"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_SPNDX_APRL_NBR"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_spendexApparel"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTION",
+      "column": "DELETEFLAG"
+    },
+      [{
+        "table": "transaction",
+        "column": "DeleteFlag"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_AGE_YR_NBR"
+    },
+      [{
+        "table": "customer",
+        "column": "c_merkle_householdAge"
+      }]
+    ],
+    [{
+      "table": "MDS_CATEGORYPREFERENCE",
+      "column": "SOURCECUSTOMERNUMBER"
+    },
+      [{
+        "table": "customer",
+        "column": "SourceCustomerNumber"
+      }, {
+        "table": "customer",
+        "column": "c_source#'MDS Category Preference'"
+      }, {
+        "table": "customer",
+        "column": "c_mdsCustomerID"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_ADDR_TYP_CD"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_addressType"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTION",
+      "column": "C_CUSTOMER_HASH"
+    },
+      [{
+        "table": "transaction",
+        "column": "c_CUSTOMER_HASH"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "INVOICEDATE"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "InvoiceDate"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_PRIM_NM_MARR_STAT_CD"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_maritalStatus"
+      }]
+    ],
+    [{
+      "table": "BD2_CARDHOLDER",
+      "column": "C_OPN_DT_HASH_KEY"
+    },
+      [{
+        "table": "customer",
+        "column": "c_cardATOpenDate"
+      }]
+    ],
+    [{
+      "table": "INF_MODELSCORE",
+      "column": "MDL CNU HOUSE 10 BUCKET NUM 2016 UPDATE"
+    },
+      [{
+        "table": "customer",
+        "column": "c_mailModelScore"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "C_PRICE_ADJUSTMENT_IND"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "c_PRICE_ADJUSTMENT_IND"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_UPD_DT_HASH_KEY"
+    },
+      [{
+        "table": "customer",
+        "column": "c_merkle_updateDate"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_HHLD_PRST_OF_CHL_TYP_STAT_CD"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_megaTypePresenceChildren"
+      }]
+    ],
+    [{
+      "table": "ATN_CUSTOMER",
+      "column": "LASTNAME"
+    },
+      [{
+        "table": "customer",
+        "column": "LastName"
+      }, {
+        "table": "customeraddressxref",
+        "column": "c_individualMatchCode:LN"
+      }]
+    ],
+    [{
+      "table": "ATN_CUSTOMER",
+      "column": "COUNTRY"
+    },
+      [{
+        "table": "address",
+        "column": "Country"
+      }, {
+        "table": "customeraddressxref",
+        "column": "c_individualMatchCode:CNTRY"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "COSTBASIS"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "CostBasis"
+      }]
+    ],
+    [{
+      "table": "BD2_CARDHOLDER",
+      "column": "C_ACT_IND"
+    },
+      [{
+        "table": "customer",
+        "column": "c_activeInd"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_MRKL_INF_CRD_HLD_RNK_NBR"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_inferredCardHolder"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "C_RETURN_LOC"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "c_RETURN_LOC"
+      }]
+    ],
+    [{
+      "table": "BD2_ORGANIZATION",
+      "column": "CITY"
+    },
+      [{
+        "table": "organization",
+        "column": "City"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "SALEREVENUE"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "SaleRevenue"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "LISTPRICE"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "ListPrice"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "DATECREATED"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "DateCreated"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_MEGA_PRST_OF_CHL_ID"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_megaPresenceChildren"
+      }]
+    ],
+    [{
+      "table": "BD2_PRODUCT",
+      "column": "AVAILABILITY"
+    },
+      [{
+        "table": "product",
+        "column": "Availability"
+      }]
+    ],
+    [{
+      "table": "BD2_PRODUCTCATEGORY",
+      "column": "URL"
+    },
+      [{
+        "table": "productcategory",
+        "column": "URL"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "C_FULFILLMENT_LOC"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "c_FULFILLMENT_LOC"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTION",
+      "column": "C_CHANNEL"
+    },
+      [{
+        "table": "transaction",
+        "column": "c_CHANNEL"
+      }]
+    ],
+    [{
+      "table": "BD2_CARDHOLDER",
+      "column": "C_EST_CLS_DT_HASH_KEY"
+    },
+      [{
+        "table": "customer",
+        "column": "c_cardATCloseDate"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "SHIPDATE"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "ShipDate"
+      }]
+    ],
+    [{
+      "table": "MDS_CUSTOMER",
+      "column": "PREFERENCES"
+    },
+      [{
+        "table": "customer",
+        "column": "Preferences"
+      }]
+    ],
+    [{
+      "table": "ADW_CUSTOMERLINEAGE",
+      "column": "C_CUSTOMERNUMBER"
+    },
+      [{
+        "table": "c_CUSTOMERLINEAGE",
+        "column": "c_CUSTOMERNUMBER"
+      }, {
+        "table": "customer",
+        "column": "c_source#'ADW Customer Lineage'"
+      }, {
+        "table": "customer",
+        "column": "c_customerNumber"
+      }, {
+        "table": "customer",
+        "column": "SourceCustomerNumber:adwCustNum"
+      }, {
+        "table": "c_CUSTOMERLINEAGE",
+        "column": "Sourcec_CUSTOMERLINEAGENumber:adwCustNum"
+      }]
+    ],
+    [{
+      "table": "BD2_PROMODIMENSION",
+      "column": "PMOTN_ID"
+    },
+      [{
+        "table": "message",
+        "column": "SourceMessageNumber:PROMO"
+      }]
+    ],
+    [{
+      "table": "BD2_PRODUCTCATEGORY",
+      "column": "SOURCEPARENTCATEGORYNUMBER"
+    },
+      [{
+        "table": "productcategory",
+        "column": "SourceParentCategoryNumber"
+      }]
+    ],
+    [{
+      "table": "BD2_PRODUCTCATEGORY",
+      "column": "LEVELNAME"
+    },
+      [{
+        "table": "productcategory",
+        "column": "LevelName"
+      }]
+    ],
+    [{
+      "table": "BD2_PRODUCTCATEGORY",
+      "column": "SOURCECATEGORYNUMBER"
+    },
+      [{
+        "table": "productcategory",
+        "column": "SourceCategoryNumber"
+      }]
+    ],
+    [{
+      "table": "BD2_TRANSACTIONITEM",
+      "column": "SOURCETRANSACTIONNUMBER"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "SourceTransactionNumber"
+      }, {
+        "table": "transaction",
+        "column": "SourceTransactionNumber"
+      }]
+    ],
+    [{
+      "table": "BD2_PROMOFACTHISTORY",
+      "column": "PMOTN_ID"
+    },
+      [{
+        "table": "transactionitemmessagexref",
+        "column": "SourceMessageNumber:PROMO"
+      }, {
+        "table": "transactionitemmessagexref",
+        "column": "Type#'promotion'"
+      }]
+    ],
+    [{
+      "table": "BD2_PROMODIMENSION",
+      "column": "PMOTN_CATG_NM"
+    },
+      [{
+        "table": "dispatch",
+        "column": "SubType"
+      }, {
+        "table": "message",
+        "column": "c_promoCategoryName"
+      }, {
+        "table": "message",
+        "column": "SourceDispatchNumber:PROMO"
+      }, {
+        "table": "dispatch",
+        "column": "SourceCampaignNumber:PROMO"
+      }, {
+        "table": "dispatch",
+        "column": "SourceDispatchNumber:PROMO"
+      }, {
+        "table": "campaign",
+        "column": "SourceCampaignNumber:PROMO"
+      }]
+    ],
+    [{
+      "table": "MDS_LIFETIMEVALUE",
+      "column": "C_DECILELTVR12"
+    },
+      [{
+        "table": "customer",
+        "column": "c_LTV_decile12m"
+      }]
+    ],
+    [{
+      "table": "BD2_PRODUCT",
+      "column": "C_PARENTPRODUCTNUMBERDESC"
+    },
+      [{
+        "table": "product",
+        "column": "c_PARENTPRODUCTNUMBERDESC"
+      }]
+    ],
+    [{
+      "table": "BD2_OBSOLETESURVIVINGCUSTOMER",
+      "column": "C_NEW_CUSTOMER_KEY"
+    },
+      [{
+        "table": "c_obsoleteSurvivingCustomer",
+        "column": "c_newCustomerKey"
+      }, {
+        "table": "customer",
+        "column": "c_mdsCustomerID"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTIONITEM",
+      "column": "DELETEFLAG"
+    },
+      [{
+        "table": "transactionitem",
+        "column": "DeleteFlag"
+      }]
+    ],
+    [{
+      "table": "BD2_PROMODIMENSION",
+      "column": "PMOTN_END_DT"
+    },
+      [{
+        "table": "message",
+        "column": "c_promoEndDate"
+      }]
+    ],
+    [{
+      "table": "MDS_LIFETIMEVALUE",
+      "column": "C_DECILELTVR18"
+    },
+      [{
+        "table": "customer",
+        "column": "c_LTV_decile18m"
+      }]
+    ],
+    [{
+      "table": "ATN_CUSTOMER",
+      "column": "DATECREATED"
+    },
+      [{
+        "table": "customer",
+        "column": "DateCreated"
+      }]
+    ],
+    [{
+      "table": "BD2_PRODUCT",
+      "column": "DATECREATED"
+    },
+      [{
+        "table": "product",
+        "column": "DateCreated"
+      }]
+    ],
+    [{
+      "table": "BD2_PRODUCT",
+      "column": "AVAILABLEQTY"
+    },
+      [{
+        "table": "product",
+        "column": "AvailableQty"
+      }]
+    ],
+    [{
+      "table": "BD2_PRODUCT",
+      "column": "PRODUCTURL"
+    },
+      [{
+        "table": "product",
+        "column": "ProductURL"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_MEGA_OCC_ID"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_megaOccupation"
+      }]
+    ],
+    [{
+      "table": "BD2_CUSTOMERDEMOGRAPHICS",
+      "column": "C_HHLD_NBR_OF_CHL_TYP_STAT_CD"
+    },
+      [{
+        "table": "customer",
+        "column": "c_Merkle_megaTypeNumberChildren"
+      }]
+    ],
+    [{
+      "table": "BD2_PRODUCT",
+      "column": "PARENTPRODUCTNUMBER"
+    },
+      [{
+        "table": "product",
+        "column": "ParentProductNumber"
+      }]
+    ],
+    [{
+      "table": "ADW_TRANSACTION",
+      "column": "SOURCETRANSACTIONNUMBERALT"
+    },
+      [{
+        "table": "transaction",
+        "column": "SourceTransactionNumberAlt"
       }]
     ]
   ]

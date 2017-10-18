@@ -6,6 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -43,7 +44,7 @@ public class JSON2CSV {
                 output = new JSONObject(jsonString);
             }
 
-            JSONArray mapArray = output.getJSONArray("map");
+            JSONArray mapArray = output.getJSONArray("mapping");
             JSONArray innerArr;
             JSONObject aIFMappingObj;
             JSONObject udfMappingObj;
@@ -71,6 +72,8 @@ public class JSON2CSV {
             }
 
             Path outputFile = Paths.get(args[1]);
+            list.sort( Comparator.naturalOrder());
+
             Files.write( outputFile, list);
 
         } catch (JSONException | IOException e) {
