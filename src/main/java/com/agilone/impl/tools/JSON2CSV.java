@@ -1,4 +1,4 @@
-package com.practice;
+package com.agilone.impl.tools;
 
 import java.io.File;
 import java.io.IOException;
@@ -51,7 +51,7 @@ public class JSON2CSV {
             JSONArray udfMappingArr;
 
             List<String> list = new ArrayList<>();
-            list.add("AIFTable,AIFColumn,UDMTable,UDMColumn");
+//            list.add("AIFTable,AIFColumn,UDMTable,UDMColumn");
 
             for( int i=0 ; i<mapArray.length() ; ++i) {
                 innerArr = mapArray.getJSONArray( i);
@@ -73,6 +73,7 @@ public class JSON2CSV {
 
             Path outputFile = Paths.get(args[1]);
             list.sort( Comparator.naturalOrder());
+            list.add( 0, "AIFTable,AIFColumn,UDMTable,UDMColumn");
 
             Files.write( outputFile, list);
 
