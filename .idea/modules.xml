@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Json2CSV.iml" filepath="$PROJECT_DIR$/Json2CSV.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ImplTools.iml" filepath="$PROJECT_DIR$/ImplTools.iml" />
     </modules>
   </component>
 </project>

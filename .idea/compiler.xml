@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="ImplTools" />
         <module name="Json2CSV" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="ImplTools" target="1.8" />
       <module name="Json2CSV" target="1.8" />
     </bytecodeTargetLevel>
   </component>

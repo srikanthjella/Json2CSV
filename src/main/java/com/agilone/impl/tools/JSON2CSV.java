@@ -5,9 +5,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import org.json.JSONArray;
@@ -33,6 +31,25 @@ public class JSON2CSV {
             else {
                 udm( args[1], args[2]);
             }
+        }
+        else {
+            List<String> csList = new ArrayList<>();
+            List<String> prodList = new ArrayList<>();
+
+            csList.add("account,Batch,STRING,Batch");
+            csList.add("account,DateCreated,LONG,DateCreated");
+            csList.add("account,DateModified,LONG,DateModified");
+            csList.add("account,DeleteFlag,BOOLEAN,Delete Flag");
+            csList.add("account,ID,STRING,ID");
+            csList.add("account,Name,STRING,Name");
+
+            prodList.add("account,Batch,STRING,Batch");
+            prodList.add("account,DateCreated,LONG,DateCreated");
+            prodList.add("account,DateModified,LONG,DateModified");
+            prodList.add("account,DeleteFlag,BOOLEAN,DeleteFlag");
+            prodList.add("account,ID,STRING,ID");
+
+            compare( csList, prodList, "udm");
         }
     }
 
@@ -169,6 +186,47 @@ public class JSON2CSV {
             System.err.println("Unable to process JSON -> " + e.getLocalizedMessage());
             e.printStackTrace();
         }
+
+    }
+
+    private static void compare(List<String>  csCSV, List<String>  prodCSV, String udmOrMapping) {
+        List<String> newItems = new ArrayList<>();
+        List<String> updateItems = new ArrayList<>();
+
+        Map<String,String> csMap = new HashMap<>();
+        Map<String,String> prodMap = new HashMap<>();
+
+        for( String item : csCSV) {
+            String[] arr = item.split(",");
+            csMap.put( arr[0]+arr[1], item);
+        }
+
+        for( String item : prodCSV) {
+            String[] arr = item.split(",");
+            prodMap.put( arr[0]+arr[1], item);
+        }
+
+        for( Map.Entry<String,String> entry : csMap.entrySet()) {
+            if( prodMap.get( entry.getKey()) == null) {
+                newItems.add( entry.getValue());
+            }
+            else if( prodMap.get( entry.getKey()).equals(entry.getValue()) == false) {
+                updateItems.add( entry.getValue());
+            }
+            else continue;
+        }
+
+        if( newItems.size() != 0 || updateItems.size() != 0) {
+            System.out.println( "New Items:");
+            for (String item : newItems)
+                System.out.println( item);
+
+            System.out.println();
+            System.out.println( "Updated/Modified Items:");
+            for (String item : updateItems)
+                System.out.println( item);
+        }
+        else System.out.println( "Both environments are identical.");
 
     }
 }
