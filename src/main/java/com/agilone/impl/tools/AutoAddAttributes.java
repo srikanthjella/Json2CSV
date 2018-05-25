@@ -7,6 +7,7 @@ import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -41,18 +42,89 @@ public class AutoAddAttributes {
         if( optsMap.size() == 0) {
             exitWithErrorMsg("None of the required parameters not found (env/location/tenantId/operation)", true);
         }
-        else if( !optsMap.keySet().contains( Constants.ENV) || !optsMap.keySet().contains( Constants.LOCATION)
-                || !optsMap.keySet().contains( Constants.OPERATION) || !optsMap.keySet().contains( Constants.TENANT_ID)
-                || !optsMap.keySet().contains( Constants.TOKEN) || !optsMap.keySet().contains( Constants.INPUTFILE)) {
-            exitWithErrorMsg("Following required parameter(s) not found:"
-                    + (optsMap.keySet().contains( Constants.ENV) ? "" : " " + Constants.ENV)
-                    + (optsMap.keySet().contains( Constants.LOCATION) ? "" : " " + Constants.LOCATION)
-                    + (optsMap.keySet().contains( Constants.OPERATION) ? "" : " "+ Constants.OPERATION)
-                    + (optsMap.keySet().contains( Constants.TENANT_ID) ? "" : " " + Constants.TENANT_ID)
-                    + (optsMap.keySet().contains( Constants.INPUTFILE) ? "" : " " + Constants.INPUTFILE)
-                    + (optsMap.keySet().contains( Constants.TOKEN) ? "" : " " + Constants.TOKEN), true);
+        else if( optsMap.keySet().contains( Constants.OPERATION)) {
+            if (!optsMap.keySet().contains(Constants.ENV) || !optsMap.keySet().contains(Constants.LOCATION)
+                    || optsMap.get( Constants.OPERATION).equalsIgnoreCase( Constants.ADDATTRIBUTES) && !optsMap.keySet().contains(Constants.TENANT_ID)
+                    || !optsMap.keySet().contains(Constants.TOKEN) || !optsMap.keySet().contains(Constants.INPUTFILE)) {
+                exitWithErrorMsg("Following required parameter(s) not found:"
+                        + (optsMap.keySet().contains(Constants.ENV) ? "" : " " + Constants.ENV)
+                        + (optsMap.keySet().contains(Constants.LOCATION) ? "" : " " + Constants.LOCATION)
+                        + (optsMap.keySet().contains(Constants.OPERATION) ? "" : " " + Constants.OPERATION)
+                        + (optsMap.keySet().contains(Constants.TENANT_ID) ? "" : " " + Constants.TENANT_ID)
+                        + (optsMap.keySet().contains(Constants.INPUTFILE) ? "" : " " + Constants.INPUTFILE)
+                        + (optsMap.keySet().contains(Constants.TOKEN) ? "" : " " + Constants.TOKEN), true);
+            }
+            else if( !optsMap.keySet().contains(Constants.ENV) || !optsMap.keySet().contains(Constants.LOCATION)
+                    || optsMap.get( Constants.OPERATION).equalsIgnoreCase( Constants.MAPPING) && !optsMap.keySet().contains(Constants.TENANT_ID)
+                    || !optsMap.keySet().contains(Constants.TOKEN) || !optsMap.keySet().contains(Constants.INPUTFILE)
+                    || !optsMap.keySet().contains(Constants.CONNECTORID)) {
+                exitWithErrorMsg("Following required parameter(s) not found:"
+                        + (optsMap.keySet().contains(Constants.ENV) ? "" : " " + Constants.ENV)
+                        + (optsMap.keySet().contains(Constants.LOCATION) ? "" : " " + Constants.LOCATION)
+                        + (optsMap.keySet().contains(Constants.OPERATION) ? "" : " " + Constants.OPERATION)
+                        + (optsMap.keySet().contains(Constants.TENANT_ID) ? "" : " " + Constants.TENANT_ID)
+                        + (optsMap.keySet().contains(Constants.INPUTFILE) ? "" : " " + Constants.INPUTFILE)
+                        + (optsMap.keySet().contains(Constants.CONNECTORID) ? "" : " " + Constants.CONNECTORID)
+                        + (optsMap.keySet().contains(Constants.TOKEN) ? "" : " " + Constants.TOKEN), true);
+            }
         }
 
+        AutoAddAttributes att = new AutoAddAttributes();
+        if( optsMap.get( Constants.OPERATION).equalsIgnoreCase( Constants.ADDATTRIBUTES)) {
+            att.addAttributesOperation( optsMap);
+        }
+        else if( optsMap.get( Constants.OPERATION).equalsIgnoreCase( Constants.MAPPING)) {
+            att.addMapping( optsMap);
+        }
+
+//        System.out.println( udmEntities.toString());
+    }
+
+    private void addMapping(Map<String,String> optsMap) throws IOException {
+        String inputFile = optsMap.get(Constants.INPUTFILE);
+        Util util = new Util();
+        List<String> csvList;
+
+        Path path = Paths.get( inputFile);
+        csvList = Files.lines( path).collect( Collectors.toList());
+
+        String[] attrs;
+        Map<String,List<String>> entitiesMap = new HashMap<>();
+
+        for( String line : csvList) {
+            attrs = line.split(",");
+            if( !entitiesMap.containsKey(attrs[0])) {
+                entitiesMap.put( attrs[0], new ArrayList<>());
+            }
+            entitiesMap.get(attrs[0]).add( line);
+        }
+
+        buildAddMappingJSON( entitiesMap, optsMap);
+
+    }
+
+    private void buildAddMappingJSON(Map<String, List<String>> inputEntitiesMap, Map<String, String> optsMap) {
+        Util util = new Util();
+        udmEntities = util.getConnector( optsMap.get( Constants.TOKEN)
+                , Integer.parseInt( optsMap.get( Constants.CONNECTORID))
+                , optsMap.get(Constants.TENANT_ID));
+
+        int connectorDefId = udmEntities.getJSONObject( Constants.CONNECTORDEF).getInt("id");
+        JSONObject connectorDef = new JSONObject();
+        connectorDef.put("id", connectorDefId);
+        udmEntities.put( Constants.CONNECTORDEF, connectorDef);
+        int connectorIncrement = udmEntities.getInt( Constants.CONNECTORINCREMENT);
+//        udmEntities.put( Constants.CONNECTORINCREMENT, connectorIncrement);
+        udmEntities.remove( Constants.CONNECTORINCREMENT);
+        String jsonString = udmEntities.toString();
+        jsonString = "{\"connectorIncrement\": " + connectorIncrement  + "," + jsonString.substring(1);
+
+        util.putConnector( optsMap.get( Constants.TOKEN), optsMap.get( Constants.TENANT_ID)
+                , jsonString, Integer.parseInt( optsMap.get( Constants.CONNECTORID)));
+//        System.out.println( udmEntities.toString());
+    }
+
+    private void addAttributesOperation(Map<String, String> optsMap) throws IOException {
         String inputFile = optsMap.get(Constants.INPUTFILE);
         List<String> csvList;
 
@@ -75,10 +147,7 @@ public class AutoAddAttributes {
         }
 //            removeOtherEntities( entitiesMap);
         buildAddAttributesJSON( entitiesMap, optsMap);
-
-//        System.out.println( udmEntities.toString());
     }
-
 /*
     private static void removeOtherEntities( Map<String,List<String>> entitiesMap) {
         JSONArray entities = udmEntities.getJSONArray("content");
@@ -97,7 +166,7 @@ public class AutoAddAttributes {
     }
 */
 
-    private static void buildAddAttributesJSON(Map<String, List<String>> inputEntitiesMap, Map<String, String> optsMap) {
+    private void buildAddAttributesJSON(Map<String, List<String>> inputEntitiesMap, Map<String, String> optsMap) {
         JSONArray udmColumnsArr =  udmEntities.getJSONArray("content");
         String entityName;
 
@@ -132,7 +201,7 @@ public class AutoAddAttributes {
         }
     }
 
-    private static Map<String,Object> addNewAttribute(String attributeName, String displayName, String attributeType, String availability, String entityName) {
+    private Map<String,Object> addNewAttribute(String attributeName, String displayName, String attributeType, String availability, String entityName) {
         Map<String,Object> attr = new HashMap<>();
 
         if( !Constants.VALID_DATA_TYPES.contains( attributeType.toUpperCase())) {
@@ -166,11 +235,12 @@ public class AutoAddAttributes {
 
     private static String usage() {
         return "Invalid option: Usage is \n java -jar ImplTools-X.X.jar " +
-                "-operation <AddAttributes/Compare> " +
+                "-operation <AddAttributes/Mapping/Compare> " +
                 "-env <CS/PROD> " +
                 "-location <US/EU> " +
                 "-tenantId <ID> " +
                 "-token <tokenId> " +
+                "[-ConnectorId <id>] " +
                 "-fileName </path/to/file>";
     }
 

@@ -21,7 +21,7 @@ public class Util {
         return udmEntities;
     }
 
-    public String putUdmPTable(String token, String tenantId, String tableID, String body) {
+    public boolean putUdmPTable(String token, String tenantId, String tableID, String body) {
         ConfigApp app = new ConfigApp();
         try {
             app.putUdmPTable(token, tenantId, tableID, body);
@@ -30,6 +30,31 @@ public class Util {
             ioe.printStackTrace();
             throw ioe;
         }
-        return "";
+        return true;
+    }
+
+    public JSONObject getConnector( String token, int connectorID, String tenantId) {
+        ConfigApp app = new ConfigApp();
+        String str;
+        try {
+             str = app.getConnector( token, connectorID, tenantId);
+        }
+        catch ( Exception ioe) {
+            ioe.printStackTrace();
+            throw ioe;
+        }
+        return new JSONObject( str);
+    }
+
+    public boolean putConnector(String token, String tenantId, String body, int connectorId) {
+        ConfigApp app = new ConfigApp();
+        try {
+            app.putConnector(token, tenantId, connectorId, body);
+        }
+        catch ( Exception ioe) {
+            ioe.printStackTrace();
+            throw ioe;
+        }
+        return true;
     }
 }

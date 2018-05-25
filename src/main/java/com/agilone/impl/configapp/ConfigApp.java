@@ -19,6 +19,7 @@ public class ConfigApp {
     private static final String ATHLETA_CS_TENANT_ID = "60";
 //    private static final String MC_CDP_TENANT_ID = "142";
     private static final String UDMP_URL = "/config/UDMPTables";
+    private static final String CONNECTOR_URL = "/config/connectors/";
     private static final String INCLUDE_COLUMNS = "?include=columns&limit=500&offset=0";
     private static final String EXCLUDE_COLUMNS = "?limit=500&offset=0";
     private static final String putUdmpTable = "";
@@ -43,11 +44,8 @@ public class ConfigApp {
                     , String.class);
 
         log.info(responseEntity.getStatusCode().toString());
-//            log.info(responseEntity.getBody().toString());
-        JSONObject json = new JSONObject( responseEntity.getBody());
-//        log.info( json.toString());
 
-        return json.toString();
+        return responseEntity.getBody();
     }
 
     public String getAllUdmPTables(String url, String token, String tenantId) {
@@ -60,5 +58,13 @@ public class ConfigApp {
 
     public String putUdmPTable( String token, String tenantId, String tableID, String body) {
         return callRestAPI( CS_US_URL + tenantId + UDMP_URL + "/" + tableID, token, HttpMethod.PUT, body);
+    }
+
+    public String getConnector(String token, int connectorID, String tenantId) {
+        return callRestAPI( CS_US_URL + tenantId + CONNECTOR_URL + connectorID, token, HttpMethod.GET, "");
+    }
+
+    public String putConnector(String token, String tenantId, int connectorID, String body) {
+        return callRestAPI( CS_US_URL + tenantId + CONNECTOR_URL + connectorID, token, HttpMethod.PUT, body);
     }
 }

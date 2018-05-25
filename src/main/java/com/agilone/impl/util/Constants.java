@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Constants {
+    public static final String CONNECTORID = "connectorid";
     public static String TENANT_ID = "tenantid";
     public static String ENV = "env";
     public static String OPERATION = "operation";
     public static String LOCATION = "location";
     public static String TOKEN = "token";
+    public static String USERNAME = "username";
     public static String INPUTFILE = "inputfile";
     public static String TABLE_ID = "tableId";
     public static String NAME = "name";
@@ -19,6 +21,10 @@ public class Constants {
     public static String AVAILABILITY = "availability";
     public static String LOOKUP = "lookup";
     public static String NEW = "new";
+    public static String ADDATTRIBUTES = "AddAttributes";
+    public static String MAPPING = "Mapping";
+    public static String CONNECTORDEF = "connectorDef";
+    public static String CONNECTORINCREMENT = "connectorIncrement";
 
     public static List<String> VALID_DATA_TYPES = new ArrayList<>(7);
     public static List<String> VALID_AVAILABILITY = new ArrayList<>(7);

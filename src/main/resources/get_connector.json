@@ -1,0 +1,2498 @@
+{
+	"connectorId": 1,
+	"name": "StandardFeeds",
+	"connectorIncrement": 1,
+	"parameters": [{
+		"type": "PASSWORD",
+		"name": "sftp.password",
+		"value": "********",
+		"required": true
+	}, {
+		"type": "STRING",
+		"name": "sftp.null.values",
+		"value": "[\"UNKNOWN\",\"null\",\"X\",\"DEFAULT\"]",
+		"required": true
+	}, {
+		"type": "STRING",
+		"name": "sftp.pattern",
+		"value": "^(AgendaFlag|lip_email_contacts|lip_email_messages|lip_email_events|inf_dim_payment|inf_dim_product|inf_bridge_event_date_store|lpz_customer|lpz_fact_sales_ext|inf_fact_sales|AgeAppend|inf_dim_employee|inf_fact_ecom_order|inf_dim_store_address|inf_dim_store|store_address|inf_fact_on_hand_store|inf_dim_vendor|inf_dim_payment)(|.*?)(_|)(\\d{1,})(_OUT)?(\\.csv|\\.tsv)$",
+		"required": true
+	}, {
+		"type": "STRING",
+		"name": "sftp.encoding",
+		"value": "",
+		"required": true
+	}, {
+		"type": "NUMERIC",
+		"name": "sftp.port",
+		"value": "22",
+		"required": true
+	}, {
+		"type": "STRING",
+		"name": "custom.date.formats",
+		"value": "",
+		"required": true
+	}, {
+		"type": "STRING",
+		"name": "sftp.host",
+		"value": "sftp.agilone.com",
+		"required": true
+	}, {
+		"type": "STRING",
+		"name": "sftp.default.timezone",
+		"value": "",
+		"required": true
+	}, {
+		"type": "STRING",
+		"name": "sftp.required.patterns",
+		"value": "",
+		"required": true
+	}, {
+		"type": "PASSWORD",
+		"name": "sftp.pem",
+		"value": "",
+		"required": true
+	}, {
+		"type": "STRING",
+		"name": "sftp.folder",
+		"value": "/InternalExport",
+		"required": true
+	}, {
+		"type": "PASSWORD",
+		"name": "encryption.pgp.password",
+		"value": "",
+		"required": true
+	}, {
+		"type": "STRING",
+		"name": "sftp.username",
+		"value": "lillypulitzer",
+		"required": true
+	}, {
+		"type": "STRING",
+		"name": "sftp.delimiter",
+		"value": ",",
+		"required": true
+	}, {
+		"type": "PASSWORD",
+		"name": "encryption.pgp.key",
+		"value": "",
+		"required": true
+	}, {
+		"type": "STRING",
+		"name": "sftp.csv",
+		"value": "true",
+		"required": true
+	}, {
+		"type": "NUMERIC",
+		"name": "max.connections",
+		"value": "10",
+		"required": true
+	}],
+	"active": true,
+	"dateStarted": 1483558520000,
+	"errorThreshold": 0.97,
+	"tenantId": 425,
+	"lastExecuted": 0,
+	"connectorDef": {
+		"connectorName": "SFTP CSV Connector",
+		"connectorClass": "com.agilone.aif.impl.SFtpConnector",
+		"connectorJar": "/jars/aif/aif-sftp.jar",
+		"ssidPrefix": "FTP_CSV",
+		"active": true,
+		"epochBacktrack": 126144000000,
+		"epochMaxInterval": 126144000000,
+		"epochMinInterval": 0,
+		"iconUrl": "icon.ico",
+		"parameters": [{
+			"type": "PASSWORD",
+			"defaultValue": "",
+			"name": "sftp.password",
+			"required": true
+		}, {
+			"type": "STRING",
+			"defaultValue": "",
+			"name": "sftp.null.values",
+			"required": true
+		}, {
+			"type": "STRING",
+			"defaultValue": "",
+			"name": "sftp.pattern",
+			"required": true
+		}, {
+			"type": "STRING",
+			"defaultValue": "",
+			"name": "sftp.encoding",
+			"required": true
+		}, {
+			"type": "NUMERIC",
+			"defaultValue": "",
+			"name": "sftp.port",
+			"required": true
+		}, {
+			"type": "STRING",
+			"defaultValue": "",
+			"name": "custom.date.formats",
+			"required": true
+		}, {
+			"type": "STRING",
+			"defaultValue": "",
+			"name": "sftp.host",
+			"required": true
+		}, {
+			"type": "STRING",
+			"defaultValue": "",
+			"name": "sftp.default.timezone",
+			"required": true
+		}, {
+			"type": "STRING",
+			"defaultValue": "",
+			"name": "sftp.required.patterns",
+			"required": true
+		}, {
+			"type": "PASSWORD",
+			"defaultValue": "",
+			"name": "sftp.pem",
+			"required": true
+		}, {
+			"type": "STRING",
+			"defaultValue": "",
+			"name": "sftp.folder",
+			"required": true
+		}, {
+			"type": "PASSWORD",
+			"defaultValue": "",
+			"name": "encryption.pgp.password",
+			"required": true
+		}, {
+			"type": "STRING",
+			"defaultValue": "",
+			"name": "sftp.username",
+			"required": true
+		}, {
+			"type": "STRING",
+			"defaultValue": "",
+			"name": "sftp.delimiter",
+			"required": true
+		}, {
+			"type": "PASSWORD",
+			"defaultValue": "",
+			"name": "encryption.pgp.key",
+			"required": true
+		}, {
+			"type": "STRING",
+			"defaultValue": "",
+			"name": "sftp.csv",
+			"required": true
+		}, {
+			"type": "NUMERIC",
+			"defaultValue": "",
+			"name": "max.connections",
+			"required": true
+		}],
+		"tenantId": 0,
+		"mapping": [],
+		"id": 1
+	},
+	"ruleConfiguration": {
+		"enabled": true,
+		"alertEmails": ["supportmanagement@agilone.com"],
+		"rules": [{
+			"alertType": "WARNING",
+			"minRecordThreshold": 100,
+			"entityName": "product"
+		}, {
+			"alertType": "WARNING",
+			"minRecordThreshold": 100,
+			"entityName": "customer"
+		}, {
+			"alertType": "WARNING",
+			"minRecordThreshold": 100,
+			"entityName": "transaction"
+		}]
+	},
+	"mapping": [
+		[{
+				"table": "inf_dim_product",
+				"column": "IATT26_DESC"
+			},
+			[{
+				"table": "product",
+				"column": "c_PatternType"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "first_receipt_date"
+			},
+			[{
+				"table": "product",
+				"column": "c_First_receipt_date"
+			}, {
+				"table": "product",
+				"column": "c_SalePriceStartDate"
+			}]
+		],
+		[{
+				"table": "lip_email_contacts",
+				"column": "DateCreated"
+			},
+			[{
+				"table": "customer",
+				"column": "DateCreated"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "basic_item"
+			},
+			[{
+				"table": "product",
+				"column": "c_basic_item"
+			}]
+		],
+		[{
+				"table": "store_address",
+				"column": "zip"
+			},
+			[{
+				"table": "organization",
+				"column": "Zip"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "IATT12_DESC"
+			},
+			[{
+				"table": "product",
+				"column": "c_SleeveType"
+			}]
+		],
+		[{
+				"table": "lip_email_contacts",
+				"column": "Email"
+			},
+			[{
+				"table": "customer",
+				"column": "SourceCustomerNumber"
+			}, {
+				"table": "customer",
+				"column": "Email"
+			}, {
+				"table": "customer",
+				"column": "c_SourceType#\"lip_email_contacts\""
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "product_class_subclass_code"
+			},
+			[{
+				"table": "product",
+				"column": "c_product_class_subclass_code"
+			}, {
+				"table": "productcategory",
+				"column": "SourceCategoryNumber:subclass_code"
+			}, {
+				"table": "productcategoryxref",
+				"column": "SourceProductCategoryNumber:subclass_code"
+			}]
+		],
+		[{
+				"table": "lpz_fact_sales_ext",
+				"column": "shipping_country"
+			},
+			[{
+				"table": "address",
+				"column": "Country:shipping_country"
+			}, {
+				"table": "address",
+				"column": "SourceAddressNumber:shipping_country"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceAddressNumber:shipping_country"
+			}, {
+				"table": "address",
+				"column": "c_ShippingCountry"
+			}]
+		],
+		[{
+				"table": "inf_bridge_event_date_store",
+				"column": "event_id"
+			},
+			[{
+				"table": "c_inf_bridge_event_date_store",
+				"column": "c_eventid"
+			}]
+		],
+		[{
+				"table": "lip_email_events",
+				"column": "EventTimeStamp"
+			},
+			[{
+				"table": "event",
+				"column": "EventTimeStamp"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "suggested_retail"
+			},
+			[{
+				"table": "product",
+				"column": "ListPrice"
+			}, {
+				"table": "product",
+				"column": "MSRP"
+			}, {
+				"table": "product",
+				"column": "SalePrice"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "ABS_Delivery_Code"
+			},
+			[{
+				"table": "product",
+				"column": "c_Delivery"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "color"
+			},
+			[{
+				"table": "product",
+				"column": "Color"
+			}]
+		],
+		[{
+				"table": "inf_dim_employee",
+				"column": "start_range"
+			},
+			[{
+				"table": "employee",
+				"column": "StartDate"
+			}]
+		],
+		[{
+				"table": "inf_fact_ecom_order",
+				"column": "InitialIntegrationDate"
+			},
+			[{
+				"table": "transaction",
+				"column": "TransactionTimeStamp"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "vendor"
+			},
+			[{
+				"table": "product",
+				"column": "SourceBrandNumber"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "valued_cost"
+			},
+			[{
+				"table": "product",
+				"column": "c_valued_cost"
+			}]
+		],
+		[{
+				"table": "AgendaFlag",
+				"column": "AgendaYear"
+			},
+			[{
+				"table": "c_AgendaFlag",
+				"column": "c_AgendaYear"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "ABS_print_name"
+			},
+			[{
+				"table": "product",
+				"column": "c_ABS_print_name"
+			}]
+		],
+		[{
+				"table": "inf_fact_ecom_order",
+				"column": "RowCreated"
+			},
+			[{
+				"table": "transaction",
+				"column": "c_v5RowCreated"
+			}, {
+				"table": "transactionitem",
+				"column": "c_v5RowCreated"
+			}]
+		],
+		[{
+				"table": "lpz_fact_sales_ext",
+				"column": "shipping_address_line2"
+			},
+			[{
+				"table": "address",
+				"column": "Address2:shipping_address_line2"
+			}, {
+				"table": "address",
+				"column": "SourceAddressNumber:shipping_address_line2"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceAddressNumber:shipping_address_line2"
+			}, {
+				"table": "address",
+				"column": "c_ShippingAddress2"
+			}]
+		],
+		[{
+				"table": "lpz_fact_sales_ext",
+				"column": "shipping_address_line1"
+			},
+			[{
+				"table": "address",
+				"column": "Address1:shipping_address_line1"
+			}, {
+				"table": "address",
+				"column": "SourceAddressNumber:shipping_address_line1"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceAddressNumber:shipping_address_line1"
+			}, {
+				"table": "address",
+				"column": "c_ShippingAddress1"
+			}]
+		],
+		[{
+				"table": "lpz_customer",
+				"column": "last_name"
+			},
+			[{
+				"table": "customer",
+				"column": "LastName"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "IATT14_DESC"
+			},
+			[{
+				"table": "product",
+				"column": "c_PriceRange"
+			}]
+		],
+		[{
+				"table": "lpz_fact_sales_ext",
+				"column": "store_no"
+			},
+			[{
+				"table": "customer",
+				"column": "Preferences:store_no"
+			}, {
+				"table": "transaction",
+				"column": "SourceTransactionNumber:store_no"
+			}, {
+				"table": "transaction",
+				"column": "SourceOrganizationNumber"
+			}]
+		],
+		[{
+				"table": "inf_fact_sales",
+				"column": "lp_cost"
+			},
+			[{
+				"table": "transactionitem",
+				"column": "c_CostBasis:lp_cost"
+			}]
+		],
+		[{
+				"table": "inf_fact_sales",
+				"column": "gift_wrap_tax"
+			},
+			[{
+				"table": "transactionitem",
+				"column": "c_Tax:gift_wrap_tax"
+			}]
+		],
+		[{
+				"table": "inf_fact_ecom_order",
+				"column": "OrderLineStatus"
+			},
+			[{
+				"table": "transactionitem",
+				"column": "Subtype"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "lp_cost"
+			},
+			[{
+				"table": "product",
+				"column": "c_cost"
+			}]
+		],
+		[{
+				"table": "lpz_customer",
+				"column": "zip"
+			},
+			[{
+				"table": "address",
+				"column": "Zip"
+			}]
+		],
+		[{
+				"table": "inf_fact_on_hand_store",
+				"column": "as_of_date_time"
+			},
+			[{
+				"table": "productproperties",
+				"column": "c_as_of_date_time"
+			}]
+		],
+		[{
+				"table": "lpz_fact_sales_ext",
+				"column": "billing_state"
+			},
+			[{
+				"table": "address",
+				"column": "SourceAddressNumber:billing_state"
+			}, {
+				"table": "address",
+				"column": "State:billing_state"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceAddressNumber:billing_state"
+			}, {
+				"table": "address",
+				"column": "c_BillingState"
+			}]
+		],
+		[{
+				"table": "inf_fact_sales",
+				"column": "merchandise_tax"
+			},
+			[{
+				"table": "transactionitem",
+				"column": "c_Tax:merchandise_tax"
+			}]
+		],
+		[{
+				"table": "AgeAppend",
+				"column": "Phone"
+			},
+			[{
+				"table": "address",
+				"column": "SourceAddressNumber:Phone"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceAddressNumber:Phone"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceCustomerNumber:Phone"
+			}, {
+				"table": "customer",
+				"column": "SourceCustomerNumber:Phone"
+			}, {
+				"table": "customer",
+				"column": "PrimaryPhone"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "IATT28_DESC"
+			},
+			[{
+				"table": "product",
+				"column": "c_SolidCarryover"
+			}]
+		],
+		[{
+				"table": "lpz_customer",
+				"column": "phone"
+			},
+			[{
+				"table": "customer",
+				"column": "PrimaryPhone"
+			}]
+		],
+		[{
+				"table": "lip_email_events",
+				"column": "Type"
+			},
+			[{
+				"table": "event",
+				"column": "Type"
+			}]
+		],
+		[{
+				"table": "inf_fact_sales",
+				"column": "sales_value"
+			},
+			[{
+				"table": "transactionitem",
+				"column": "SaleRevenue"
+			}, {
+				"table": "transactionitem",
+				"column": "c_SaleRevenue:sales_value"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "IATT24_DESC"
+			},
+			[{
+				"table": "product",
+				"column": "c_PrintScale"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "IATT05_DESC"
+			},
+			[{
+				"table": "product",
+				"column": "c_markdown_flag_attribute_name"
+			}]
+		],
+		[{
+				"table": "AgeAppend",
+				"column": "ibe8623_IBE_Premier_DateOfBirthCCYYMM00_Month"
+			},
+			[{
+				"table": "customer",
+				"column": "BirthMonth"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "permanent_markdown_taken"
+			},
+			[{
+				"table": "product",
+				"column": "c_Permanent_markdown_taken"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "IATT02_DESC"
+			},
+			[{
+				"table": "product",
+				"column": "c_SurfaceDesign"
+			}]
+		],
+		[{
+				"table": "lpz_fact_sales_ext",
+				"column": "billing_city"
+			},
+			[{
+				"table": "address",
+				"column": "City:billing_city"
+			}, {
+				"table": "address",
+				"column": "SourceAddressNumber:billing_city"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceAddressNumber:billing_city"
+			}, {
+				"table": "customer",
+				"column": "SourceCustomerNumber:billing_city"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceCustomerNumber:billing_city"
+			}, {
+				"table": "transaction",
+				"column": "SourceCustomerNumber:billing_city"
+			}, {
+				"table": "address",
+				"column": "c_BillingCity"
+			}]
+		],
+		[{
+				"table": "inf_fact_ecom_order",
+				"column": "store"
+			},
+			[{
+				"table": "transaction",
+				"column": "SourceOrganizationNumber"
+			}, {
+				"table": "transaction",
+				"column": "SourceTransactionNumber:store"
+			}, {
+				"table": "transactionitem",
+				"column": "SourceTransactionNumber:store"
+			}, {
+				"table": "transactionitem",
+				"column": "SourceOrganizationNumber"
+			}]
+		],
+		[{
+				"table": "inf_fact_sales",
+				"column": "seq"
+			},
+			[{
+				"table": "transactionitem",
+				"column": "SourceTransactionItemNumber"
+			}]
+		],
+		[{
+				"table": "lpz_customer",
+				"column": "address1"
+			},
+			[{
+				"table": "address",
+				"column": "Address1"
+			}]
+		],
+		[{
+				"table": "lpz_customer",
+				"column": "address2"
+			},
+			[{
+				"table": "address",
+				"column": "Address2"
+			}]
+		],
+		[{
+				"table": "lpz_customer",
+				"column": "address3"
+			},
+			[{
+				"table": "address",
+				"column": "c_Address3"
+			}]
+		],
+		[{
+				"table": "inf_fact_sales",
+				"column": "non_merchandize_flag"
+			},
+			[{
+				"table": "transactionitem",
+				"column": "c_non_merchandize_flag"
+			}]
+		],
+		[{
+				"table": "lpz_fact_sales_ext",
+				"column": "billing_address_line1"
+			},
+			[{
+				"table": "address",
+				"column": "Address1:billing_address_line1"
+			}, {
+				"table": "address",
+				"column": "SourceAddressNumber:billing_address_line1"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceAddressNumber:billing_address_line1"
+			}, {
+				"table": "customer",
+				"column": "SourceCustomerNumber:billing_address_line1"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceCustomerNumber:billing_address_line1"
+			}, {
+				"table": "transaction",
+				"column": "SourceCustomerNumber:billing_address_line1"
+			}, {
+				"table": "address",
+				"column": "c_BillingAddress1"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "lp_video_flag"
+			},
+			[{
+				"table": "product",
+				"column": "c_Video"
+			}]
+		],
+		[{
+				"table": "lpz_fact_sales_ext",
+				"column": "billing_address_line2"
+			},
+			[{
+				"table": "address",
+				"column": "SourceAddressNumber:billing_address_line2"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceAddressNumber:billing_address_line2"
+			}, {
+				"table": "customer",
+				"column": "SourceCustomerNumber:billing_address_line2"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceCustomerNumber:billing_address_line2"
+			}, {
+				"table": "transaction",
+				"column": "SourceCustomerNumber:billing_address_line2"
+			}, {
+				"table": "address",
+				"column": "c_BillingAddress2"
+			}, {
+				"table": "address",
+				"column": "Address2:billing_address_line2"
+			}]
+		],
+		[{
+				"table": "inf_fact_sales",
+				"column": "trans_no"
+			},
+			[{
+				"table": "transaction",
+				"column": "SourceTransactionNumber:trans_no"
+			}, {
+				"table": "transactionitem",
+				"column": "SourceTransactionNumber:trans_no"
+			}, {
+				"table": "transaction",
+				"column": "c_SourceType#\"inf_fact_sales\""
+			}, {
+				"table": "transactionitem",
+				"column": "c_SourceType#\"inf_fact_sales\""
+			}]
+		],
+		[{
+				"table": "lpz_fact_sales_ext",
+				"column": "shipping_phone_number"
+			},
+			[{
+				"table": "customer",
+				"column": "PrimaryPhone"
+			}]
+		],
+		[{
+				"table": "inf_dim_employee",
+				"column": "employee_last_name"
+			},
+			[{
+				"table": "employee",
+				"column": "LastName"
+			}]
+		],
+		[{
+				"table": "lpz_customer",
+				"column": "employee_flag"
+			},
+			[{
+				"table": "customer",
+				"column": "c_employee_flag"
+			}]
+		],
+		[{
+				"table": "lpz_fact_sales_ext",
+				"column": "shipping_state"
+			},
+			[{
+				"table": "address",
+				"column": "SourceAddressNumber:shipping_state"
+			}, {
+				"table": "address",
+				"column": "State:shipping_state"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceAddressNumber:shipping_state"
+			}, {
+				"table": "address",
+				"column": "c_ShippingState"
+			}]
+		],
+		[{
+				"table": "inf_fact_sales",
+				"column": "sales_quantity"
+			},
+			[{
+				"table": "transactionitem",
+				"column": "c_Quantity:sales_quantity"
+			}]
+		],
+		[{
+				"table": "AgeAppend",
+				"column": "EmailAddress"
+			},
+			[{
+				"table": "address",
+				"column": "SourceAddressNumber:EmailAddress"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceAddressNumber:EmailAddress"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceCustomerNumber:EmailAddress"
+			}, {
+				"table": "customer",
+				"column": "Email"
+			}, {
+				"table": "customer",
+				"column": "SourceCustomerNumber:EmailAddress"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "start_range"
+			},
+			[{
+				"table": "product",
+				"column": "DateCreated"
+			}]
+		],
+		[{
+				"table": "inf_fact_ecom_order",
+				"column": "seq"
+			},
+			[{
+				"table": "transactionitem",
+				"column": "SourceTransactionItemNumber"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "actual_cost"
+			},
+			[{
+				"table": "product",
+				"column": "c_actual_cost"
+			}]
+		],
+		[{
+				"table": "lpz_fact_sales_ext",
+				"column": "billing_email_address"
+			},
+			[{
+				"table": "address",
+				"column": "SourceAddressNumber:billing_email_address"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceAddressNumber:billing_email_address"
+			}, {
+				"table": "customer",
+				"column": "Email"
+			}, {
+				"table": "customer",
+				"column": "SourceCustomerNumber:billing_email_address"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceCustomerNumber:billing_email_address"
+			}, {
+				"table": "transaction",
+				"column": "SourceCustomerNumber:billing_email_address"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "IATT04_DESC"
+			},
+			[{
+				"table": "product",
+				"column": "c_season_year_attribute_name"
+			}]
+		],
+		[{
+				"table": "lip_email_events",
+				"column": "URL"
+			},
+			[{
+				"table": "event",
+				"column": "URL"
+			}]
+		],
+		[{
+				"table": "AgeAppend",
+				"column": "FirstName"
+			},
+			[{
+				"table": "address",
+				"column": "SourceAddressNumber:FirstName"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceAddressNumber:FirstName"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceCustomerNumber:FirstName"
+			}, {
+				"table": "customer",
+				"column": "FirstName"
+			}, {
+				"table": "customer",
+				"column": "SourceCustomerNumber:FirstName"
+			}, {
+				"table": "customer",
+				"column": "c_SourceType#\"AgeAppend\""
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "color_name"
+			},
+			[{
+				"table": "product",
+				"column": "c_colorname"
+			}]
+		],
+		[{
+				"table": "lip_email_events",
+				"column": "SourceListNumber"
+			},
+			[{
+				"table": "event",
+				"column": "SourceListNumber"
+			}]
+		],
+		[{
+				"table": "lpz_fact_sales_ext",
+				"column": "billing_country"
+			},
+			[{
+				"table": "address",
+				"column": "Country:billing_country"
+			}, {
+				"table": "address",
+				"column": "c_BillingCountry"
+			}]
+		],
+		[{
+				"table": "inf_fact_on_hand_store",
+				"column": "item_code"
+			},
+			[{
+				"table": "productproperties",
+				"column": "SourceProductNumber"
+			}, {
+				"table": "productproperties",
+				"column": "SourceProductPropertiesNumber:item_code"
+			}]
+		],
+		[{
+				"table": "inf_fact_sales",
+				"column": "lp_original_retail"
+			},
+			[{
+				"table": "transactionitem",
+				"column": "ListPrice"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "IATT19_DESC"
+			},
+			[{
+				"table": "product",
+				"column": "c_SwimType"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "IATT22_DESC"
+			},
+			[{
+				"table": "product",
+				"column": "c_PrintContent"
+			}]
+		],
+		[{
+				"table": "lpz_customer",
+				"column": "city"
+			},
+			[{
+				"table": "address",
+				"column": "City"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "ABS_style"
+			},
+			[{
+				"table": "product",
+				"column": "ParentProductNumber"
+			}, {
+				"table": "product",
+				"column": "ProductURL#\"http://www.lillypulitzer.com/catalog/product.jsp?style=\"+ProductURL"
+			}, {
+				"table": "product",
+				"column": "c_ABS_Style"
+			}]
+		],
+		[{
+				"table": "store_address",
+				"column": "address_1"
+			},
+			[{
+				"table": "organization",
+				"column": "Address1"
+			}]
+		],
+		[{
+				"table": "store_address",
+				"column": "address_2"
+			},
+			[{
+				"table": "organization",
+				"column": "Address2"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "IATT03_DESC"
+			},
+			[{
+				"table": "product",
+				"column": "c_shape_design_attribute_name"
+			}]
+		],
+		[{
+				"table": "lpz_fact_sales_ext",
+				"column": "RowCreated"
+			},
+			[{
+				"table": "transaction",
+				"column": "c_v5RowCreated"
+			}, {
+				"table": "customer",
+				"column": "c_v5RowCreated"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "IATT23_DESC"
+			},
+			[{
+				"table": "product",
+				"column": "c_PrintColorCombo"
+			}]
+		],
+		[{
+				"table": "inf_fact_ecom_order",
+				"column": "StatusDate"
+			},
+			[{
+				"table": "transactionitem",
+				"column": "ShipDate"
+			}]
+		],
+		[{
+				"table": "inf_fact_sales",
+				"column": "item_code"
+			},
+			[{
+				"table": "transactionitem",
+				"column": "SourceProductNumber"
+			}]
+		],
+		[{
+				"table": "AgeAppend",
+				"column": "City"
+			},
+			[{
+				"table": "address",
+				"column": "City"
+			}, {
+				"table": "address",
+				"column": "SourceAddressNumber:City"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceAddressNumber:City"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceCustomerNumber:City"
+			}, {
+				"table": "customer",
+				"column": "SourceCustomerNumber:City"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "product_class_name"
+			},
+			[{
+				"table": "product",
+				"column": "c_Product_class_name"
+			}]
+		],
+		[{
+				"table": "inf_fact_ecom_order",
+				"column": "Price"
+			},
+			[{
+				"table": "transactionitem",
+				"column": "SaleRevenue"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "temp_on_sale"
+			},
+			[{
+				"table": "product",
+				"column": "c_temp_on_sale"
+			}]
+		],
+		[{
+				"table": "AgeAppend",
+				"column": "Address2"
+			},
+			[{
+				"table": "address",
+				"column": "Address2"
+			}, {
+				"table": "address",
+				"column": "SourceAddressNumber:Address2"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceAddressNumber:Address2"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceCustomerNumber:Address2"
+			}, {
+				"table": "customer",
+				"column": "SourceCustomerNumber:Address2"
+			}]
+		],
+		[{
+				"table": "AgeAppend",
+				"column": "Address1"
+			},
+			[{
+				"table": "address",
+				"column": "Address1"
+			}, {
+				"table": "address",
+				"column": "SourceAddressNumber:Address1"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceAddressNumber:Address1"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceCustomerNumber:Address1"
+			}, {
+				"table": "customer",
+				"column": "SourceCustomerNumber:Address1"
+			}]
+		],
+		[{
+				"table": "lpz_fact_sales_ext",
+				"column": "billing_last_name"
+			},
+			[{
+				"table": "address",
+				"column": "SourceAddressNumber:billing_last_name"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceAddressNumber:billing_last_name"
+			}, {
+				"table": "customer",
+				"column": "LastName"
+			}, {
+				"table": "customer",
+				"column": "SourceCustomerNumber:billing_last_name"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceCustomerNumber:billing_last_name"
+			}, {
+				"table": "transaction",
+				"column": "SourceCustomerNumber:billing_last_name"
+			}]
+		],
+		[{
+				"table": "inf_dim_store",
+				"column": "current_indicator"
+			},
+			[{
+				"table": "organization",
+				"column": "ExcludeAsClosestStore"
+			}]
+		],
+		[{
+				"table": "lpz_customer",
+				"column": "customer_seq"
+			},
+			[{
+				"table": "customer",
+				"column": "SourceCustomerNumber"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceAddressNumber"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceCustomerNumber"
+			}, {
+				"table": "address",
+				"column": "SourceAddressNumber"
+			}, {
+				"table": "customer",
+				"column": "c_SourceType#\"lpz_customer\""
+			}]
+		],
+		[{
+				"table": "store_address",
+				"column": "state"
+			},
+			[{
+				"table": "organization",
+				"column": "State"
+			}]
+		],
+		[{
+				"table": "lpz_customer",
+				"column": "RowModified"
+			},
+			[{
+				"table": "customer",
+				"column": "c_v5RowModified"
+			}]
+		],
+		[{
+				"table": "inf_fact_ecom_order",
+				"column": "Quantity"
+			},
+			[{
+				"table": "transactionitem",
+				"column": "Quantity"
+			}]
+		],
+		[{
+				"table": "lip_email_events",
+				"column": "SubType"
+			},
+			[{
+				"table": "event",
+				"column": "Subtype"
+			}]
+		],
+		[{
+				"table": "inf_dim_store",
+				"column": "store_no"
+			},
+			[{
+				"table": "organization",
+				"column": "c_store_no"
+			}, {
+				"table": "organization",
+				"column": "SourceOrganizationNumber"
+			}]
+		],
+		[{
+				"table": "inf_fact_ecom_order",
+				"column": "OriginalPrice"
+			},
+			[{
+				"table": "transactionitem",
+				"column": "ListPrice"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "IATT29_DESC"
+			},
+			[{
+				"table": "product",
+				"column": "c_SolidFashionCore"
+			}]
+		],
+		[{
+				"table": "lpz_customer",
+				"column": "ok_to_call"
+			},
+			[{
+				"table": "customer",
+				"column": "Preferences:ok_to_call"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "lp_gift_wrap_flag"
+			},
+			[{
+				"table": "product",
+				"column": "c_Giftrapflag"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "item_code"
+			},
+			[{
+				"table": "product",
+				"column": "c_item_code"
+			}, {
+				"table": "product",
+				"column": "SourceProductNumber"
+			}, {
+				"table": "productcategoryxref",
+				"column": "SourceProductNumber"
+			}]
+		],
+		[{
+				"table": "lpz_customer",
+				"column": "zip_ext"
+			},
+			[{
+				"table": "address",
+				"column": "ZipExt"
+			}]
+		],
+		[{
+				"table": "lip_email_events",
+				"column": "Email"
+			},
+			[{
+				"table": "event",
+				"column": "SourceCustomerNumber"
+			}, {
+				"table": "event",
+				"column": "Email"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "lp_ecom_preorder_flag"
+			},
+			[{
+				"table": "product",
+				"column": "c_lp_ecom_preorder_flag"
+			}]
+		],
+		[{
+				"table": "inf_bridge_event_date_store",
+				"column": "date_key"
+			},
+			[{
+				"table": "c_inf_bridge_event_date_store",
+				"column": "c_date_key"
+			}]
+		],
+		[{
+				"table": "lpz_customer",
+				"column": "email"
+			},
+			[{
+				"table": "customer",
+				"column": "Email"
+			}]
+		],
+		[{
+				"table": "AgeAppend",
+				"column": "senddate"
+			},
+			[{
+				"table": "customer",
+				"column": "c_LastAcxiomSendDate"
+			}]
+		],
+		[{
+				"table": "inf_fact_sales",
+				"column": "store_no"
+			},
+			[{
+				"table": "transaction",
+				"column": "SourceTransactionNumber:store_no"
+			}, {
+				"table": "transactionitem",
+				"column": "SourceTransactionNumber:store_no"
+			}, {
+				"table": "transaction",
+				"column": "SourceOrganizationNumber"
+			}, {
+				"table": "transactionitem",
+				"column": "SourceOrganizationNumber"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "product_type"
+			},
+			[{
+				"table": "product",
+				"column": "c_GWP_Flag"
+			}]
+		],
+		[{
+				"table": "lip_email_messages",
+				"column": "Subject"
+			},
+			[{
+				"table": "message",
+				"column": "Subject"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "size"
+			},
+			[{
+				"table": "product",
+				"column": "c_Size"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "IATT13_DESC"
+			},
+			[{
+				"table": "product",
+				"column": "c_NewvsOld"
+			}]
+		],
+		[{
+				"table": "lpz_fact_sales_ext",
+				"column": "RowModified"
+			},
+			[{
+				"table": "transaction",
+				"column": "c_v5RowModified"
+			}, {
+				"table": "customer",
+				"column": "c_v5RowModified"
+			}]
+		],
+		[{
+				"table": "inf_dim_store",
+				"column": "store_name"
+			},
+			[{
+				"table": "organization",
+				"column": "Name"
+			}]
+		],
+		[{
+				"table": "lip_email_events",
+				"column": "LinkName"
+			},
+			[{
+				"table": "event",
+				"column": "LinkName"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "item_description"
+			},
+			[{
+				"table": "product",
+				"column": "Name:item_description"
+			}]
+		],
+		[{
+				"table": "inf_fact_ecom_order",
+				"column": "RowModified"
+			},
+			[{
+				"table": "transaction",
+				"column": "c_v5RowModified"
+			}, {
+				"table": "transactionitem",
+				"column": "c_v5RowModified"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "lp_ecom_preorder_release_date"
+			},
+			[{
+				"table": "product",
+				"column": "c_PreorderReleaseDate"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "IATT27_DESC"
+			},
+			[{
+				"table": "product",
+				"column": "c_SolidHue"
+			}]
+		],
+		[{
+				"table": "lpz_customer",
+				"column": "state"
+			},
+			[{
+				"table": "address",
+				"column": "State"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "IATT25_DESC"
+			},
+			[{
+				"table": "product",
+				"column": "c_PrintLayout"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "IATT11_DESC"
+			},
+			[{
+				"table": "product",
+				"column": "c_TargetCustomer"
+			}]
+		],
+		[{
+				"table": "lip_email_events",
+				"column": "SourceMessageNumber"
+			},
+			[{
+				"table": "event",
+				"column": "SourceMessageNumber"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "lp_monogram_flag"
+			},
+			[{
+				"table": "product",
+				"column": "c_MonogramFlag"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "file_retail_for_chain"
+			},
+			[{
+				"table": "product",
+				"column": "c_file_retail_for_chain"
+			}]
+		],
+		[{
+				"table": "inf_fact_sales",
+				"column": "monogram_tax"
+			},
+			[{
+				"table": "transactionitem",
+				"column": "c_Tax:monogram"
+			}]
+		],
+		[{
+				"table": "inf_dim_store",
+				"column": "SATT01_DESC"
+			},
+			[{
+				"table": "organization",
+				"column": "Status"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "Publish_Flag"
+			},
+			[{
+				"table": "product",
+				"column": "c_Publish_Flag"
+			}]
+		],
+		[{
+				"table": "store_address",
+				"column": "store_no"
+			},
+			[{
+				"table": "organization",
+				"column": "SourceOrganizationNumber"
+			}]
+		],
+		[{
+				"table": "inf_fact_sales",
+				"column": "returns_value"
+			},
+			[{
+				"table": "transactionitem",
+				"column": "c_SaleRevenue:returns_value"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "IATT15_DESC"
+			},
+			[{
+				"table": "product",
+				"column": "c_Occasion"
+			}]
+		],
+		[{
+				"table": "inf_fact_sales",
+				"column": "entry_type"
+			},
+			[{
+				"table": "transactionitem",
+				"column": "c_entry_type"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "size_name"
+			},
+			[{
+				"table": "product",
+				"column": "c_Size_Name"
+			}]
+		],
+		[{
+				"table": "inf_fact_sales",
+				"column": "gwp_flag"
+			},
+			[{
+				"table": "transactionitem",
+				"column": "c_gwp_flag"
+			}]
+		],
+		[{
+				"table": "inf_fact_sales",
+				"column": "returns_quantity"
+			},
+			[{
+				"table": "transactionitem",
+				"column": "c_Quantity:returns_quantity"
+			}]
+		],
+		[{
+				"table": "lpz_customer",
+				"column": "country"
+			},
+			[{
+				"table": "address",
+				"column": "Country"
+			}]
+		],
+		[{
+				"table": "inf_fact_on_hand_store",
+				"column": "Inventory_Units"
+			},
+			[{
+				"table": "productproperties",
+				"column": "AvailableQty"
+			}]
+		],
+		[{
+				"table": "AgeAppend",
+				"column": "Zip"
+			},
+			[{
+				"table": "address",
+				"column": "SourceAddressNumber:Zip"
+			}, {
+				"table": "address",
+				"column": "Zip"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceAddressNumber:Zip"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceCustomerNumber:Zip"
+			}, {
+				"table": "customer",
+				"column": "SourceCustomerNumber:Zip"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "current_indicator"
+			},
+			[{
+				"table": "product",
+				"column": "c_CurrentIndicator"
+			}]
+		],
+		[{
+				"table": "inf_fact_sales",
+				"column": "RowModified"
+			},
+			[{
+				"table": "transaction",
+				"column": "c_v5RowModified"
+			}, {
+				"table": "transactionitem",
+				"column": "c_v5RowModified"
+			}]
+		],
+		[{
+				"table": "lpz_fact_sales_ext",
+				"column": "trans_no"
+			},
+			[{
+				"table": "transaction",
+				"column": "SourceTransactionNumber:trans_no"
+			}, {
+				"table": "transaction",
+				"column": "c_SourceType#\"lpz_fact_sales_ext\""
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "Go_live_date"
+			},
+			[{
+				"table": "product",
+				"column": "c_GoLiveDate"
+			}]
+		],
+		[{
+				"table": "store_address",
+				"column": "city"
+			},
+			[{
+				"table": "organization",
+				"column": "City"
+			}]
+		],
+		[{
+				"table": "AgeAppend",
+				"column": "Country"
+			},
+			[{
+				"table": "address",
+				"column": "Country"
+			}, {
+				"table": "address",
+				"column": "SourceAddressNumber:Country"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceAddressNumber:Country"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceCustomerNumber:Country"
+			}, {
+				"table": "customer",
+				"column": "SourceCustomerNumber:Country"
+			}]
+		],
+		[{
+				"table": "AgeAppend",
+				"column": "MiddleName"
+			},
+			[{
+				"table": "address",
+				"column": "SourceAddressNumber:MiddleName"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceAddressNumber:MiddleName"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceCustomerNumber:MiddleName"
+			}, {
+				"table": "customer",
+				"column": "MiddleName"
+			}, {
+				"table": "customer",
+				"column": "SourceCustomerNumber:MiddleName"
+			}]
+		],
+		[{
+				"table": "inf_dim_store",
+				"column": "district_name"
+			},
+			[{
+				"table": "organization",
+				"column": "c_district_name"
+			}]
+		],
+		[{
+				"table": "inf_dim_employee",
+				"column": "employee_key"
+			},
+			[{
+				"table": "employee",
+				"column": "SourceEmployeeNumber"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "ABS_color_name"
+			},
+			[{
+				"table": "product",
+				"column": "c_ABS_color_name"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "IATT18_DESC"
+			},
+			[{
+				"table": "product",
+				"column": "c_KeyItem"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "IATT20_DESC"
+			},
+			[{
+				"table": "product",
+				"column": "c_KeyLook"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "prepack_type"
+			},
+			[{
+				"table": "product",
+				"column": "c_prepack_type"
+			}]
+		],
+		[{
+				"table": "inf_fact_sales",
+				"column": "transaction_date"
+			},
+			[{
+				"table": "transaction",
+				"column": "TransactionTimeStamp"
+			}, {
+				"table": "transactionitem",
+				"column": "ShipDate"
+			}]
+		],
+		[{
+				"table": "inf_fact_sales",
+				"column": "trans_type"
+			},
+			[{
+				"table": "transactionitem",
+				"column": "c_trans_type"
+			}]
+		],
+		[{
+				"table": "inf_fact_sales",
+				"column": "employee_key"
+			},
+			[{
+				"table": "transaction",
+				"column": "SourceEmployeeNumber"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "IATT17_DESC"
+			},
+			[{
+				"table": "product",
+				"column": "c_Neckline"
+			}]
+		],
+		[{
+				"table": "lip_email_messages",
+				"column": "SourceMessageNumber"
+			},
+			[{
+				"table": "message",
+				"column": "SourceMessageNumber"
+			}, {
+				"table": "message",
+				"column": "SourceDispatchNumber"
+			}, {
+				"table": "dispatch",
+				"column": "SourceDispatchNumber"
+			}, {
+				"table": "dispatch",
+				"column": "SourceCampaignNumber"
+			}, {
+				"table": "campaign",
+				"column": "SourceCampaignNumber"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "ABS_style_name"
+			},
+			[{
+				"table": "product",
+				"column": "Name:ABS_style_name"
+			}, {
+				"table": "product",
+				"column": "c_ABS_Style_Name"
+			}]
+		],
+		[{
+				"table": "inf_dim_employee",
+				"column": "employee_first_name"
+			},
+			[{
+				"table": "employee",
+				"column": "FirstName"
+			}]
+		],
+		[{
+				"table": "inf_fact_sales",
+				"column": "shipping_tax"
+			},
+			[{
+				"table": "transactionitem",
+				"column": "c_Tax:shipping_tax"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "product_class_dept_code"
+			},
+			[{
+				"table": "product",
+				"column": "c_product_class_dept_code"
+			}, {
+				"table": "productcategoryxref",
+				"column": "SourceProductCategoryNumber:dept_code"
+			}, {
+				"table": "productcategory",
+				"column": "SourceCategoryNumber:dept_code"
+			}]
+		],
+		[{
+				"table": "inf_fact_ecom_order",
+				"column": "OrderLineNumber"
+			},
+			[{
+				"table": "transactionitem",
+				"column": "c_OrderLineNumber"
+			}]
+		],
+		[{
+				"table": "lpz_fact_sales_ext",
+				"column": "shipping_city"
+			},
+			[{
+				"table": "address",
+				"column": "City:shipping_city"
+			}, {
+				"table": "address",
+				"column": "SourceAddressNumber:shipping_city"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceAddressNumber:shipping_city"
+			}, {
+				"table": "address",
+				"column": "c_ShippingCity"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "IATT21_DESC"
+			},
+			[{
+				"table": "product",
+				"column": "c_KeyShape"
+			}]
+		],
+		[{
+				"table": "lpz_customer",
+				"column": "RowCreated"
+			},
+			[{
+				"table": "customer",
+				"column": "c_v5RowCreated"
+			}]
+		],
+		[{
+				"table": "inf_fact_on_hand_store",
+				"column": "store"
+			},
+			[{
+				"table": "productproperties",
+				"column": "SourceOrganizationNumber"
+			}, {
+				"table": "productproperties",
+				"column": "SourceProductPropertiesNumber:store"
+			}]
+		],
+		[{
+				"table": "lpz_customer",
+				"column": "ok_to_mail"
+			},
+			[{
+				"table": "customer",
+				"column": "Preferences:ok_to_mail"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "IATT16_DESC"
+			},
+			[{
+				"table": "product",
+				"column": "c_Length"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "lp_image_url"
+			},
+			[{
+				"table": "product",
+				"column": "ImageURL#\"http://s7d1.scene7.com/is/image/sugartown/\"+ImageURL"
+			}]
+		],
+		[{
+				"table": "AgeAppend",
+				"column": "ibe8623_IBE_Premier_DateOfBirthCCYYMM00_Year"
+			},
+			[{
+				"table": "customer",
+				"column": "BirthYear"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "end_range"
+			},
+			[{
+				"table": "product",
+				"column": "c_SalePriceEndDate"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "style"
+			},
+			[{
+				"table": "product",
+				"column": "c_StyleType"
+			}]
+		],
+		[{
+				"table": "lip_email_contacts",
+				"column": "FirstName"
+			},
+			[{
+				"table": "customer",
+				"column": "FirstName"
+			}]
+		],
+		[{
+				"table": "lip_email_contacts",
+				"column": "LastName"
+			},
+			[{
+				"table": "customer",
+				"column": "LastName"
+			}]
+		],
+		[{
+				"table": "inf_dim_vendor",
+				"column": "vendor_reported_name"
+			},
+			[{
+				"table": "c_brand",
+				"column": "Name"
+			}]
+		],
+		[{
+				"table": "AgendaFlag",
+				"column": "ABS_style"
+			},
+			[{
+				"table": "c_AgendaFlag",
+				"column": "Sourcec_AgendaFlagNumber"
+			}]
+		],
+		[{
+				"table": "lip_email_contacts",
+				"column": "Preferences"
+			},
+			[{
+				"table": "customer",
+				"column": "Preferences"
+			}]
+		],
+		[{
+				"table": "lpz_customer",
+				"column": "first_name"
+			},
+			[{
+				"table": "customer",
+				"column": "FirstName"
+			}]
+		],
+		[{
+				"table": "inf_dim_vendor",
+				"column": "vendor_no"
+			},
+			[{
+				"table": "c_brand",
+				"column": "SourceBrandNumber"
+			}]
+		],
+		[{
+				"table": "inf_fact_sales",
+				"column": "shipping_surcharge_tax"
+			},
+			[{
+				"table": "transactionitem",
+				"column": "c_Tax:shipping_surcharge_tax"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "product_class_code"
+			},
+			[{
+				"table": "product",
+				"column": "c_ProductClass"
+			}, {
+				"table": "productcategory",
+				"column": "SourceCategoryNumber:code"
+			}, {
+				"table": "productcategoryxref",
+				"column": "SourceProductCategoryNumber:code"
+			}]
+		],
+		[{
+				"table": "inf_fact_sales",
+				"column": "returns_cost"
+			},
+			[{
+				"table": "transactionitem",
+				"column": "c_CostBasis:returns_cost"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "size_scale"
+			},
+			[{
+				"table": "product",
+				"column": "c_SizeScale"
+			}]
+		],
+		[{
+				"table": "lpz_fact_sales_ext",
+				"column": "shipping_zipcode"
+			},
+			[{
+				"table": "address",
+				"column": "SourceAddressNumber:shipping_zipcode"
+			}, {
+				"table": "address",
+				"column": "Zip:shipping_zipcode"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceAddressNumber:shipping_zipcode"
+			}, {
+				"table": "address",
+				"column": "c_ShippingZip"
+			}]
+		],
+		[{
+				"table": "inf_dim_payment",
+				"column": "payment_description"
+			},
+			[{
+				"table": "c_paymentmethod",
+				"column": "c_payment_description"
+			}]
+		],
+		[{
+				"table": "inf_fact_ecom_order",
+				"column": "OrderCode"
+			},
+			[{
+				"table": "transaction",
+				"column": "SourceTransactionNumber:OrderCode"
+			}, {
+				"table": "transactionitem",
+				"column": "SourceTransactionNumber:OrderCode"
+			}, {
+				"table": "transactionitem",
+				"column": "c_SourceType#\"inf_fact_ecom_order\""
+			}, {
+				"table": "transaction",
+				"column": "c_SourceType#\"inf_fact_ecom_order\""
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "IATT01_DESC"
+			},
+			[{
+				"table": "product",
+				"column": "c_style_type_attribute_name"
+			}]
+		],
+		[{
+				"table": "inf_fact_sales",
+				"column": "lp_unauth_markdown_amount"
+			},
+			[{
+				"table": "transactionitem",
+				"column": "c_Discount:lp_unauth_markdown_amount"
+			}]
+		],
+		[{
+				"table": "inf_dim_store",
+				"column": "region_name"
+			},
+			[{
+				"table": "organization",
+				"column": "SubType"
+			}]
+		],
+		[{
+				"table": "lpz_fact_sales_ext",
+				"column": "billing_first_name"
+			},
+			[{
+				"table": "address",
+				"column": "SourceAddressNumber:billing_first_name"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceAddressNumber:billing_first_name"
+			}, {
+				"table": "customer",
+				"column": "FirstName"
+			}, {
+				"table": "customer",
+				"column": "SourceCustomerNumber:billing_first_name"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceCustomerNumber:billing_first_name"
+			}, {
+				"table": "transaction",
+				"column": "SourceCustomerNumber:billing_first_name"
+			}, {
+				"table": "customer",
+				"column": "c_SourceType#\"lpz_fact_sales_ext\""
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "ABS_color"
+			},
+			[{
+				"table": "product",
+				"column": "c_ABS_color"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "ABS_print"
+			},
+			[{
+				"table": "product",
+				"column": "c_Print"
+			}]
+		],
+		[{
+				"table": "inf_fact_ecom_order",
+				"column": "GTIN"
+			},
+			[{
+				"table": "transactionitem",
+				"column": "SourceProductNumber"
+			}]
+		],
+		[{
+				"table": "AgeAppend",
+				"column": "LastName"
+			},
+			[{
+				"table": "address",
+				"column": "SourceAddressNumber:LastName"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceAddressNumber:LastName"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceCustomerNumber:LastName"
+			}, {
+				"table": "customer",
+				"column": "LastName"
+			}, {
+				"table": "customer",
+				"column": "SourceCustomerNumber:LastName"
+			}]
+		],
+		[{
+				"table": "inf_fact_sales",
+				"column": "RowCreated"
+			},
+			[{
+				"table": "transaction",
+				"column": "c_v5RowCreated"
+			}, {
+				"table": "transactionitem",
+				"column": "c_v5RowCreated"
+			}]
+		],
+		[{
+				"table": "inf_dim_employee",
+				"column": "end_range"
+			},
+			[{
+				"table": "employee",
+				"column": "EndDate"
+			}]
+		],
+		[{
+				"table": "inf_dim_product",
+				"column": "product_class_class_code"
+			},
+			[{
+				"table": "product",
+				"column": "c_product_class_class_code"
+			}, {
+				"table": "productcategoryxref",
+				"column": "SourceProductCategoryNumber:class_code"
+			}, {
+				"table": "productcategory",
+				"column": "SourceCategoryNumber:class_code"
+			}]
+		],
+		[{
+				"table": "lip_email_messages",
+				"column": "Name"
+			},
+			[{
+				"table": "message",
+				"column": "Name"
+			}, {
+				"table": "dispatch",
+				"column": "Name"
+			}, {
+				"table": "campaign",
+				"column": "Name"
+			}]
+		],
+		[{
+				"table": "lpz_fact_sales_ext",
+				"column": "billing_zipcode"
+			},
+			[{
+				"table": "address",
+				"column": "SourceAddressNumber:billing_zipcode"
+			}, {
+				"table": "address",
+				"column": "Zip:billing_zipcode"
+			}, {
+				"table": "customeraddressxref",
+				"column": "SourceAddressNumber:billing_zipcode"
+			}, {
+				"table": "address",
+				"column": "c_BillingZip"
+			}]
+		],
+		[{
+				"table": "inf_dim_payment",
+				"column": "payment_code"
+			},
+			[{
+				"table": "c_paymentmethod",
+				"column": "c_payment_code"
+			}]
+		],
+		[{
+				"table": "inf_fact_sales",
+				"column": "lp_markdown_amount"
+			},
+			[{
+				"table": "transactionitem",
+				"column": "c_Discount:lp_markdown_amount"
+			}]
+		]
+	]
+}
