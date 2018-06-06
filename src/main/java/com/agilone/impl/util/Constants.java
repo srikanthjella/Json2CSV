@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Constants {
     public static final String CONNECTORID = "connectorid";
+    public static final String PASSWORD = "password";
     public static String TENANT_ID = "tenantid";
     public static String ENV = "env";
     public static String OPERATION = "operation";

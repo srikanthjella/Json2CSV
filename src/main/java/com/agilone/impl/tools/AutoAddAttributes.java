@@ -18,7 +18,7 @@ public class AutoAddAttributes {
     private static JSONObject udmEntities;
     private static final Logger log = LoggerFactory.getLogger( AutoAddAttributes.class);
 
-    public static void main(String[] args) throws Exception {
+    public static void main( String[] args) throws Exception {
         Map<String,String> optsMap = new HashMap<>();
 
         for (int i = 0; i < args.length; i++) {
@@ -42,32 +42,50 @@ public class AutoAddAttributes {
         if( optsMap.size() == 0) {
             exitWithErrorMsg("None of the required parameters not found (env/location/tenantId/operation)", true);
         }
-        else if( optsMap.keySet().contains( Constants.OPERATION)) {
-            if (!optsMap.keySet().contains(Constants.ENV) || !optsMap.keySet().contains(Constants.LOCATION)
-                    || optsMap.get( Constants.OPERATION).equalsIgnoreCase( Constants.ADDATTRIBUTES) && !optsMap.keySet().contains(Constants.TENANT_ID)
-                    || !optsMap.keySet().contains(Constants.TOKEN) || !optsMap.keySet().contains(Constants.INPUTFILE)) {
-                exitWithErrorMsg("Following required parameter(s) not found:"
-                        + (optsMap.keySet().contains(Constants.ENV) ? "" : " " + Constants.ENV)
-                        + (optsMap.keySet().contains(Constants.LOCATION) ? "" : " " + Constants.LOCATION)
-                        + (optsMap.keySet().contains(Constants.OPERATION) ? "" : " " + Constants.OPERATION)
-                        + (optsMap.keySet().contains(Constants.TENANT_ID) ? "" : " " + Constants.TENANT_ID)
-                        + (optsMap.keySet().contains(Constants.INPUTFILE) ? "" : " " + Constants.INPUTFILE)
-                        + (optsMap.keySet().contains(Constants.TOKEN) ? "" : " " + Constants.TOKEN), true);
-            }
-            else if( !optsMap.keySet().contains(Constants.ENV) || !optsMap.keySet().contains(Constants.LOCATION)
-                    || optsMap.get( Constants.OPERATION).equalsIgnoreCase( Constants.MAPPING) && !optsMap.keySet().contains(Constants.TENANT_ID)
-                    || !optsMap.keySet().contains(Constants.TOKEN) || !optsMap.keySet().contains(Constants.INPUTFILE)
-                    || !optsMap.keySet().contains(Constants.CONNECTORID)) {
-                exitWithErrorMsg("Following required parameter(s) not found:"
-                        + (optsMap.keySet().contains(Constants.ENV) ? "" : " " + Constants.ENV)
-                        + (optsMap.keySet().contains(Constants.LOCATION) ? "" : " " + Constants.LOCATION)
-                        + (optsMap.keySet().contains(Constants.OPERATION) ? "" : " " + Constants.OPERATION)
-                        + (optsMap.keySet().contains(Constants.TENANT_ID) ? "" : " " + Constants.TENANT_ID)
-                        + (optsMap.keySet().contains(Constants.INPUTFILE) ? "" : " " + Constants.INPUTFILE)
-                        + (optsMap.keySet().contains(Constants.CONNECTORID) ? "" : " " + Constants.CONNECTORID)
-                        + (optsMap.keySet().contains(Constants.TOKEN) ? "" : " " + Constants.TOKEN), true);
-            }
+        else if (optsMap.get( Constants.OPERATION).equalsIgnoreCase( Constants.ADDATTRIBUTES) && (!optsMap.keySet().contains(Constants.ENV)
+                || !optsMap.keySet().contains(Constants.LOCATION) || !optsMap.keySet().contains(Constants.TENANT_ID)
+                || !optsMap.keySet().contains(Constants.USERNAME) || !optsMap.keySet().contains(Constants.INPUTFILE))) {
+            exitWithErrorMsg("Following required parameter(s) not found:"
+                    + (optsMap.keySet().contains(Constants.ENV) ? "" : " " + Constants.ENV)
+                    + (optsMap.keySet().contains(Constants.LOCATION) ? "" : " " + Constants.LOCATION)
+                    + (optsMap.keySet().contains(Constants.OPERATION) ? "" : " " + Constants.OPERATION)
+                    + (optsMap.keySet().contains(Constants.TENANT_ID) ? "" : " " + Constants.TENANT_ID)
+                    + (optsMap.keySet().contains(Constants.INPUTFILE) ? "" : " " + Constants.INPUTFILE)
+                    + (optsMap.keySet().contains(Constants.USERNAME) ? "" : " " + Constants.USERNAME), true);
         }
+        else if( optsMap.get( Constants.OPERATION).equalsIgnoreCase( Constants.MAPPING) && (!optsMap.keySet().contains(Constants.ENV)
+                || !optsMap.keySet().contains(Constants.LOCATION) || !optsMap.keySet().contains(Constants.TENANT_ID)
+                || !optsMap.keySet().contains(Constants.USERNAME) || !optsMap.keySet().contains(Constants.INPUTFILE)
+                || !optsMap.keySet().contains(Constants.CONNECTORID))) {
+            exitWithErrorMsg("Following required parameter(s) not found:"
+                    + (optsMap.keySet().contains(Constants.ENV) ? "" : " " + Constants.ENV)
+                    + (optsMap.keySet().contains(Constants.LOCATION) ? "" : " " + Constants.LOCATION)
+                    + (optsMap.keySet().contains(Constants.OPERATION) ? "" : " " + Constants.OPERATION)
+                    + (optsMap.keySet().contains(Constants.TENANT_ID) ? "" : " " + Constants.TENANT_ID)
+                    + (optsMap.keySet().contains(Constants.INPUTFILE) ? "" : " " + Constants.INPUTFILE)
+                    + (optsMap.keySet().contains(Constants.CONNECTORID) ? "" : " " + Constants.CONNECTORID)
+                    + (optsMap.keySet().contains(Constants.USERNAME) ? "" : " " + Constants.USERNAME), true);
+        }
+
+        String encoding;
+        if( optsMap.get( Constants.PASSWORD) == null) {
+            String userName = optsMap.get( Constants.USERNAME);
+            char[] password = System.console().readPassword( "Enter Password");
+
+            encoding = Base64.getEncoder().encodeToString ( (userName + ":" + new String(password)).getBytes());
+            System.out.println( password);
+            Arrays.fill(password, ' ');
+        }
+        else
+            encoding = Base64.getEncoder().encodeToString ( (
+                    optsMap.get( Constants.USERNAME) + ":" + optsMap.get( Constants.PASSWORD)).getBytes());
+
+        Util util = new Util();
+        String token = util.getToken( encoding);
+        optsMap.put( Constants.TOKEN, token);
+        optsMap.remove( Constants.USERNAME);
+        optsMap.remove( Constants.PASSWORD);
+        optsMap.remove( Constants.PASSWORD);
 
         AutoAddAttributes att = new AutoAddAttributes();
         if( optsMap.get( Constants.OPERATION).equalsIgnoreCase( Constants.ADDATTRIBUTES)) {
@@ -89,25 +107,55 @@ public class AutoAddAttributes {
         csvList = Files.lines( path).collect( Collectors.toList());
 
         String[] attrs;
-        Map<String,List<String>> entitiesMap = new HashMap<>();
+        Map<String,List<String>> mappingMap = new HashMap<>();
 
         for( String line : csvList) {
             attrs = line.split(",");
-            if( !entitiesMap.containsKey(attrs[0])) {
-                entitiesMap.put( attrs[0], new ArrayList<>());
+            if( !mappingMap.containsKey(attrs[0])) {
+                mappingMap.put( attrs[0] + "," + attrs[1], new ArrayList<>());
             }
-            entitiesMap.get(attrs[0]).add( line);
+            mappingMap.get( attrs[0] + "," + attrs[1]).add( attrs[2] + "," + attrs[3]);
         }
 
-        buildAddMappingJSON( entitiesMap, optsMap);
-
+        buildAddMappingJSON( mappingMap, optsMap);
     }
 
-    private void buildAddMappingJSON(Map<String, List<String>> inputEntitiesMap, Map<String, String> optsMap) {
+    private void buildAddMappingJSON( Map<String, List<String>> mappingMap, Map<String, String> optsMap) {
         Util util = new Util();
         udmEntities = util.getConnector( optsMap.get( Constants.TOKEN)
                 , Integer.parseInt( optsMap.get( Constants.CONNECTORID))
                 , optsMap.get(Constants.TENANT_ID));
+
+        List<Object> mappingListArray;
+        List<Object> mappingListOuterArray = new ArrayList<>();
+        JSONObject feedInput;
+        List<JSONObject> mappedEntitiesArray;
+        String [] array;
+
+        for ( String str : mappingMap.keySet()) {
+            mappingListArray = new ArrayList<>();
+            array = str.split(",");
+            feedInput = new JSONObject();
+            feedInput.put( "table", array[0]);
+            feedInput.put( "column", array[1]);
+
+            mappingListArray.add( feedInput);
+
+            mappedEntitiesArray = new ArrayList<>();
+
+            for( String str2 : mappingMap.get(str)) {
+                array = str2.split(",");
+                feedInput = new JSONObject();
+                feedInput.put( "table", array[0]);
+                feedInput.put( "column", array[1]);
+
+                mappedEntitiesArray.add( feedInput);
+            }
+            mappingListArray.add( mappedEntitiesArray);
+            mappingListOuterArray.add( mappingListArray);
+        }
+
+        udmEntities.put( "mapping", mappingListOuterArray);
 
         int connectorDefId = udmEntities.getJSONObject( Constants.CONNECTORDEF).getInt("id");
         JSONObject connectorDef = new JSONObject();
@@ -201,18 +249,24 @@ public class AutoAddAttributes {
         }
     }
 
-    private Map<String,Object> addNewAttribute(String attributeName, String displayName, String attributeType, String availability, String entityName) {
+    private Map<String,Object> addNewAttribute(String attributeName, String displayName, String attributeType
+            , String availability, String entityName) {
         Map<String,Object> attr = new HashMap<>();
 
-        if( !Constants.VALID_DATA_TYPES.contains( attributeType.toUpperCase())) {
-            exitWithErrorMsg( attributeType.toUpperCase() + " is not a valid data type. AttributeName: " + attributeName + ", EntityName: " + entityName, false);
-        }
+        if( !attributeName.startsWith("c_"))
+            exitWithErrorMsg( attributeName + " attribute should start with c_ ", false);
+
+        if( !attributeName.matches("([a-z]+([A-Z][a-z])*)+"))
+            exitWithErrorMsg( attributeName + " should be in camelCase ", false);
+
+        if( !Constants.VALID_DATA_TYPES.contains( attributeType.toUpperCase()))
+            exitWithErrorMsg( attributeType.toUpperCase() + " is not a valid data type. AttributeName: "
+                    + attributeName + ", EntityName: " + entityName, false);
+
+        if( !Constants.VALID_DATA_TYPES.contains( attributeType.toUpperCase()))
+            exitWithErrorMsg( attributeType.toUpperCase() + " is not a valid data type.", false);
 
         List<String> list = Arrays.asList( availability.split("\\|"));
-
-        if( !Constants.VALID_DATA_TYPES.contains( attributeType.toUpperCase())) {
-            exitWithErrorMsg( attributeType.toUpperCase() + " is not a valid data type.", false);
-        }
 
         for( String str : list) {
             if( !Constants.VALID_AVAILABILITY.contains( str) )
@@ -239,13 +293,14 @@ public class AutoAddAttributes {
                 "-env <CS/PROD> " +
                 "-location <US/EU> " +
                 "-tenantId <ID> " +
-                "-token <tokenId> " +
+                "-userName <UserName> " +
+                "[-password <Password>] " +
                 "[-ConnectorId <id>] " +
                 "-fileName </path/to/file>";
     }
 
     private static void exitWithErrorMsg( String msg, boolean usage) {
-        log.error( msg);
+        log.error( "\n\n" + msg);
 
         if( usage)
             log.error( usage());

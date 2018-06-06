@@ -6,14 +6,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.*;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 public class ConfigApp {
 
     private static final Logger log = LoggerFactory.getLogger(ConfigApp.class);
+    public  static final String CS_US_URL_SHORT = "https://cs-configapi.agilone.com/";
     public  static final String CS_US_URL = "https://cs-configapi.agilone.com/v2/";
 //    private static final String PROD_URL = "https://cs-configapi.agilone.com/v2/";
     private static final String ATHLETA_CS_TENANT_ID = "60";
@@ -66,5 +64,25 @@ public class ConfigApp {
 
     public String putConnector(String token, String tenantId, int connectorID, String body) {
         return callRestAPI( CS_US_URL + tenantId + CONNECTOR_URL + connectorID, token, HttpMethod.PUT, body);
+    }
+
+    public String getToken( String encoding) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType( MediaType.APPLICATION_FORM_URLENCODED);
+        headers.add("Authorization", "Basic " + encoding);
+
+        System.out.println( encoding);
+
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<String> responseEntity;
+        HttpEntity<String> requestEntity = new HttpEntity<>( "", headers);
+
+        responseEntity = restTemplate.exchange( CS_US_URL_SHORT + "token?action=create&scheme=a1user"
+                , HttpMethod.POST, requestEntity
+                , String.class);
+
+        log.info(responseEntity.getStatusCode().toString());
+
+        return new JSONObject(responseEntity.getBody()).getString("access_token");
     }
 }

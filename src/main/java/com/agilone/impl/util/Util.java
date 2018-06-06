@@ -57,4 +57,17 @@ public class Util {
         }
         return true;
     }
+
+    public String getToken( String encoding) {
+        ConfigApp app = new ConfigApp();
+        String token;
+        try {
+            token = app.getToken( encoding);
+        }
+        catch ( Exception ioe) {
+            ioe.printStackTrace();
+            throw ioe;
+        }
+        return token;
+    }
 }
