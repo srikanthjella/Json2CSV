@@ -1,3 +1,5 @@
 AgilOne_Customer,firstname,customer,LastName
 AgilOne_Customer,lastname,customer,FirstName
 AgilOne_Customer,middlename,customer,MiddleName
+AgilOne_Customer,Salutation,customer,Sal
+AgilOne_Customer,Company,customer,Company

@@ -1,0 +1,1441 @@
+udmTable,ColumnName,ColumnType,ColumnDisplayName
+account,Batch,STRING,Batch
+account,DateCreated,LONG,DateCreated
+account,DateModified,LONG,DateModified
+account,DeleteFlag,BOOLEAN,DeleteFlag
+account,ID,STRING,ID
+account,Name,STRING,Name
+account,ParentAccountID,STRING,ParentAccountID
+account,ParentAccountNumber,STRING,ParentAccountNumber
+account,RowCreated,LONG,RowCreated
+account,RowModified,LONG,RowModified
+account,RowProcessed,LONG,RowProcessed
+account,Source,STRING,Source
+account,SourceAccountNumber,STRING,SourceAccountNumber
+account,SourceSystemID,STRING,SourceSystemID
+account,TenantId,INTEGER,TenantId
+address,Address1,STRING,Address1
+address,Address2,STRING,Address2
+address,AddressType,STRING,AddressType
+address,Batch,STRING,Batch
+address,CMRA,STRING,CMRA
+address,CarrierRoute,STRING,CarrierRoute
+address,Certified,STRING,Certified
+address,City,STRING,City
+address,Country,STRING,Country
+address,CountryCode,STRING,CountryCode
+address,DateCertified,STRING,DateCertified
+address,DeleteFlag,BOOLEAN,DeleteFlag
+address,DeliveryPointCheckDigit,STRING,DeliveryPointCheckDigit
+address,DeliveryPointCode,STRING,DeliveryPointCode
+address,DpvConfirm,STRING,DpvConfirm
+address,ErrorCode,STRING,ErrorCode
+address,ErrorString,STRING,ErrorString
+address,ID,STRING,ID
+address,LACS,STRING,LACS
+address,Latitude,STRING,Latitude
+address,Longitude,STRING,Longitude
+address,MatchFlag,STRING,MatchFlag
+address,MoveDate,STRING,MoveDate
+address,MoveType,STRING,MoveType
+address,NCOADateModified,STRING,NCOADateModified
+address,NCOADateUpdate,STRING,NCOADateUpdate
+address,Name,STRING,Name
+address,RBDI,STRING,Address Type - Residential or Business
+address,RowCreated,LONG,RowCreated
+address,RowModified,LONG,RowModified
+address,RowProcessed,LONG,RowProcessed
+address,Source,STRING,Source
+address,SourceAddressNumber,STRING,SourceAddressNumber
+address,SourceSystemID,STRING,SourceSystemID
+address,State,STRING,State
+address,Suite,STRING,Suite
+address,TenantId,INTEGER,TenantId
+address,Type,STRING,Type
+address,Zip,STRING,Zip
+address,ZipExt,STRING,ZipExt
+anonymousevent,Anonymous,BOOLEAN,Anonymous
+anonymousevent,Batch,STRING,Batch
+anonymousevent,BodyType,STRING,BodyType
+anonymousevent,BrandId,STRING,BrandId
+anonymousevent,Browser,STRING,Browser
+anonymousevent,BrowserType,STRING,BrowserType
+anonymousevent,Category,STRING,Category
+anonymousevent,ContainerId,STRING,ContainerId
+anonymousevent,Cookie,STRING,Cookie
+anonymousevent,Country,STRING,Country
+anonymousevent,CustomerID,STRING,CustomerID
+anonymousevent,CustomerState,STRING,CustomerState
+anonymousevent,DeviceType,STRING,DeviceType
+anonymousevent,Domain,STRING,Domain
+anonymousevent,Email,STRING,Email
+anonymousevent,EventTimeStamp,LONG,EventTimeStamp
+anonymousevent,GeoAreaCode,STRING,GeoAreaCode
+anonymousevent,GeoContinent,STRING,GeoContinent
+anonymousevent,GeoLatitude,STRING,GeoLatitude
+anonymousevent,GeoLongitude,STRING,GeoLongitude
+anonymousevent,GeoOrganization,STRING,GeoOrganization
+anonymousevent,GeoPostalCode,STRING,GeoPostalCode
+anonymousevent,Geocity,STRING,Geocity
+anonymousevent,Georegion,STRING,Georegion
+anonymousevent,ID,STRING,ID
+anonymousevent,IPAddress,STRING,IPAddress
+anonymousevent,Language,STRING,Language
+anonymousevent,LinkName,STRING,LinkName
+anonymousevent,MessageID,STRING,MessageID
+anonymousevent,OS,STRING,OS
+anonymousevent,OperatingSystem,STRING,OperatingSystem
+anonymousevent,ProductCategoryID,STRING,ProductCategoryID
+anonymousevent,ProductID,STRING,ProductID
+anonymousevent,RealtimeRequestNumber,STRING,RealtimeRequestNumber
+anonymousevent,Referer,STRING,Referer
+anonymousevent,RowCreated,LONG,RowCreated
+anonymousevent,RowModified,LONG,RowModified
+anonymousevent,RowProcessed,LONG,RowProcessed
+anonymousevent,SearchTerm,STRING,SearchTerm
+anonymousevent,SegmentId,STRING,SegmentId
+anonymousevent,SessionID,STRING,SessionID
+anonymousevent,Source,STRING,Source
+anonymousevent,SourceCustomerNumber,STRING,SourceCustomerNumber
+anonymousevent,SourceListNumber,STRING,SourceListNumber
+anonymousevent,SourceMessageNumber,STRING,SourceMessageNumber
+anonymousevent,SourceProductCategoryNumber,STRING,SourceProductCategoryNumber
+anonymousevent,SourceProductNumber,STRING,SourceProductNumber
+anonymousevent,SourceSubSystemID,STRING,SourceSubSystemID
+anonymousevent,SourceSystemID,STRING,SourceSystemID
+anonymousevent,SourceTransactionNumber,STRING,SourceTransactionNumber
+anonymousevent,Subtype,STRING,Subtype
+anonymousevent,TenantId,INTEGER,TenantId
+anonymousevent,TransactionID,STRING,TransactionID
+anonymousevent,Type,STRING,Type
+anonymousevent,URL,STRING,URL
+anonymousevent,UserClient,STRING,UserClient
+anonymousevent,Variables,STRING,Variables
+campaign,Batch,STRING,Batch
+campaign,DateCreated,LONG,DateCreated
+campaign,DateModified,LONG,DateModified
+campaign,DeleteFlag,BOOLEAN,DeleteFlag
+campaign,Description,STRING,Description
+campaign,ID,STRING,ID
+campaign,Name,STRING,Name
+campaign,RowCreated,LONG,RowCreated
+campaign,RowModified,LONG,RowModified
+campaign,RowProcessed,LONG,RowProcessed
+campaign,Source,STRING,Source
+campaign,SourceCampaignNumber,STRING,SourceCampaignNumber
+campaign,SourceSystemID,STRING,SourceSystemID
+campaign,TenantId,INTEGER,TenantId
+campaignhistory,CampaignID,LONG,CampaignID
+campaignhistory,CustomerID,STRING,CustomerID
+campaignhistory,DispatchTime,LONG,DispatchTime
+campaignhistory,ID,STRING,ID
+campaignhistory,TenantID,INTEGER,TenantID
+campaignhistory,VariantName,STRING,VariantName
+campaignhistory,partition_yyyymm,STRING,partition_yyyymm
+customer,AccountID,STRING,AccountID
+customer,Age,INTEGER,Age
+customer,Batch,STRING,Batch
+customer,BirthDate,LONG,BirthDate
+customer,BirthDay,INTEGER,BirthDay
+customer,BirthMonth,INTEGER,BirthMonth
+customer,BirthYear,INTEGER,BirthYear
+customer,Company,STRING,Company
+customer,Cookie,STRING,Cookie
+customer,DateCreated,LONG,DateCreated
+customer,DateModified,LONG,DateModified
+customer,DeleteFlag,BOOLEAN,DeleteFlag
+customer,DoNotCall,STRING,DoNotCall
+customer,DoNotEmail,STRING,DoNotEmail
+customer,DoNotMail,STRING,DoNotMail
+customer,DoNotText,STRING,DoNotText
+customer,Email,STRING,Email
+customer,EmailStatus,STRING,EmailStatus
+customer,FirstName,STRING,FirstName
+customer,Gender,STRING,Gender
+customer,ID,STRING,ID
+customer,LastName,STRING,LastName
+customer,MiddleName,STRING,MiddleName
+customer,MobileAdvertisingId,STRING,MobileAdvertisingId
+customer,MobileDeviceId,STRING,MobileDeviceId
+customer,MobilePhone,STRING,MobilePhone
+customer,MobilePhoneValidity,STRING,MobilePhoneValidity
+customer,NameCodes,STRING,NameCodes
+customer,PhoneValidationResultCodes,STRING,PhoneValidationResultCodes
+customer,Preferences,STRING,Preferences
+customer,PrimaryPhone,STRING,PrimaryPhone
+customer,PrimaryPhoneValidity,STRING,PrimaryPhoneValidity
+customer,RowCreated,LONG,RowCreated
+customer,RowModified,LONG,RowModified
+customer,RowProcessed,LONG,RowProcessed
+customer,Sal,STRING,Sal
+customer,SecondaryPhone,STRING,SecondaryPhone
+customer,SecondaryPhoneValidity,STRING,SecondaryPhoneValidity
+customer,Source,STRING,Source
+customer,SourceAccountNumber,STRING,SourceAccountNumber
+customer,SourceCustomerNumber,STRING,SourceCustomerNumber
+customer,SourceSystemID,STRING,SourceSystemID
+customer,State,STRING,State
+customer,TenantId,INTEGER,TenantId
+customer,Title,STRING,Title
+customer,UUID,STRING,UUID
+customer,c_birthDateTextFormat,STRING,Birth Date Text
+customer,c_cardNo,STRING,Card Number
+customer,c_customerBrands,STRING,Customer Brands
+customer,c_customerGroup,STRING,Customer Group
+customer,c_customerType,STRING,Customer Type
+customer,c_daysUntilNextBirthday,INTEGER,Days Until Next Birthday
+customer,c_latestSourceCustomerNumber,STRING,Latest Source Customer Number
+customer,c_loyaltyCardNumbers,STRING,Loyalty Card Numbers
+customer,c_phoneNumbers,STRING,Phone Numbers
+customer,c_virtualCardInformation,STRING,Virtual Card Information
+customer,c_webMembership,STRING,Web Membership
+customer,c_webMembershipCacharel,INTEGER,Web Membership Cacharel
+customer,c_webMembershipPcLingerie,INTEGER,Web Membership PC Lingerie
+customer,c_webMembershipPierreCardin,INTEGER,Web Membership Pierre Cardin
+customer,c_webMembershipUsPolo,INTEGER,Web Membership US Polo
+customeraddressxref,AddressID,STRING,AddressID
+customeraddressxref,Batch,STRING,Batch
+customeraddressxref,CustomerID,STRING,CustomerID
+customeraddressxref,DeleteFlag,BOOLEAN,DeleteFlag
+customeraddressxref,ID,STRING,ID
+customeraddressxref,RowCreated,LONG,RowCreated
+customeraddressxref,RowModified,LONG,RowModified
+customeraddressxref,RowProcessed,LONG,RowProcessed
+customeraddressxref,Source,STRING,Source
+customeraddressxref,SourceAddressNumber,STRING,SourceAddressNumber
+customeraddressxref,SourceCustomerNumber,STRING,SourceCustomerNumber
+customeraddressxref,SourceSystemID,STRING,SourceSystemID
+customeraddressxref,TenantId,INTEGER,TenantId
+customerfirsttransactionproductcategory,Batch,STRING,Batch
+customerfirsttransactionproductcategory,ID,STRING,ID
+customerfirsttransactionproductcategory,MasterCustomerID,STRING,MasterCustomerID
+customerfirsttransactionproductcategory,ProductCategoryID,STRING,ProductCategoryID
+customerfirsttransactionproductcategory,RowCreated,LONG,RowCreated
+customerfirsttransactionproductcategory,SourceSystemID,STRING,SourceSystemID
+customerfirsttransactionproductcategory,TenantID,INTEGER,TenantID
+customerhistory,Batch,STRING,Batch
+customerhistory,Cookie,STRING,Cookie
+customerhistory,DeleteFlag,BOOLEAN,DeleteFlag
+customerhistory,Email,STRING,Email
+customerhistory,ID,STRING,ID
+customerhistory,PrimaryPhone,STRING,PrimaryPhone
+customerhistory,RowCreated,LONG,RowCreated
+customerhistory,RowModified,LONG,RowModified
+customerhistory,RowProcessed,LONG,RowProcessed
+customerhistory,Source,STRING,Source
+customerhistory,SourceCustomerNumber,STRING,SourceCustomerNumber
+customerhistory,SourceSystemID,STRING,SourceSystemID
+customerhistory,TenantId,INTEGER,TenantId
+customerlasttransactionproductcategory,Batch,STRING,Batch
+customerlasttransactionproductcategory,ID,STRING,ID
+customerlasttransactionproductcategory,MasterCustomerID,STRING,MasterCustomerID
+customerlasttransactionproductcategory,ProductCategoryID,STRING,ProductCategoryID
+customerlasttransactionproductcategory,RowCreated,LONG,RowCreated
+customerlasttransactionproductcategory,SourceSystemID,STRING,SourceSystemID
+customerlasttransactionproductcategory,TenantID,INTEGER,TenantID
+customersummary,Address1,STRING,Address1
+customersummary,Address2,STRING,Address2
+customersummary,AddressCertified,STRING,AddressCertified
+customersummary,AddressType,STRING,Address Type
+customersummary,BehaviorBasedClusterID,STRING,Behavior-based cluster
+customersummary,BehaviorBasedClusterID_L1M,STRING,Behavior based cluster ID one month ago
+customersummary,BehaviorBasedClusterID_L2M,STRING,Behavior based cluster ID two months ago
+customersummary,BehaviorBasedClusterID_ThisMonth,STRING,Behavior-based cluster as of this month
+customersummary,BirthDate,LONG,Birth Date
+customersummary,BrandClusterID,STRING,Brand-based cluster
+customersummary,BrowseClusterID,STRING,Browse Cluster
+customersummary,BuyerIdentification,STRING,Is Identified Buyer
+customersummary,City,STRING,City
+customersummary,ClosestStoreID,STRING,Closest Store ID
+customersummary,Country,STRING,Country
+customersummary,DoNotCall,STRING,Call campaigns opt-out
+customersummary,DoNotEmail,STRING,Email campaigns opt-out
+customersummary,DoNotMail,STRING,Direct mail campaigns opt-out
+customersummary,DoNotText,STRING,Text campaigns opt-out
+customersummary,DpvConfirm,STRING,DPV Confirmed
+customersummary,EmailStatus,STRING,Email Status
+customersummary,FirstName,STRING,First Name
+customersummary,FirstOfflinePromoID,STRING,FirstOfflinePromoID
+customersummary,FirstPromoCategoryID,STRING,Online Acquisition Promotion Category
+customersummary,FirstPromoID,STRING,Online Acquisition Promotion
+customersummary,FirstTransactionDate,LONG,First Transaction Date
+customersummary,FirstTransactionRevenue,DECIMAL,First Transaction Revenue
+customersummary,FirstVisitDate,LONG,Date of First Web Visit
+customersummary,Gender,STRING,Gender
+customersummary,LastClickDate,LONG,Date of Last Email Clicked
+customersummary,LastName,STRING,Last Name
+customersummary,LastOpenDate,LONG,Date of Last Email Opened
+customersummary,LastSendDate,LONG,Date of Last Email Sent
+customersummary,LastTransactionDate,LONG,Last Transaction Date
+customersummary,LastVisitDate,LONG,Date of Last Web Visit
+customersummary,MasterCustomerID,STRING,MasterCustomerID
+customersummary,MiddleName,STRING,Middle Name
+customersummary,MobilePhone,STRING,Mobile Phone
+customersummary,MobilePhoneValidity,STRING,Mobile Phone Validity
+customersummary,MoveDate,STRING,MoveDate
+customersummary,MoveType,STRING,MoveType
+customersummary,NCOADateUpdate,STRING,NCOADateUpdate
+customersummary,NCOADateUpdateBigInt,LONG,NCOADateUpdate
+customersummary,Preferences,STRING,Preferences
+customersummary,PreviousTransactionDate,LONG,Date of Second to Last Transaction
+customersummary,PrimaryBrand,STRING,Primary Brand
+customersummary,PrimaryDeviceType,STRING,Primary Device Type
+customersummary,PrimaryOrganization,STRING,Primary Organization
+customersummary,PrimaryPhone,STRING,Primary Phone
+customersummary,PrimaryPhoneValidity,STRING,Primary Phone Validity
+customersummary,PrimaryStoreID,STRING,Primary Store ID
+customersummary,ProductClusterID,STRING,Product-based cluster
+customersummary,ProductClusterID_L1M,STRING,Product based cluster one month ago
+customersummary,ProductClusterID_L2M,STRING,Product based cluster two months ago
+customersummary,ProductClusterID_ThisMonth,STRING,Product based cluster as of this month
+customersummary,PropensityToBuyDecile,STRING,Likelihood to buy
+customersummary,PropensityToBuyDecile_L1M,STRING,Likelihood to buy one month ago
+customersummary,PropensityToBuyDecile_L2M,STRING,Likelihood to buy two months ago
+customersummary,PropensityToBuyDecile_ThisMonth,STRING,Likelihood to buy as of this month
+customersummary,PropensityToConvertDecile,STRING,Likelihood to convert
+customersummary,PropensityToEngageDecile,STRING,Email engagement segment
+customersummary,PurchaseClusterID,STRING,Purchase cluster
+customersummary,RBDI,STRING,Address Type - Residential or Business
+customersummary,Sal,STRING,Salutation
+customersummary,SecondaryPhone,STRING,Secondary Phone
+customersummary,SecondaryPhoneValidity,STRING,Secondary Phone Validity
+customersummary,State,STRING,State
+customersummary,Suite,STRING,Suite
+customersummary,Title,STRING,Title
+customersummary,TotalClickCount31_60Days,INTEGER,Email Click Count between 31 and 60 days ago
+customersummary,TotalClickCountLast30Days,INTEGER,Email Click Count in the last 30 days
+customersummary,TotalCost,DECIMAL,Total Cost
+customersummary,TotalCost_Last12Months,DECIMAL,Total Cost in the Last 12 months
+customersummary,TotalCost_Last13_24Months,DECIMAL,Total Cost between the Last 13 and 24 months
+customersummary,TotalDiscount,DECIMAL,Total Discount
+customersummary,TotalListPrice,DECIMAL,Total List Price
+customersummary,TotalOpenCount31_60Days,INTEGER,Email Open Count between 31 and 60 days ago
+customersummary,TotalOpenCountLast30Days,INTEGER,Email Open Count in the last 30 days
+customersummary,TotalProductCount,INTEGER,Number of products purchased
+customersummary,TotalProductcategoryCount,INTEGER,Number of product categories purchased from
+customersummary,TotalRevenue,DECIMAL,Total Revenue
+customersummary,TotalRevenue_Last12Months,DECIMAL,Revenue in last 12 Months
+customersummary,TotalRevenue_Last13_24Months,DECIMAL,Revenue between 13 and 24 months ago
+customersummary,TotalRevenuedecile_Last12Months,INTEGER,Revenue decile in last 12 months
+customersummary,TotalRevenuedecile_Last13_24Months,INTEGER,Revenue decile between 13 and 24 months ago
+customersummary,TotalSendCount31_60Days,INTEGER,Emails Sent between 31 and 60 days ago
+customersummary,TotalSendCountLast30Days,INTEGER,Emails Sent in the last 30 days
+customersummary,TotalTransactionCount,INTEGER,Total Number of Transactions
+customersummary,TotalTransactionCountWithDiscount,INTEGER,Number of Transactions with Discount
+customersummary,TotalTransactionCount_Last12Months,INTEGER,Number of Transactions in last 12 months
+customersummary,TotalTransactionCount_Last13_24Months,INTEGER,Number of Transactions between 13-24 months ago
+customersummary,TotalVisitCount31_60Days,INTEGER,Web Visit Count between 31 and 60 days ago
+customersummary,TotalVisitCountLast30Days,INTEGER,Web Visit Count in the last 30 days
+customersummary,ZipCode,STRING,ZipCode
+customersummary,ZipExt,STRING,Zip Code Suffix
+customersummary,age,INTEGER,Age
+customersummary,aovgroup,STRING,Average Order Value (AOV)
+customersummary,averagediscountrate,STRING,Average Discount Rate
+customersummary,birthmonth,STRING,Birth Month
+customersummary,birthyear,STRING,Birth Year
+customersummary,c_cardNo,STRING,Card Number
+customersummary,c_customerBrands,STRING,Customer Brands
+customersummary,c_customerGroup,STRING,Customer Group
+customersummary,c_customerType,STRING,Customer Type
+customersummary,c_daysUntilNextBirthday,INTEGER,Days Until Next Birthday
+customersummary,c_latestSourceCustomerNumber,STRING,Latest Source Customer Number
+customersummary,c_loyaltyCardNumbers,STRING,List of loyalty card numbers
+customersummary,c_phoneNumbers,STRING,Phone Numbers
+customersummary,c_virtualCardInformation,STRING,Virtual Card Information
+customersummary,c_webMembership,STRING,Web Membership
+customersummary,c_webMembershipCacharel,INTEGER,Web Membership Cacharel
+customersummary,c_webMembershipPcLingerie,INTEGER,Web Membership PC Lingerie
+customersummary,c_webMembershipPierreCardin,INTEGER,Web Membership Pierre Cardin
+customersummary,c_webMembershipUsPolo,INTEGER,Web Membership US Polo
+customersummary,categorymixgroup,STRING,Product categories purchased from - group
+customersummary,closeststore,STRING,Closest Store
+customersummary,closeststoredistance,INTEGER,Distance to Closest Store
+customersummary,closeststoredistancegroup,STRING,Distance to Closest Store - Group
+customersummary,customerstatus,STRING,Is Buyer
+customersummary,daysincefirstweblogin,INTEGER,Days Since First Web Visit
+customersummary,daysincefirstweblogingroup,STRING,Days Since First Web Visit Group
+customersummary,daysincelastweblogin,INTEGER,Days Since Last Web Visit
+customersummary,daysincelastweblogingroup,STRING,Days Since Last Web Visit Group
+customersummary,email,STRING,Email Address
+customersummary,emailHash,STRING,Email Hash
+customersummary,emaildomain,STRING,Email Domain
+customersummary,firsttransactionorganization,STRING,Organization of First Transaction
+customersummary,firsttransactionrevenuegroup,STRING,First Transaction Revenue Group
+customersummary,frequency,DOUBLE,Transaction Frequency (orders per year)
+customersummary,frequencygroup,STRING,Transaction Frequency (orders per year) -  Group
+customersummary,lasttransactioninterval,INTEGER,Last Transaction Interval
+customersummary,lasttransactionintervalgroup,STRING,Last Transaction Interval Group
+customersummary,lasttransactionorganization,STRING,Organization of Last Transaction
+customersummary,primarystore,STRING,Primary Store
+customersummary,recencydays,INTEGER,Days Since Last Transaction
+customersummary,recencydaysgroup,STRING,Months Since Last Transaction - group
+customersummary,recencymonth,STRING,Months Since Last Transaction
+customersummary,tenuredays,INTEGER,Days Since First Transaction
+customersummary,tenuredaysgroup,STRING,Days Since First Transaction Group
+customersummary,totalclickcount31_60daysgroup,STRING,Email Click Count between 31-60 days ago - group
+customersummary,totalclickcountlast30daysgroup,STRING,Email Click Count in the last 30 days - group
+customersummary,totalopencount31_60daysgroup,STRING,Email Open Count between 31-60 days ago - group
+customersummary,totalopencountlast30daysgroup,STRING,Email Open Count in the last 30 days - group
+customersummary,totalorganizationcount,INTEGER,Total number of organizations bought from
+customersummary,totalproductcountgroup,STRING,Number of products purchased - group
+customersummary,totalrevenue_last12monthsgroup,STRING,Revenue in last 12 Months - group
+customersummary,totalrevenue_last13_24monthsgroup,STRING,Revenue between 13 and 24 months ago - group
+customersummary,totalrevenuegroup,STRING,Total Revenue - group
+customersummary,totalrevenuesegment_13_24months,STRING,Revenue Segment between 13 and 24 months ago
+customersummary,totalrevenuesegment_last12months,STRING,Revenue Segment in last 12 months
+customersummary,totalrevenuesegment_segmentationstatus,STRING,Revenue Trend Segment
+customersummary,totalsendcount31_60daysgroup,STRING,Emails Sent between 31 and 60 days ago - group
+customersummary,totalsendcountlast30daysgroup,STRING,Emails Sent in the last 30 days - group
+customersummary,totaltransactioncount_13_24monthsgroup,STRING,Transactions between 13-24 months ago - group
+customersummary,totaltransactioncount_last12monthsgroup,STRING,Transactions in last 12 months - group
+customersummary,totaltransactioncountgroup,STRING,Total Number of Transactions - group
+customersummary,totalvisitcount31_60daysgroup,STRING,Web Visit Count between 31 and 60 days ago - group
+customersummary,totalvisitcountlast30daysgroup,STRING,Web Visit Count in the last 30 days - group
+customersummary,zipconcat,STRING,Zip and Country Code
+dispatch,AttributionStartDate,LONG,AttributionStartDate
+dispatch,AttributionWindow,INTEGER,AttributionWindow
+dispatch,Batch,STRING,Batch
+dispatch,CampaignID,STRING,CampaignID
+dispatch,DateCreated,LONG,DateCreated
+dispatch,DeleteFlag,BOOLEAN,DeleteFlag
+dispatch,ID,STRING,ID
+dispatch,Name,STRING,Name
+dispatch,RowCreated,LONG,RowCreated
+dispatch,RowModified,LONG,RowModified
+dispatch,RowProcessed,LONG,RowProcessed
+dispatch,Source,STRING,Source
+dispatch,SourceCampaignNumber,STRING,SourceCampaignNumber
+dispatch,SourceDispatchNumber,STRING,SourceDispatchNumber
+dispatch,SourceSystemID,STRING,SourceSystemID
+dispatch,SubType,STRING,SubType
+dispatch,TenantId,INTEGER,TenantId
+dispatch,Type,STRING,Type
+employee,Batch,STRING,Batch
+employee,DeleteFlag,BOOLEAN,DeleteFlag
+employee,EndDate,STRING,EndDate
+employee,FirstName,STRING,FirstName
+employee,ID,STRING,ID
+employee,LastName,STRING,LastName
+employee,OrganizationID,STRING,OrganizationID
+employee,RowCreated,LONG,RowCreated
+employee,RowModified,LONG,RowModified
+employee,RowProcessed,LONG,RowProcessed
+employee,Source,STRING,Source
+employee,SourceEmployeeNumber,STRING,SourceEmployeeNumber
+employee,SourceOrganizationNumber,STRING,SourceOrganizationNumber
+employee,SourceSystemID,STRING,SourceSystemID
+employee,StartDate,STRING,StartDate
+employee,Status,STRING,Status
+employee,TenantId,INTEGER,TenantId
+employee,Title,STRING,Title
+event,Anonymous,BOOLEAN,Anonymous
+event,Batch,STRING,Batch
+event,BodyType,STRING,BodyType
+event,BrandId,STRING,BrandId
+event,Browser,STRING,Browser
+event,BrowserType,STRING,BrowserType
+event,Category,STRING,Category
+event,ContainerId,STRING,ContainerId
+event,Cookie,STRING,Cookie
+event,Country,STRING,Country
+event,CustomerID,STRING,CustomerID
+event,CustomerState,STRING,CustomerState
+event,DeviceType,STRING,DeviceType
+event,Domain,STRING,Domain
+event,Email,STRING,Email
+event,EventTimeStamp,LONG,EventTimeStamp
+event,GeoAreaCode,STRING,GeoAreaCode
+event,GeoContinent,STRING,GeoContinent
+event,GeoLatitude,STRING,GeoLatitude
+event,GeoLongitude,STRING,GeoLongitude
+event,GeoOrganization,STRING,GeoOrganization
+event,GeoPostalCode,STRING,GeoPostalCode
+event,Geocity,STRING,Geocity
+event,Georegion,STRING,Georegion
+event,ID,STRING,ID
+event,IPAddress,STRING,IPAddress
+event,Language,STRING,Language
+event,LinkName,STRING,LinkName
+event,MessageID,STRING,MessageID
+event,OS,STRING,OS
+event,OperatingSystem,STRING,OperatingSystem
+event,ProductCategoryID,STRING,ProductCategoryID
+event,ProductID,STRING,ProductID
+event,RealtimeRequestNumber,STRING,RealtimeRequestNumber
+event,Referer,STRING,Referer
+event,RowCreated,LONG,RowCreated
+event,RowModified,LONG,RowModified
+event,RowProcessed,LONG,RowProcessed
+event,SearchTerm,STRING,SearchTerm
+event,SegmentId,STRING,SegmentId
+event,SessionID,STRING,SessionID
+event,Source,STRING,Source
+event,SourceCustomerNumber,STRING,SourceCustomerNumber
+event,SourceListNumber,STRING,SourceListNumber
+event,SourceMessageNumber,STRING,SourceMessageNumber
+event,SourceProductCategoryNumber,STRING,SourceProductCategoryNumber
+event,SourceProductNumber,STRING,SourceProductNumber
+event,SourceSubSystemID,STRING,SourceSubSystemID
+event,SourceSystemID,STRING,SourceSystemID
+event,SourceTransactionNumber,STRING,SourceTransactionNumber
+event,Subtype,STRING,Subtype
+event,TenantId,INTEGER,TenantId
+event,TransactionID,STRING,TransactionID
+event,Type,STRING,Type
+event,URL,STRING,URL
+event,UserClient,STRING,UserClient
+event,Variables,STRING,Variables
+fiscalcalendar,Batch,STRING,Batch
+fiscalcalendar,FiscalDay,INTEGER,FiscalDay
+fiscalcalendar,FiscalMonth,INTEGER,FiscalMonth
+fiscalcalendar,FiscalQuarter,INTEGER,FiscalQuarter
+fiscalcalendar,FiscalWeek,INTEGER,FiscalWeek
+fiscalcalendar,FiscalYear,INTEGER,FiscalYear
+fiscalcalendar,ID,INTEGER,ID
+fiscalcalendar,RowCreated,LONG,RowCreated
+fiscalcalendar,RowModified,LONG,RowModified
+fiscalcalendar,RowProcessed,LONG,RowProcessed
+fiscalcalendar,Source,STRING,Source
+fiscalcalendar,isleapyear,INTEGER,isleapyear
+holidays,Batch,STRING,Batch
+holidays,Date,INTEGER,Date
+holidays,ID,INTEGER,ID
+holidays,IsOfficialHoliday,STRING,IsOfficialHoliday
+holidays,IsSpecialDay,STRING,IsSpecialDay
+holidays,RowCreated,LONG,RowCreated
+holidays,RowModified,LONG,RowModified
+holidays,RowProcessed,LONG,RowProcessed
+holidays,Source,STRING,Source
+holidays,SpecialDayName,STRING,SpecialDayName
+hoursummary,AM_PM,STRING,AM_PM
+hoursummary,DayPeriod,STRING,DayPeriod
+hoursummary,Hour,INTEGER,Hour
+hoursummary,HourID,INTEGER,HourID
+hoursummary,TimeHour,STRING,TimeHour
+household,Batch,STRING,Batch
+household,HouseholdID,STRING,HouseholdID
+household,ID,STRING,ID
+household,MasterCustomerID,STRING,MasterCustomerID
+household,RowCreated,LONG,RowCreated
+household,RowModified,LONG,RowModified
+household,SourceSystemID,STRING,SourceSystemID
+household,TenantId,INTEGER,TenantId
+householdfirsttransactionproductcategory,Batch,STRING,Batch
+householdfirsttransactionproductcategory,HouseholdID,STRING,HouseholdID
+householdfirsttransactionproductcategory,ID,STRING,ID
+householdfirsttransactionproductcategory,ProductCategoryID,STRING,ProductCategoryID
+householdfirsttransactionproductcategory,RowCreated,LONG,RowCreated
+householdfirsttransactionproductcategory,SourceSystemID,STRING,SourceSystemID
+householdfirsttransactionproductcategory,TenantID,INTEGER,TenantID
+householdlasttransactionproductcategory,Batch,STRING,Batch
+householdlasttransactionproductcategory,HouseholdID,STRING,HouseholdID
+householdlasttransactionproductcategory,ID,STRING,ID
+householdlasttransactionproductcategory,ProductCategoryID,STRING,ProductCategoryID
+householdlasttransactionproductcategory,RowCreated,LONG,RowCreated
+householdlasttransactionproductcategory,SourceSystemID,STRING,SourceSystemID
+householdlasttransactionproductcategory,TenantID,INTEGER,TenantID
+householdsummary,Address1,STRING,Address1
+householdsummary,Address2,STRING,Address2
+householdsummary,BuyerIdentification,STRING,Is Identified Buyer
+householdsummary,City,STRING,City
+householdsummary,Country,STRING,Country
+householdsummary,FirstOfflinePromoID,STRING,FirstOfflinePromoID
+householdsummary,FirstPromoCategoryID,STRING,FirstPromoCategoryID
+householdsummary,FirstPromoID,STRING,FirstPromoID
+householdsummary,FirstTransactionDate,LONG,First Transaction Date
+householdsummary,FirstTransactionRevenue,DECIMAL,First Transaction Revenue
+householdsummary,FirstVisitDate,LONG,Date of First Web Visit
+householdsummary,HouseholdID,STRING,HouseholdID
+householdsummary,LastClickDate,LONG,Date of Last Email Clicked
+householdsummary,LastOpenDate,LONG,Date of Last Email Opened
+householdsummary,LastSendDate,LONG,Date of Last Email Sent
+householdsummary,LastTransactionDate,LONG,Last Transaction Date
+householdsummary,LastVisitDate,LONG,Date of Last Web Visit
+householdsummary,PreviousTransactionDate,LONG,Date of Second to Last Transaction
+householdsummary,PrimaryBrand,STRING,Primary Brand
+householdsummary,PrimaryOrganization,STRING,Primary Organization
+householdsummary,State,STRING,State
+householdsummary,TotalClickCount31_60Days,INTEGER,Email Click Count between 31 and 60 days ago
+householdsummary,TotalClickCountLast30Days,INTEGER,Email Click Count in the last 30 days
+householdsummary,TotalCost,DECIMAL,TotalCost
+householdsummary,TotalCost_Last12Months,DECIMAL,TotalCost_Last12Months
+householdsummary,TotalCost_Last13_24Months,DECIMAL,TotalCost_Last13_24Months
+householdsummary,TotalDiscount,DECIMAL,Total Discount
+householdsummary,TotalListPrice,DECIMAL,TotalListPrice
+householdsummary,TotalOpenCount31_60Days,INTEGER,Email Open Count between 31 and 60 days ago
+householdsummary,TotalOpenCountLast30Days,INTEGER,Email Open Count in the last 30 days
+householdsummary,TotalProductCount,INTEGER,Number of products purchased
+householdsummary,TotalProductcategoryCount,INTEGER,Number of product categories purchased from
+householdsummary,TotalRevenue,DECIMAL,Total Revenue
+householdsummary,TotalRevenue_13_24Months,DECIMAL,Revenue between 13 and 24 months ago
+householdsummary,TotalRevenue_Last12Months,DECIMAL,Revenue in last 12 Months
+householdsummary,TotalRevenuedecile_13_24Months,INTEGER,Revenue decile between 13 and 24 months ago
+householdsummary,TotalRevenuedecile_Last12Months,INTEGER,Revenue decile in last 12 months
+householdsummary,TotalSendCount31_60Days,INTEGER,Emails Sent between 31 and 60 days ago
+householdsummary,TotalSendCountLast30Days,INTEGER,Emails Sent in the last 30 days
+householdsummary,TotalTransactionCount,INTEGER,Total Number of Transactions
+householdsummary,TotalTransactionCountWithDiscount,INTEGER,Number of Transactions with Discount
+householdsummary,TotalTransactionCount_Last12Months,INTEGER,Number of Transactions in last 12 months
+householdsummary,TotalTransactionCount_Last13_24Months,INTEGER,Number of Transactions between 13-24 months ago
+householdsummary,TotalVisitCount31_60Days,INTEGER,Web Visit Count between 31 and 60 days ago
+householdsummary,TotalVisitCountLast30Days,INTEGER,Web Visit Count in the last 30 days
+householdsummary,ZipCode,STRING,ZipCode
+householdsummary,aovgroup,STRING,Average Order Value (AOV)
+householdsummary,averagediscountrate,STRING,Average Discount Rate
+householdsummary,categorymixgroup,STRING,Product categories purchased from - group
+householdsummary,daysincefirstweblogin,INTEGER,Days Since First Web Visit
+householdsummary,daysincefirstweblogingroup,STRING,Days Since First Web Visit Group
+householdsummary,daysincelastweblogin,INTEGER,Days Since Last Web Visit
+householdsummary,daysincelastweblogingroup,STRING,Days Since Last Web Visit Group
+householdsummary,firsttransactionorganization,STRING,Organization of First Transaction
+householdsummary,firsttransactionrevenuegroup,STRING,First Transaction Revenue Group
+householdsummary,frequency,DOUBLE,Transaction Frequency (orders per year)
+householdsummary,frequencygroup,STRING,Transaction Frequency (orders per year) -  Group
+householdsummary,lasttransactioninterval,INTEGER,Last Transaction Interval
+householdsummary,lasttransactionintervalgroup,STRING,Last Transaction Interval Group
+householdsummary,lasttransactionorganization,STRING,Organization of Last Transaction
+householdsummary,primarystore,STRING,Primary Store
+householdsummary,recencydays,INTEGER,Days Since Last Transaction
+householdsummary,recencydaysgroup,STRING,Months Since Last Transaction - group
+householdsummary,recencymonth,STRING,Months Since Last Transaction
+householdsummary,tenuredays,INTEGER,Days Since First Transaction
+householdsummary,tenuredaysgroup,STRING,Days Since First Transaction Group
+householdsummary,totalclickcount31_60daysgroup,STRING,Email Click Count between 31-60 days ago - group
+householdsummary,totalclickcountlast30daysgroup,STRING,Email Click Count in the last 30 days - group
+householdsummary,totalopencount31_60daysgroup,STRING,Email Open Count between 31-60 days ago - group
+householdsummary,totalopencountlast30daysgroup,STRING,Email Open Count in the last 30 days - group
+householdsummary,totalorganizationcount,INTEGER,Total number of organizations bought from
+householdsummary,totalproductcountgroup,STRING,Number of products purchased - group
+householdsummary,totalrevenue_last12monthsgroup,STRING,Revenue in last 12 Months - group
+householdsummary,totalrevenue_last13_24monthsgroup,STRING,Revenue between 13 and 24 months ago - group
+householdsummary,totalrevenuegroup,STRING,Total Revenue - group
+householdsummary,totalrevenuesegment_13_24months,STRING,Revenue Segment between 13 and 24 months ago
+householdsummary,totalrevenuesegment_last12months,STRING,Revenue Segment in last 12 months
+householdsummary,totalrevenuesegment_segmentationstatus,STRING,Revenue Trend Segment
+householdsummary,totalsendcount31_60daysgroup,STRING,Emails Sent between 31 and 60 days ago - group
+householdsummary,totalsendcountlast30daysgroup,STRING,Emails Sent in the last 30 days - group
+householdsummary,totaltransactioncount_13_24monthsgroup,STRING,Transactions between 13-24 months ago - group
+householdsummary,totaltransactioncount_last12monthsgroup,STRING,Transactions in last 12 months - group
+householdsummary,totaltransactioncountgroup,STRING,Total Number of Transactions - group
+householdsummary,totalvisitcount31_60daysgroup,STRING,Web Visit Count between 31 and 60 days ago - group
+householdsummary,totalvisitcountlast30daysgroup,STRING,Web Visit Count in the last 30 days - group
+householdsummary,zipconcat,STRING,zipconcat
+mastercustomer,Batch,STRING,Batch
+mastercustomer,CustomerID,STRING,CustomerID
+mastercustomer,ID,STRING,ID
+mastercustomer,MasterCustomerID,STRING,MasterCustomerID
+mastercustomer,RowCreated,LONG,RowCreated
+mastercustomer,RowModified,LONG,RowModified
+mastercustomer,SourceSystemID,STRING,SourceSystemID
+mastercustomer,TenantId,INTEGER,TenantId
+mastercustomergroup,Batch,STRING,Batch
+mastercustomergroup,ID,STRING,ID
+mastercustomergroup,MasterCustomerGroupID,STRING,MasterCustomerGroupID
+mastercustomergroup,MasterCustomerID,STRING,MasterCustomerID
+mastercustomergroup,RowCreated,LONG,RowCreated
+mastercustomergroup,RowModified,LONG,RowModified
+mastercustomergroup,SourceSystemID,STRING,SourceSystemID
+mastercustomergroup,TenantId,INTEGER,TenantId
+mastercustomergroupsummary,Address1,STRING,Address1
+mastercustomergroupsummary,Address2,STRING,Address2
+mastercustomergroupsummary,AddressCertified,STRING,AddressCertified
+mastercustomergroupsummary,AddressType,STRING,Address Type
+mastercustomergroupsummary,AovGroup,STRING,Average Order Value (AOV)
+mastercustomergroupsummary,AverageDiscountRate,STRING,Average Discount Rate
+mastercustomergroupsummary,City,STRING,City
+mastercustomergroupsummary,Country,STRING,Country
+mastercustomergroupsummary,CustomerGroupStatus,STRING,CustomerGroupStatus
+mastercustomergroupsummary,DoNotEmail,STRING,Email campaigns opt-out
+mastercustomergroupsummary,DoNotMail,STRING,Direct mail campaigns opt-out
+mastercustomergroupsummary,DpvConfirm,STRING,DPV Confirmed
+mastercustomergroupsummary,Email,STRING,Email Address
+mastercustomergroupsummary,EmailStatus,STRING,Email Status
+mastercustomergroupsummary,FirstName,STRING,First Name
+mastercustomergroupsummary,FirstTransactionBrand,STRING,First Transaction Brand
+mastercustomergroupsummary,FirstTransactionDate,LONG,First Transaction Date
+mastercustomergroupsummary,FirstTransactionOrganization,STRING,Organization of First Transaction
+mastercustomergroupsummary,FirstTransactionRevenue,DECIMAL,First Transaction Revenue
+mastercustomergroupsummary,FirstTransactionRevenueGroup,STRING,First Transaction Revenue Group
+mastercustomergroupsummary,Frequency,DOUBLE,Transaction Frequency (orders per year)
+mastercustomergroupsummary,FrequencyGroup,STRING,Transaction Frequency (orders per year) - Group
+mastercustomergroupsummary,Gender,STRING,Gender
+mastercustomergroupsummary,LastName,STRING,Last Name
+mastercustomergroupsummary,LastTransactionBrand,STRING,Last Transaction Brand
+mastercustomergroupsummary,LastTransactionDate,LONG,Last Transaction Date
+mastercustomergroupsummary,LastTransactionOrganization,STRING,Organization of Last Transaction
+mastercustomergroupsummary,MasterCustomerGroupID,STRING,MasterCustomerGroupID
+mastercustomergroupsummary,MiddleName,STRING,Middle Name
+mastercustomergroupsummary,PrimaryBrand,STRING,Primary Brand
+mastercustomergroupsummary,PrimaryOrganization,STRING,Primary Organization
+mastercustomergroupsummary,PrimaryStore,STRING,Primary Store
+mastercustomergroupsummary,RecencyDays,INTEGER,Days Since Last Transaction
+mastercustomergroupsummary,RecencyDaysGroup,STRING,Months Since Last Transaction - Group
+mastercustomergroupsummary,Sal,STRING,Salutation
+mastercustomergroupsummary,State,STRING,State
+mastercustomergroupsummary,Suite,STRING,Suite
+mastercustomergroupsummary,TenureDays,INTEGER,Days Since First Transaction
+mastercustomergroupsummary,TenureDaysGroup,STRING,Days Since First Transaction Group
+mastercustomergroupsummary,Title,STRING,Title
+mastercustomergroupsummary,TotalBrandCount,INTEGER,Total Number of Brands
+mastercustomergroupsummary,TotalOrganizationCount,INTEGER,Total number of organizations bought from
+mastercustomergroupsummary,TotalProductCategoryCount,INTEGER,Number of product categories purchased from
+mastercustomergroupsummary,TotalProductCategoryCountGroup,STRING,Number of product categories purchased - Group
+mastercustomergroupsummary,TotalProductCount,INTEGER,Number of products purchased
+mastercustomergroupsummary,TotalProductCountGroup,STRING,Number of products purchased - Group
+mastercustomergroupsummary,TotalRevenue,DECIMAL,Total Revenue
+mastercustomergroupsummary,TotalRevenueGroup,STRING,Total Revenue - Group
+mastercustomergroupsummary,TotalRevenue_Last12Months,DECIMAL,Revenue in last 12 Months
+mastercustomergroupsummary,TotalRevenue_Last12MonthsGroup,STRING,Revenue in last 12 Months - Group
+mastercustomergroupsummary,TotalTransactionCount,INTEGER,Total Number of Transactions
+mastercustomergroupsummary,TotalTransactionCountGroup,STRING,Total Number of Transactions - Group
+mastercustomergroupsummary,TotalTransactionCount_Last12Months,INTEGER,Number of Transactions in last 12 months
+mastercustomergroupsummary,TotalTransactionCount_Last12MonthsGroup,STRING,Transactions in last 12 months - Group
+mastercustomergroupsummary,ZipCode,STRING,ZipCode
+mastercustomergroupsummary,ZipConcat,STRING,Zip and Country Code
+mastercustomergroupsummary,ZipExt,STRING,Zip Code Suffix
+message,AttributionStartDate,LONG,AttributionStartDate
+message,AttributionWindow,INTEGER,AttributionWindow
+message,Batch,STRING,Batch
+message,Content,STRING,Content
+message,Cost,DECIMAL,Cost
+message,DateCreated,LONG,DateCreated
+message,DeleteFlag,BOOLEAN,DeleteFlag
+message,DispatchID,STRING,DispatchID
+message,ID,STRING,ID
+message,Links,STRING,Links
+message,MessageFrom,STRING,MessageFrom
+message,Name,STRING,Name
+message,RowCreated,LONG,RowCreated
+message,RowModified,LONG,RowModified
+message,RowProcessed,LONG,RowProcessed
+message,Segment,STRING,Segment
+message,SendDate,LONG,Send Date
+message,Source,STRING,Source
+message,SourceDispatchNumber,STRING,SourceDispatchNumber
+message,SourceMessageNumber,STRING,Source Message Number
+message,SourceSystemID,STRING,SourceSystemID
+message,Subject,STRING,Subject
+message,TenantId,INTEGER,TenantId
+message,Variant,STRING,Variant
+mlbehaviordna,Average,DOUBLE,Average
+mlbehaviordna,ClusterAverage,DOUBLE,ClusterAverage
+mlbehaviordna,ClusterID,INTEGER,ClusterID
+mlbehaviordna,DNA,DOUBLE,DNA
+mlbehaviordna,FeatureID,STRING,FeatureID
+mlbrandclusteringinput,BrandClusteringScore,DOUBLE,BrandClusteringScore
+mlbrandclusteringinput,BrandName,STRING,BrandName
+mlbrandclusteringinput,ID,STRING,ID
+mlbrandclusteringinput,MasterCustomerID,STRING,MasterCustomerID
+mlbranddna,ClusterID,STRING,ClusterID
+mlbranddna,DNA,DOUBLE,DNA
+mlbranddna,FeatureID,STRING,FeatureID
+mlbranddna,ProductID,STRING,ProductID
+mlbranddna,n,DOUBLE,n
+mlbranddna,n0,DOUBLE,n0
+mlbranddna,n00,DOUBLE,n00
+mlbranddna,n01,DOUBLE,n01
+mlbranddna,n1,DOUBLE,n1
+mlbranddna,n10,DOUBLE,n10
+mlbranddna,n11,DOUBLE,n11
+mlbranddna,nDot0,DOUBLE,nDot0
+mlbranddna,nDot1,DOUBLE,nDot1
+mlcluster,BehaviorBasedClusterID,INTEGER,BehaviorBasedClusterID
+mlcluster,BrowseClusterID,INTEGER,BrowseClusterID
+mlcluster,MasterCustomerID,STRING,MasterCustomerID
+mlcluster,ProductBasedClusterID,INTEGER,ProductBasedClusterID
+mlcluster,PurchaseClusterID,INTEGER,PurchaseClusterID
+mlproductcategoryclusteringinput,ID,STRING,ID
+mlproductcategoryclusteringinput,MasterCustomerID,STRING,MasterCustomerID
+mlproductcategoryclusteringinput,ProductCategoryClusteringScore,DOUBLE,ProductCategoryClusteringScore
+mlproductcategoryclusteringinput,ProductCategoryID,STRING,ProductCategoryID
+mlproductdna,Average,DOUBLE,Average
+mlproductdna,ClusterAverage,DOUBLE,ClusterAverage
+mlproductdna,ClusterID,INTEGER,ClusterID
+mlproductdna,DNA,DOUBLE,DNA
+mlproductdna,FeatureID,STRING,FeatureID
+mlpropensity,MasterCustomerID,STRING,MasterCustomerID
+mlpropensity,ToBuy,DECIMAL,ToBuy
+mlpropensity,ToBuyDecile,INTEGER,ToBuyDecile
+mlpropensity,ToConvert,DECIMAL,ToConvert
+mlpropensity,ToConvertDecile,INTEGER,ToConvertDecile
+mlpropensity,ToEngage,DECIMAL,ToEngage
+mlpropensity,ToEngageDecile,INTEGER,ToEngageDecile
+mlrecommendations,ID,STRING,ID
+mlrecommendations,IsBestSeller,BOOLEAN,IsBestSeller
+mlrecommendations,MasterCustomerID,STRING,MasterCustomerID
+mlrecommendations,ProductID,STRING,ProductID
+mlrecommendations,RankNumber,INTEGER,RankNumber
+mlrecommendations,TotalTransactionCount_Last30Days,INTEGER,TotalTransactionCount_Last30Days
+mlrecoobservations,DeltaTComputed,INTEGER,DeltaTComputed
+mlrecoobservations,DeltaTObserved,INTEGER,DeltaTObserved
+mlrecoobservations,ID,STRING,ID
+mlrecoobservations,Model,STRING,Model
+mlrecoobservations,NumberOfCustomers,INTEGER,NumberOfCustomers
+mlrecoobservations,ProductIDFrom,STRING,ProductIDFrom
+mlrecoobservations,ProductIDTo,STRING,ProductIDTo
+mlrecoobservations,Score,DOUBLE,Score
+organization,Address1,STRING,Address1
+organization,Address2,STRING,Address2
+organization,Batch,STRING,Batch
+organization,City,STRING,City
+organization,Country,STRING,Country
+organization,DeleteFlag,BOOLEAN,DeleteFlag
+organization,ExcludeAsClosestStore,INTEGER,ExcludeAsClosestStore
+organization,ID,STRING,ID
+organization,Name,STRING,Organization Name
+organization,ParentOrganizationID,STRING,ParentOrganizationID
+organization,ParentSourceOrganizationNumber,STRING,Parent Source Organization Number
+organization,RowCreated,LONG,RowCreated
+organization,RowModified,LONG,RowModified
+organization,RowProcessed,LONG,RowProcessed
+organization,Source,STRING,Source
+organization,SourceOrganizationNumber,STRING,Source Organization Number
+organization,SourceSystemID,STRING,SourceSystemID
+organization,State,STRING,State
+organization,Status,STRING,Organization Status
+organization,SubType,STRING,Subtype
+organization,TenantId,INTEGER,TenantId
+organization,Type,STRING,Organization Type
+organization,Zip,STRING,Zip
+organization,c_sezonOutlet,STRING,Sezon Outlet
+organization,c_storeBrand,STRING,Store Brand
+organization,c_storeMall,STRING,Store Mall
+organizationsummary,Address1,STRING,Address1
+organizationsummary,Address2,STRING,Address2
+organizationsummary,Batch,STRING,Batch
+organizationsummary,City,STRING,City
+organizationsummary,Country,STRING,Country
+organizationsummary,ID,STRING,Id
+organizationsummary,RowCreated,LONG,RowCreated
+organizationsummary,RowModified,LONG,RowModified
+organizationsummary,SourceOrganizationNumber,STRING,Source Organization Number
+organizationsummary,SourceSystemID,STRING,SourceSystemID
+organizationsummary,State,STRING,State
+organizationsummary,Status,STRING,Status
+organizationsummary,SubType,STRING,SubType
+organizationsummary,TenantID,INTEGER,TenantID
+organizationsummary,Type,STRING,Type
+organizationsummary,Zip,STRING,Zip
+organizationsummary,c_sezonOutlet,STRING,Sezon Outlet
+organizationsummary,c_storeBrand,STRING,Store Brand
+organizationsummary,c_storeMall,STRING,Store Mall
+organizationsummary,level10Code,STRING,Level 10 Code
+organizationsummary,level10Name,STRING,Level 10 Name
+organizationsummary,level1Code,STRING,Level 1 Code
+organizationsummary,level1Name,STRING,Level 1 Name
+organizationsummary,level2Code,STRING,Level 2 Code
+organizationsummary,level2Name,STRING,Level 2 Name
+organizationsummary,level3Code,STRING,Level 3 Code
+organizationsummary,level3Name,STRING,Level 3 Name
+organizationsummary,level4Code,STRING,Level 4 Code
+organizationsummary,level4Name,STRING,Level 4 Name
+organizationsummary,level5Code,STRING,Level 5 Code
+organizationsummary,level5Name,STRING,Level 5 Name
+organizationsummary,level6Code,STRING,Level 6 Code
+organizationsummary,level6Name,STRING,Level 6 Name
+organizationsummary,level7Code,STRING,Level 7 Code
+organizationsummary,level7Name,STRING,Level 7 Name
+organizationsummary,level8Code,STRING,Level 8 Code
+organizationsummary,level8Name,STRING,Level 8 Name
+organizationsummary,level9Code,STRING,Level 9 Code
+organizationsummary,level9Name,STRING,Level 9 Name
+product,Availability,STRING,Availability
+product,AvailableQty,INTEGER,Available Quantity
+product,Batch,STRING,Batch
+product,BrandName,STRING,Brand Name
+product,BundleNumber,STRING,BundleNumber
+product,Color,STRING,Color
+product,DateCreated,LONG,DateCreated
+product,DateModified,LONG,DateModified
+product,DeleteFlag,BOOLEAN,DeleteFlag
+product,Description,STRING,Product Description
+product,ID,STRING,ID
+product,ImageURL,STRING,Image URL
+product,ListPrice,DECIMAL,List Price
+product,MSRP,DECIMAL,MSRP
+product,Name,STRING,Product Name
+product,ParentProductID,STRING,ParentProductID
+product,ParentProductNumber,STRING,Parent Product Number
+product,ProductURL,STRING,Product URL
+product,RecoStatus,STRING,RecoStatus
+product,RowCreated,LONG,RowCreated
+product,RowModified,LONG,RowModified
+product,RowProcessed,LONG,RowProcessed
+product,SaleCondition,STRING,Sale Condition
+product,SalePrice,DECIMAL,Sale Price
+product,Size,STRING,Size
+product,Source,STRING,Source
+product,SourceBrandNumber,STRING,Brand Number
+product,SourceProductNumber,STRING,Product Number
+product,SourceSystemID,STRING,SourceSystemID
+product,Status,STRING,Product Status
+product,TenantId,INTEGER,TenantId
+product,Weight,DECIMAL,Weight
+product,c_fabricCode,STRING,Fabric Code
+product,c_mainSize,STRING,Main Size
+product,c_model,STRING,Model
+product,c_productDrop,STRING,Product Drop
+product,c_season,STRING,Season
+productcategory,Batch,STRING,Batch
+productcategory,DeleteFlag,BOOLEAN,Delete Flag
+productcategory,ID,STRING,ID
+productcategory,ImageURL,STRING,Image URL
+productcategory,LevelName,STRING,Level Name
+productcategory,Name,STRING,Category Name
+productcategory,ParentCategoryID,STRING,ParentCategoryID
+productcategory,RowCreated,LONG,RowCreated
+productcategory,RowModified,LONG,RowModified
+productcategory,RowProcessed,LONG,RowProcessed
+productcategory,Source,STRING,Source
+productcategory,SourceCategoryNumber,STRING,Category Number
+productcategory,SourceParentCategoryNumber,STRING,Parent Category Number
+productcategory,SourceSystemID,STRING,SourceSystemID
+productcategory,TenantId,INTEGER,TenantId
+productcategory,URL,STRING,Category URL
+productcategory,c_hierarchyName,STRING,Hierarchy Name
+productcategoryflattened,descendantCategory,STRING,Descendant Category Name
+productcategoryflattened,descendantSCN,STRING,Descendant Source Category Number
+productcategoryflattened,descendantlevel,STRING,Descendant Category Level
+productcategoryflattened,parentCategory,STRING,parentCategory
+productcategoryflattened,parentSCN,STRING,parentSCN
+productcategoryflattened,parentlevel,STRING,parentlevel
+productcategorysummary,Batch,STRING,Batch
+productcategorysummary,ID,STRING,ID
+productcategorysummary,ImageURL,STRING,ImageURL
+productcategorysummary,LevelName,STRING,LevelName
+productcategorysummary,RowCreated,LONG,RowCreated
+productcategorysummary,RowModified,LONG,RowModified
+productcategorysummary,SourceCategoryNumber,STRING,SourceCategoryNumber
+productcategorysummary,SourceSystemID,STRING,SourceSystemID
+productcategorysummary,TenantID,INTEGER,TenantID
+productcategorysummary,URL,STRING,URL
+productcategorysummary,level10Code,STRING,level10Code
+productcategorysummary,level10Name,STRING,level10Name
+productcategorysummary,level11Code,STRING,level11Code
+productcategorysummary,level11Name,STRING,level11Name
+productcategorysummary,level12Code,STRING,level12Code
+productcategorysummary,level12Name,STRING,level12Name
+productcategorysummary,level13Code,STRING,level13Code
+productcategorysummary,level13Name,STRING,level13Name
+productcategorysummary,level14Code,STRING,level14Code
+productcategorysummary,level14Name,STRING,level14Name
+productcategorysummary,level15Code,STRING,level15Code
+productcategorysummary,level15Name,STRING,level15Name
+productcategorysummary,level1Code,STRING,level1Code
+productcategorysummary,level1Name,STRING,level1Name
+productcategorysummary,level2Code,STRING,level2Code
+productcategorysummary,level2Name,STRING,level2Name
+productcategorysummary,level3Code,STRING,level3Code
+productcategorysummary,level3Name,STRING,level3Name
+productcategorysummary,level4Code,STRING,level4Code
+productcategorysummary,level4Name,STRING,level4Name
+productcategorysummary,level5Code,STRING,level5Code
+productcategorysummary,level5Name,STRING,level5Name
+productcategorysummary,level6Code,STRING,level6Code
+productcategorysummary,level6Name,STRING,level6Name
+productcategorysummary,level7Code,STRING,level7Code
+productcategorysummary,level7Name,STRING,level7Name
+productcategorysummary,level8Code,STRING,level8Code
+productcategorysummary,level8Name,STRING,level8Name
+productcategorysummary,level9Code,STRING,level9Code
+productcategorysummary,level9Name,STRING,level9Name
+productcategoryxref,Batch,STRING,Batch
+productcategoryxref,DeleteFlag,BOOLEAN,DeleteFlag
+productcategoryxref,ID,STRING,ID
+productcategoryxref,ProductCategoryID,STRING,ProductCategoryID
+productcategoryxref,ProductID,STRING,ProductID
+productcategoryxref,RowCreated,LONG,RowCreated
+productcategoryxref,RowModified,LONG,RowModified
+productcategoryxref,RowProcessed,LONG,RowProcessed
+productcategoryxref,Source,STRING,Source
+productcategoryxref,SourceProductCategoryNumber,STRING,SourceProductCategoryNumber
+productcategoryxref,SourceProductNumber,STRING,SourceProductNumber
+productcategoryxref,SourceSystemID,STRING,SourceSystemID
+productcategoryxref,TenantId,INTEGER,TenantId
+productimage,Batch,STRING,Batch
+productimage,DeleteFlag,BOOLEAN,DeleteFlag
+productimage,ID,STRING,ID
+productimage,ImageURL,STRING,ImageURL
+productimage,ProductID,STRING,ProductID
+productimage,RowCreated,LONG,RowCreated
+productimage,RowModified,LONG,RowModified
+productimage,RowProcessed,LONG,RowProcessed
+productimage,Source,STRING,Source
+productimage,SourceProductImageNumber,STRING,SourceProductImageNumber
+productimage,SourceProductNumber,STRING,SourceProductNumber
+productimage,SourceSystemID,STRING,SourceSystemID
+productimage,TenantId,INTEGER,TenantId
+productproperties,AvailableQty,INTEGER,AvailableQty
+productproperties,Batch,STRING,Batch
+productproperties,DeleteFlag,BOOLEAN,DeleteFlag
+productproperties,Description,STRING,Description
+productproperties,ID,STRING,ID
+productproperties,ListPrice,DECIMAL,ListPrice
+productproperties,OrganizationID,STRING,OrganizationID
+productproperties,ProductID,STRING,ProductID
+productproperties,ProductURL,STRING,ProductURL
+productproperties,RowCreated,LONG,RowCreated
+productproperties,RowModified,LONG,RowModified
+productproperties,RowProcessed,LONG,RowProcessed
+productproperties,SaleCondition,STRING,SaleCondition
+productproperties,SalePrice,DECIMAL,SalePrice
+productproperties,Source,STRING,Source
+productproperties,SourceOrganizationNumber,STRING,SourceOrganizationNumber
+productproperties,SourceProductNumber,STRING,SourceProductNumber
+productproperties,SourceProductPropertiesNumber,STRING,SourceProductPropertiesNumber
+productproperties,SourceSystemID,STRING,SourceSystemID
+productproperties,TenantId,INTEGER,TenantId
+productsummary,Availability,STRING,Availability
+productsummary,AvailableQty,INTEGER,AvailableQty
+productsummary,Batch,STRING,Batch
+productsummary,BrandName,STRING,BrandName
+productsummary,BundleNumber,STRING,BundleNumber
+productsummary,Color,STRING,Color
+productsummary,DateCreated,LONG,DateCreated
+productsummary,DateModified,LONG,DateModified
+productsummary,DeleteFlag,BOOLEAN,DeleteFlag
+productsummary,Description,STRING,Description
+productsummary,FirstTransactionDate,LONG,FirstTransactionDate
+productsummary,ID,STRING,ID
+productsummary,ImageURL,STRING,ImageURL
+productsummary,LastTransactionDate,LONG,LastTransactionDate
+productsummary,ListPrice,DECIMAL,ListPrice
+productsummary,MSRP,DECIMAL,MSRP
+productsummary,Name,STRING,Name
+productsummary,ParentProductID,STRING,ParentProductID
+productsummary,ParentProductNumber,STRING,ParentProductNumber
+productsummary,ProductURL,STRING,ProductURL
+productsummary,QuantitySold,INTEGER,QuantitySold
+productsummary,QuantitySold_13_24Months,INTEGER,QuantitySold_13_24Months
+productsummary,QuantitySold_last12Months,INTEGER,QuantitySold_last12Months
+productsummary,RecoStatus,STRING,RecoStatus
+productsummary,RowCreated,LONG,RowCreated
+productsummary,RowModified,LONG,RowModified
+productsummary,SaleCondition,STRING,SaleCondition
+productsummary,SalePrice,DECIMAL,SalePrice
+productsummary,Size,STRING,Size
+productsummary,SourceBrandNumber,STRING,SourceBrandNumber
+productsummary,SourceProductNumber,STRING,SourceProductNumber
+productsummary,SourceSystemID,STRING,SourceSystemID
+productsummary,Status,STRING,Status
+productsummary,TenantID,INTEGER,TenantID
+productsummary,TotalRevenue,DECIMAL,TotalRevenue
+productsummary,TotalRevenueDecile_13_24Months,INTEGER,TotalRevenueDecile_13_24Months
+productsummary,TotalRevenueDecile_Last12Months,INTEGER,TotalRevenueDecile_Last12Months
+productsummary,TotalRevenue_13_24Months,DECIMAL,TotalRevenue_13_24Months
+productsummary,TotalRevenue_Last12Months,DECIMAL,TotalRevenue_Last12Months
+productsummary,TotalTransactionCount,INTEGER,TotalTransactionCount
+productsummary,TotalTransactionCount_Last12Months,INTEGER,TotalTransactionCount_Last12Months
+productsummary,TotalTransactionCount_Last13_24months,INTEGER,TotalTransactionCount_Last13_24months
+productsummary,TotalTransactionCount_Last30Days,INTEGER,TotalTransactionCount_Last30Days
+productsummary,Weight,DECIMAL,Weight
+productsummary,c_fabricCode,STRING,Fabric Code
+productsummary,c_mainSize,STRING,Main Size
+productsummary,c_model,STRING,Model
+productsummary,c_productDrop,STRING,Product Drop
+productsummary,c_season,STRING,Season
+promotion,Batch,STRING,Batch
+promotion,DeleteFlag,BOOLEAN,DeleteFlag
+promotion,Description,STRING,Description
+promotion,ID,STRING,ID
+promotion,Name,STRING,Name
+promotion,RowCreated,LONG,RowCreated
+promotion,RowModified,LONG,RowModified
+promotion,RowProcessed,LONG,RowProcessed
+promotion,Source,STRING,Source
+promotion,SourcePromotionNumber,STRING,SourcePromotionNumber
+promotion,SourceSystemID,STRING,SourceSystemID
+promotion,StartTimeStamp,LONG,StartTimeStamp
+promotion,TenantId,INTEGER,TenantId
+promotioncampaignxref,Batch,STRING,Batch
+promotioncampaignxref,CampaignID,STRING,CampaignID
+promotioncampaignxref,DeleteFlag,BOOLEAN,DeleteFlag
+promotioncampaignxref,ID,STRING,ID
+promotioncampaignxref,PromotionID,STRING,PromotionID
+promotioncampaignxref,RowCreated,LONG,RowCreated
+promotioncampaignxref,RowModified,LONG,RowModified
+promotioncampaignxref,RowProcessed,LONG,RowProcessed
+promotioncampaignxref,Source,STRING,Source
+promotioncampaignxref,SourceCampaignNumber,STRING,SourceCampaignNumber
+promotioncampaignxref,SourcePromotionNumber,STRING,SourcePromotionNumber
+promotioncampaignxref,SourceSystemID,STRING,SourceSystemID
+promotioncampaignxref,TenantId,INTEGER,TenantId
+promotiontypesummary,Batch,STRING,Batch
+promotiontypesummary,ID,STRING,ID
+promotiontypesummary,RowCreated,LONG,RowCreated
+promotiontypesummary,RowModified,LONG,RowModified
+promotiontypesummary,SourceCategoryNumber,STRING,SourceCategoryNumber
+promotiontypesummary,SourceSystemID,STRING,SourceSystemID
+promotiontypesummary,TenantID,INTEGER,TenantID
+promotiontypesummary,level1Code,STRING,level1Code
+promotiontypesummary,level1Name,STRING,level1Name
+promotiontypesummary,level2Code,STRING,level2Code
+promotiontypesummary,level2Name,STRING,level2Name
+promotiontypesummary,level3Code,STRING,level3Code
+promotiontypesummary,level3Name,STRING,level3Name
+promotiontypesummary,level4Code,STRING,level4Code
+promotiontypesummary,level4Name,STRING,level4Name
+promotiontypesummary,level5Code,STRING,level5Code
+promotiontypesummary,level5Name,STRING,level5Name
+ptoprecommendations,BackfilledFrom,STRING,BackfilledFrom
+ptoprecommendations,ID,STRING,ID
+ptoprecommendations,RankNumber,INTEGER,RankNumber
+ptoprecommendations,SourceProductNumber,STRING,SourceProductNumber
+ptoprecommendations,TargetSourceProductNumber,STRING,TargetSourceProductNumber
+subscription,Batch,STRING,Batch
+subscription,CustomerID,STRING,CustomerID
+subscription,DeleteFlag,BOOLEAN,DeleteFlag
+subscription,EndDate,STRING,EndDate
+subscription,EndDateBigInt,LONG,EndDateBigInt
+subscription,ID,STRING,ID
+subscription,IntervalDays,INTEGER,IntervalDays
+subscription,RowCreated,LONG,RowCreated
+subscription,RowModified,LONG,RowModified
+subscription,RowProcessed,LONG,RowProcessed
+subscription,Source,STRING,Source
+subscription,SourceCustomerNumber,STRING,SourceCustomerNumber
+subscription,SourceSubscriptionNumber,STRING,SourceSubscriptionNumber
+subscription,SourceSystemID,STRING,SourceSystemID
+subscription,StartDate,STRING,StartDate
+subscription,StartDateBigInt,LONG,StartDateBigInt
+subscription,Status,STRING,Status
+subscription,SubscriptionPrice,DECIMAL,SubscriptionPrice
+subscription,TenantId,INTEGER,TenantId
+subscription,Type,STRING,Type
+subscriptionproductxref,Batch,STRING,Batch
+subscriptionproductxref,DeleteFlag,BOOLEAN,DeleteFlag
+subscriptionproductxref,ID,STRING,ID
+subscriptionproductxref,ProductID,STRING,ProductID
+subscriptionproductxref,Qty,INTEGER,Qty
+subscriptionproductxref,RowCreated,LONG,RowCreated
+subscriptionproductxref,RowModified,LONG,RowModified
+subscriptionproductxref,RowProcessed,LONG,RowProcessed
+subscriptionproductxref,Source,STRING,Source
+subscriptionproductxref,SourceProductNumber,STRING,SourceProductNumber
+subscriptionproductxref,SourceSubscriptionNumber,STRING,SourceSubscriptionNumber
+subscriptionproductxref,SourceSystemID,STRING,SourceSystemID
+subscriptionproductxref,SubscriptionID,STRING,SubscriptionID
+subscriptionproductxref,TenantId,INTEGER,TenantId
+timesummary,Batch,STRING,Batch
+timesummary,DateInUnix,LONG,DateInUnix
+timesummary,FiscalMonth,INTEGER,FiscalMonth
+timesummary,FiscalQuarter,INTEGER,FiscalQuarter
+timesummary,FiscalWeek,INTEGER,FiscalWeek
+timesummary,FiscalYear,INTEGER,FiscalYear
+timesummary,ID,INTEGER,ID
+timesummary,IsLast12M,BOOLEAN,IsLast12M
+timesummary,IsLast30day,BOOLEAN,IsLast30day
+timesummary,IsLast6M,BOOLEAN,IsLast6M
+timesummary,IsLast7day,BOOLEAN,IsLast7day
+timesummary,IsOfficialHoliday,STRING,IsOfficialHoliday
+timesummary,IsSpecialDay,STRING,IsSpecialDay
+timesummary,IsWeekend,STRING,IsWeekend
+timesummary,MonthDayNumber,INTEGER,MonthDayNumber
+timesummary,MonthName,STRING,MonthName
+timesummary,MonthNumber,INTEGER,MonthNumber
+timesummary,QuarterName,STRING,QuarterName
+timesummary,QuarterNumber,INTEGER,QuarterNumber
+timesummary,RowCreated,LONG,RowCreated
+timesummary,RowModified,LONG,RowModified
+timesummary,SpecialDayName,STRING,SpecialDayName
+timesummary,WeekDayName,STRING,WeekDayName
+timesummary,Year,INTEGER,Year
+timesummary,YearWeekNumber,INTEGER,YearWeekNumber
+transaction,AccountID,STRING,AccountID
+transaction,Batch,STRING,Batch
+transaction,Currency,STRING,Currency
+transaction,CustomerID,STRING,CustomerID
+transaction,DateCreated,LONG,DateCreated
+transaction,DateModified,LONG,DateModified
+transaction,DeleteFlag,BOOLEAN,DeleteFlag
+transaction,Discount,DECIMAL,Discount
+transaction,EmployeeID,STRING,EmployeeID
+transaction,ID,STRING,ID
+transaction,OrganizationID,STRING,OrganizationID
+transaction,RealtimeRequestNumber,STRING,RealtimeRequestNumber
+transaction,RowCreated,LONG,RowCreated
+transaction,RowModified,LONG,RowModified
+transaction,RowProcessed,LONG,RowProcessed
+transaction,ShippingRevenue,DECIMAL,ShippingRevenue
+transaction,Source,STRING,Source
+transaction,SourceAccountNumber,STRING,SourceAccountNumber
+transaction,SourceCustomerNumber,STRING,SourceCustomerNumber
+transaction,SourceEmployeeNumber,STRING,SourceEmployeeNumber
+transaction,SourceOrganizationNumber,STRING,SourceOrganizationNumber
+transaction,SourceSystemID,STRING,SourceSystemID
+transaction,SourceTransactionNumber,STRING,SourceTransactionNumber
+transaction,SourceTransactionNumberAlt,STRING,SourceTransactionNumberAlt
+transaction,Tax,DECIMAL,Tax
+transaction,TenantId,INTEGER,TenantId
+transaction,Total,DECIMAL,Transaction Revenue
+transaction,TransactionTimeStamp,LONG,Date and Time
+transaction,Type,STRING,Type
+transaction,c_brand,STRING,Brand
+transactionitem,Batch,STRING,Batch
+transactionitem,BundleNumber,STRING,BundleNumber
+transactionitem,CostBasis,DECIMAL,Cost
+transactionitem,Currency,STRING,Currency
+transactionitem,DateCreated,LONG,DateCreated
+transactionitem,DateModified,LONG,DateModified
+transactionitem,DeleteFlag,BOOLEAN,DeleteFlag
+transactionitem,Discount,DECIMAL,Discount
+transactionitem,Gift,BOOLEAN,Gift
+transactionitem,ID,STRING,ID
+transactionitem,InvoiceDate,LONG,Invoice Date
+transactionitem,ListPrice,DECIMAL,ListPrice
+transactionitem,OrganizationID,STRING,OrganizationID
+transactionitem,OtherCost,DECIMAL,Other Cost
+transactionitem,OtherRevenue,DECIMAL,Other Revenue
+transactionitem,ProductID,STRING,ProductID
+transactionitem,Quantity,INTEGER,Product Quantity
+transactionitem,RealtimeRequestNumber,STRING,RealtimeRequestNumber
+transactionitem,RowCreated,LONG,RowCreated
+transactionitem,RowModified,LONG,RowModified
+transactionitem,RowProcessed,LONG,RowProcessed
+transactionitem,SaleRevenue,DECIMAL,Revenue
+transactionitem,ShipDate,LONG,Shipping Date
+transactionitem,ShippingCost,DECIMAL,Shipping Cost
+transactionitem,ShippingDiscount,DECIMAL,Shipping Discount
+transactionitem,ShippingRevenue,DECIMAL,Shipping Revenue
+transactionitem,Source,STRING,Source
+transactionitem,SourceOrganizationNumber,STRING,SourceOrganizationNumber
+transactionitem,SourceProductNumber,STRING,Product Number
+transactionitem,SourceSubscriptionNumber,STRING,SourceSubscriptionNumber
+transactionitem,SourceSystemID,STRING,SourceSystemID
+transactionitem,SourceTransactionItemNumber,STRING,SourceTransactionItemNumber
+transactionitem,SourceTransactionNumber,STRING,SourceTransactionNumber
+transactionitem,SubscriptionID,STRING,SubscriptionID
+transactionitem,Subtype,STRING,Subtype
+transactionitem,Tax,DECIMAL,Tax
+transactionitem,TenantId,INTEGER,TenantId
+transactionitem,TransactionID,STRING,TransactionID
+transactionitem,Type,STRING,Type
+transactionitem,UserClient,STRING,Device
+transactionitem,Volume,DECIMAL,Product Volume
+transactionitem,Weight,DECIMAL,Weight
+transactionitem,c_brand,STRING,Brand
+transactionitem,c_saleSeason,STRING,Sale Season
+transactionitemmessagexref,Batch,STRING,Batch
+transactionitemmessagexref,DeleteFlag,BOOLEAN,DeleteFlag
+transactionitemmessagexref,ID,STRING,ID
+transactionitemmessagexref,MessageID,STRING,MessageID
+transactionitemmessagexref,RowCreated,LONG,RowCreated
+transactionitemmessagexref,RowModified,LONG,RowModified
+transactionitemmessagexref,RowProcessed,LONG,RowProcessed
+transactionitemmessagexref,Source,STRING,Source
+transactionitemmessagexref,SourceMessageNumber,STRING,SourceMessageNumber
+transactionitemmessagexref,SourceSystemID,STRING,SourceSystemID
+transactionitemmessagexref,SourceTransactionItemNumber,STRING,SourceTransactionItemNumber
+transactionitemmessagexref,TenantId,INTEGER,TenantId
+transactionitemmessagexref,TransactionItemID,STRING,TransactionItemID
+transactionitemmessagexref,Type,STRING,Type
+transactionmessagexref,Batch,STRING,Batch
+transactionmessagexref,DeleteFlag,BOOLEAN,DeleteFlag
+transactionmessagexref,ID,STRING,ID
+transactionmessagexref,MasterCustomerID,STRING,MasterCustomerID
+transactionmessagexref,MessageID,STRING,MessageID
+transactionmessagexref,RowCreated,LONG,RowCreated
+transactionmessagexref,RowModified,LONG,RowModified
+transactionmessagexref,RowProcessed,LONG,RowProcessed
+transactionmessagexref,Source,STRING,Source
+transactionmessagexref,SourceMessageNumber,STRING,SourceMessageNumber
+transactionmessagexref,SourceSystemID,STRING,SourceSystemID
+transactionmessagexref,SourceTransactionNumber,STRING,SourceTransactionNumber
+transactionmessagexref,TenantId,INTEGER,TenantId
+transactionmessagexref,TransactionCustomerID,STRING,TransactionCustomerID
+transactionmessagexref,TransactionID,STRING,TransactionID
+transactionmessagexref,TransactionSourceCustomerNumber,STRING,TransactionSourceCustomerNumber
+transactionmessagexref,Type,STRING,Type
+transactionmessagexrefhousehold,Batch,STRING,Batch
+transactionmessagexrefhousehold,DeleteFlag,BOOLEAN,DeleteFlag
+transactionmessagexrefhousehold,HouseholdID,STRING,HouseholdID
+transactionmessagexrefhousehold,ID,STRING,ID
+transactionmessagexrefhousehold,MasterCustomerID,STRING,MasterCustomerID
+transactionmessagexrefhousehold,MessageID,STRING,MessageID
+transactionmessagexrefhousehold,RowCreated,LONG,RowCreated
+transactionmessagexrefhousehold,RowModified,LONG,RowModified
+transactionmessagexrefhousehold,Source,STRING,Source
+transactionmessagexrefhousehold,SourceMessageNumber,STRING,SourceMessageNumber
+transactionmessagexrefhousehold,SourceSystemID,STRING,SourceSystemID
+transactionmessagexrefhousehold,SourceTransactionNumber,STRING,SourceTransactionNumber
+transactionmessagexrefhousehold,TenantId,INTEGER,TenantId
+transactionmessagexrefhousehold,TransactionCustomerID,STRING,TransactionCustomerID
+transactionmessagexrefhousehold,TransactionID,STRING,TransactionID
+transactionmessagexrefhousehold,TransactionSourceCustomerNumber,STRING,TransactionSourceCustomerNumber
+transactionmessagexrefhousehold,Type,STRING,Type
+transactionsummary,AccountID,STRING,AccountID
+transactionsummary,Batch,STRING,Batch
+transactionsummary,BundleNumber,STRING,BundleNumber
+transactionsummary,CostBasis,DECIMAL,CostBasis
+transactionsummary,Currency,STRING,Currency
+transactionsummary,CustomerID,STRING,CustomerID
+transactionsummary,DateCreated,LONG,DateCreated
+transactionsummary,DateModified,LONG,DateModified
+transactionsummary,DeviceType,STRING,DeviceType
+transactionsummary,Discount,DECIMAL,Discount
+transactionsummary,EmployeeID,STRING,EmployeeID
+transactionsummary,Gift,BOOLEAN,Gift
+transactionsummary,HouseholdDaySinceFirstTransaction,INTEGER,HouseholdDaySinceFirstTransaction
+transactionsummary,HouseholdID,STRING,HouseholdID
+transactionsummary,HouseholdTransactionSequence,INTEGER,HouseholdTransactionSequence
+transactionsummary,ID,STRING,ID
+transactionsummary,InvoiceDate,LONG,InvoiceDate
+transactionsummary,InvoiceDateFK,INTEGER,InvoiceDateFK
+transactionsummary,ListPrice,DECIMAL,ListPrice
+transactionsummary,MasterCustomerDaySinceFirstTransaction,INTEGER,MasterCustomerDaySinceFirstTransaction
+transactionsummary,MasterCustomerID,STRING,MasterCustomerID
+transactionsummary,MasterCustomerTransactionSequence,INTEGER,MasterCustomerTransactionSequence
+transactionsummary,OrganizationID,STRING,OrganizationID
+transactionsummary,OtherCost,DECIMAL,OtherCost
+transactionsummary,OtherRevenue,DECIMAL,OtherRevenue
+transactionsummary,ProductID,STRING,ProductID
+transactionsummary,Quantity,INTEGER,Quantity
+transactionsummary,RowCreated,LONG,RowCreated
+transactionsummary,RowModified,LONG,RowModified
+transactionsummary,SaleRevenue,DECIMAL,SaleRevenue
+transactionsummary,ShipDate,LONG,ShipDate
+transactionsummary,ShipDateFK,INTEGER,ShipDateFK
+transactionsummary,ShippingCost,DECIMAL,ShippingCost
+transactionsummary,ShippingDiscount,DECIMAL,ShippingDiscount
+transactionsummary,ShippingRevenue,DECIMAL,ShippingRevenue
+transactionsummary,SourceAccountNumber,STRING,SourceAccountNumber
+transactionsummary,SourceCustomerNumber,STRING,SourceCustomerNumber
+transactionsummary,SourceEmployeeNumber,STRING,SourceEmployeeNumber
+transactionsummary,SourceOrganizationNumber,STRING,SourceOrganizationNumber
+transactionsummary,SourceProductNumber,STRING,SourceProductNumber
+transactionsummary,SourceSubscriptionNumber,STRING,SourceSubscriptionNumber
+transactionsummary,SourceSystemID,STRING,SourceSystemID
+transactionsummary,SourceTransactionItemNumber,STRING,SourceTransactionItemNumber
+transactionsummary,SourceTransactionNumber,STRING,SourceTransactionNumber
+transactionsummary,SubscriptionID,STRING,SubscriptionID
+transactionsummary,Subtype,STRING,Subtype
+transactionsummary,Tax,DECIMAL,Tax
+transactionsummary,TenantID,INTEGER,TenantID
+transactionsummary,TransactionDate,LONG,TransactionDate
+transactionsummary,TransactionID,STRING,TransactionID
+transactionsummary,TransactionLastMarketingTouchID,STRING,TransactionLastMarketingTouchID
+transactionsummary,TransactionLastOfflineMarketingTouchID,STRING,TransactionLastOfflineMarketingTouchID
+transactionsummary,TransactionLastOfflineMarketingTouchIDHousehold,STRING,TransactionLastOfflineMarketingTouchIDHousehold
+transactionsummary,TransactionTimeStamp,LONG,Date
+transactionsummary,TransactionTimeStampFK,INTEGER,TransactionTimeStampFK
+transactionsummary,Type,STRING,Type
+transactionsummary,UserClient,STRING,UserClient
+transactionsummary,c_brand,STRING,Brand
+utoprecommendations,BackfilledFrom,STRING,BackfilledFrom
+utoprecommendations,ID,STRING,ID
+utoprecommendations,MasterCustomerID,STRING,MasterCustomerID
+utoprecommendations,RankNumber,INTEGER,RankNumber
+utoprecommendations,SourceCustomerNumber,STRING,SourceCustomerNumber
+utoprecommendations,SourceProductNumber,STRING,SourceProductNumber
+vtoprecommendations,BackfilledFrom,STRING,BackfilledFrom
+vtoprecommendations,ID,STRING,ID
+vtoprecommendations,RankNumber,INTEGER,RankNumber
+vtoprecommendations,SourceProductNumber,STRING,SourceProductNumber
+vtoprecommendations,TargetSourceProductNumber,STRING,TargetSourceProductNumber
+vtovrecommendations,BackfilledFrom,STRING,BackfilledFrom
+vtovrecommendations,ID,STRING,ID
+vtovrecommendations,RankNumber,INTEGER,RankNumber
+vtovrecommendations,SourceProductNumber,STRING,SourceProductNumber
+vtovrecommendations,TargetSourceProductNumber,STRING,TargetSourceProductNumber
+zipcloseststores,ClosestStoreDistance,DOUBLE,ClosestStoreDistance
+zipcloseststores,ClosestStoreOrgID,STRING,ClosestStoreOrgID
+zipcloseststores,ClosestStoreOrgName,STRING,ClosestStoreOrgName
+zipcloseststores,Country,STRING,Country
+zipcloseststores,CountryZip,STRING,CountryZip
+zipcloseststores,ZipCode,STRING,ZipCode
+zipdemographics,AliasIntroDate,STRING,AliasIntroDate
+zipdemographics,AreaCode,STRING,AreaCode
+zipdemographics,AsianPopulation,INTEGER,AsianPopulation
+zipdemographics,AverageHouseValue,INTEGER,AverageHouseValue
+zipdemographics,Batch,STRING,Batch
+zipdemographics,BlackPopulation,INTEGER,BlackPopulation
+zipdemographics,BoxCount,INTEGER,BoxCount
+zipdemographics,BusinessAnnualPayroll,INTEGER,BusinessAnnualPayroll
+zipdemographics,BusinessEmploymentFlag,STRING,BusinessEmploymentFlag
+zipdemographics,BusinessFirstQuarterPayroll,INTEGER,BusinessFirstQuarterPayroll
+zipdemographics,CBSA,STRING,CBSA
+zipdemographics,CBSADivPop2003,INTEGER,CBSADivPop2003
+zipdemographics,CBSAPop2003,INTEGER,CBSAPop2003
+zipdemographics,CBSA_Div,STRING,CBSA_Div
+zipdemographics,CBSA_Div_Name,STRING,CBSA_Div_Name
+zipdemographics,CBSA_Name,STRING,CBSA_Name
+zipdemographics,CBSA_Type,STRING,CBSA_Type
+zipdemographics,CSA,STRING,CSA
+zipdemographics,CSAName,STRING,CSAName
+zipdemographics,CarrierRouteRateSortation,STRING,CarrierRouteRateSortation
+zipdemographics,City,STRING,City
+zipdemographics,CityAliasAbbreviation,STRING,CityAliasAbbreviation
+zipdemographics,CityAliasCode,STRING,CityAliasCode
+zipdemographics,CityAliasMixedCase,STRING,CityAliasMixedCase
+zipdemographics,CityAliasName,STRING,CityAliasName
+zipdemographics,CityDeliveryIndicator,STRING,CityDeliveryIndicator
+zipdemographics,CityMixedCase,STRING,CityMixedCase
+zipdemographics,CityStateKey,STRING,CityStateKey
+zipdemographics,CityType,STRING,CityType
+zipdemographics,ClassificationCode,STRING,ClassificationCode
+zipdemographics,CongressionalDistrict,STRING,CongressionalDistrict
+zipdemographics,CongressionalLandArea,STRING,CongressionalLandArea
+zipdemographics,Country,STRING,Country
+zipdemographics,County,STRING,County
+zipdemographics,CountyANSI,STRING,CountyANSI
+zipdemographics,CountyFIPS,STRING,CountyFIPS
+zipdemographics,DayLightSaving,STRING,DayLightSaving
+zipdemographics,DeliveryBusiness,STRING,DeliveryBusiness
+zipdemographics,DeliveryResidential,STRING,DeliveryResidential
+zipdemographics,DeliveryTotal,STRING,DeliveryTotal
+zipdemographics,Division,STRING,Division
+zipdemographics,Elevation,INTEGER,Elevation
+zipdemographics,FacilityCode,STRING,FacilityCode
+zipdemographics,FemalePopulation,INTEGER,FemalePopulation
+zipdemographics,FinanceNumber,STRING,FinanceNumber
+zipdemographics,GrowthHousingUnits2003,INTEGER,GrowthHousingUnits2003
+zipdemographics,GrowthHousingUnits2004,INTEGER,GrowthHousingUnits2004
+zipdemographics,GrowthIncreaseNumber,INTEGER,GrowthIncreaseNumber
+zipdemographics,GrowthIncreasePercentage,INTEGER,GrowthIncreasePercentage
+zipdemographics,GrowthRank,INTEGER,GrowthRank
+zipdemographics,HawaiianPopulation,INTEGER,HawaiianPopulation
+zipdemographics,HispanicPopulation,INTEGER,HispanicPopulation
+zipdemographics,HouseholdsPerZipCode,INTEGER,HouseholdsPerZipCode
+zipdemographics,ID,INTEGER,ID
+zipdemographics,IncomePerHousehold,INTEGER,IncomePerHousehold
+zipdemographics,IndianPopulation,INTEGER,IndianPopulation
+zipdemographics,LandArea,INTEGER,LandArea
+zipdemographics,Latitude,INTEGER,Latitude
+zipdemographics,Longitude,INTEGER,Longitude
+zipdemographics,MFDU,STRING,MFDU
+zipdemographics,MSA,STRING,MSA
+zipdemographics,MSA_Name,STRING,MSA_Name
+zipdemographics,MailingName,STRING,MailingName
+zipdemographics,MalePopulation,INTEGER,MalePopulation
+zipdemographics,MedianAge,INTEGER,MedianAge
+zipdemographics,MedianAgeFemale,INTEGER,MedianAgeFemale
+zipdemographics,MedianAgeMale,INTEGER,MedianAgeMale
+zipdemographics,MultiCounty,STRING,MultiCounty
+zipdemographics,NumberOfBusinesses,INTEGER,NumberOfBusinesses
+zipdemographics,NumberOfEmployees,INTEGER,NumberOfEmployees
+zipdemographics,OtherPopulation,INTEGER,OtherPopulation
+zipdemographics,PMSA,STRING,PMSA
+zipdemographics,PMSA_Name,STRING,PMSA_Name
+zipdemographics,PersonsPerHousehold,INTEGER,PersonsPerHousehold
+zipdemographics,Population,INTEGER,Population
+zipdemographics,PopulationEstimate,INTEGER,PopulationEstimate
+zipdemographics,PreferredLastLineKey,STRING,PreferredLastLineKey
+zipdemographics,PrimaryRecord,STRING,PrimaryRecord
+zipdemographics,Region,STRING,Region
+zipdemographics,RowCreated,STRING,RowCreated
+zipdemographics,RowModified,LONG,RowModified
+zipdemographics,RowProcessed,LONG,RowProcessed
+zipdemographics,SFDU,STRING,SFDU
+zipdemographics,Source,STRING,Source
+zipdemographics,State,STRING,State
+zipdemographics,StateANSI,STRING,StateANSI
+zipdemographics,StateFIPS,STRING,StateFIPS
+zipdemographics,StateFullName,STRING,StateFullName
+zipdemographics,TimeZone,INTEGER,TimeZone
+zipdemographics,UniqueZIPName,STRING,UniqueZIPName
+zipdemographics,WaterArea,INTEGER,WaterArea
+zipdemographics,WhitePopulation,INTEGER,WhitePopulation
+zipdemographics,ZIPIntroDate,STRING,ZIPIntroDate
+zipdemographics,ZipCode,STRING,ZipCode
+zipdemographics,ZipLatitude,DOUBLE,ZipLatitude
+zipdemographics,ZipLongitude,DOUBLE,ZipLongitude

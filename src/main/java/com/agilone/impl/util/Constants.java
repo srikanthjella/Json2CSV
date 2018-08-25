@@ -1,7 +1,9 @@
 package com.agilone.impl.util;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Constants {
     public static final String CONNECTORID = "connectorid";
@@ -9,6 +11,7 @@ public class Constants {
     public static String TENANT_ID = "tenantid";
     public static String ENV = "env";
     public static String OPERATION = "operation";
+    public static String UDM_ENTITY = "udmentity";
     public static String LOCATION = "location";
     public static String TOKEN = "token";
     public static String USERNAME = "username";
@@ -28,7 +31,9 @@ public class Constants {
     public static String CONNECTORINCREMENT = "connectorIncrement";
 
     public static List<String> VALID_DATA_TYPES = new ArrayList<>(7);
-    public static List<String> VALID_AVAILABILITY = new ArrayList<>(7);
+    public static List<String> VALID_AVAILABILITY = new ArrayList<>(9);
+    public static Map<String, String> TABLE_SUMMARY_MAPPING = new HashMap<>(6);
+
     static {
         VALID_DATA_TYPES.add( "INTEGER");
         VALID_DATA_TYPES.add( "LONG");
@@ -47,5 +52,12 @@ public class Constants {
         VALID_AVAILABILITY.add( "LOOKUP");
         VALID_AVAILABILITY.add( "PII");
         VALID_AVAILABILITY.add( "SUMMARY");
+
+        TABLE_SUMMARY_MAPPING.put( "customer", "CUSTOMERSUMMARY");
+        TABLE_SUMMARY_MAPPING.put( "product", "PRODUCTSUMMARY");
+        TABLE_SUMMARY_MAPPING.put( "organization", "ORGANIZATIONSUMMARY");
+        TABLE_SUMMARY_MAPPING.put( "transaction", "TRANSACTIONSUMMARY");
+        TABLE_SUMMARY_MAPPING.put( "transactionitem", "TRANSACTIONSUMMARY");
+        TABLE_SUMMARY_MAPPING.put( "message", "PROMOTIONTYPESUMMARY");
     }
 }

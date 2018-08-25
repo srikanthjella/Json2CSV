@@ -11,16 +11,26 @@ import java.util.*;
 public class ConfigApp {
 
     private static final Logger log = LoggerFactory.getLogger(ConfigApp.class);
-    public  static final String CS_US_URL_SHORT = "https://cs-configapi.agilone.com/";
+    public static Map<String,String> map;
+    private  static final String CS_US_URL_SHORT = "https://cs-configapi.agilone.com/";
     public  static final String CS_US_URL = "https://cs-configapi.agilone.com/v2/";
-//    private static final String PROD_URL = "https://cs-configapi.agilone.com/v2/";
-    private static final String ATHLETA_CS_TENANT_ID = "60";
-//    private static final String MC_CDP_TENANT_ID = "142";
+//    public  static final String CS_EU_URL_SHORT = "https://cs-configapi.eu.agilone.com/";
+//    public  static final String CS_EU_URL = "https://cs-configapi.eu.agilone.com/v2/";
+//    private static final String PROD_URL = "";
     private static final String UDMP_URL = "/config/UDMPTables";
     private static final String CONNECTOR_URL = "/config/connectors/";
     private static final String INCLUDE_COLUMNS = "?include=columns&limit=500&offset=0";
     private static final String EXCLUDE_COLUMNS = "?limit=500&offset=0";
-    private static final String putUdmpTable = "";
+
+    static {
+        Map<String,String> map2 = new HashMap<>(4);
+        map2.put("CSUS","https://cs-configapi.agilone.com/");
+        map2.put("CSEU","https://cs-configapi.agilone.com/");
+        map2.put("PRODUS","https://cs-configapi.agilone.com/");
+        map2.put("PRODEU","https://cs-configapi.agilone.com/");
+
+        map = Collections.unmodifiableMap( map2);
+    }
 
     private String callRestAPI( String url, String token, HttpMethod method, String putBody) {
         HttpHeaders headers = new HttpHeaders();
@@ -66,7 +76,7 @@ public class ConfigApp {
         return callRestAPI( CS_US_URL + tenantId + CONNECTOR_URL + connectorID, token, HttpMethod.PUT, body);
     }
 
-    public String getToken( String encoding) {
+    public String getToken( String URL, String encoding) {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType( MediaType.APPLICATION_FORM_URLENCODED);
         headers.add("Authorization", "Basic " + encoding);

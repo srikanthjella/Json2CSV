@@ -17,6 +17,7 @@
                     <source>1.8</source>
                     <target>1.8</target>
                     <executable>com.agilone.impl.tools.AutoAddAttributes</executable>
+                    <executable>com.agilone.impl.tools.JSON2CSV</executable>
                 </configuration>
             </plugin>
             <plugin>

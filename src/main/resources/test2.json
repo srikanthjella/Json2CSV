@@ -1,0 +1,28 @@
+{
+  "mapping": [
+    [
+      {
+        "column": "CustomerID",
+        "table": "AgilOne_Customer"
+      },
+      [
+        {
+          "column": "SourceCustomerNumber",
+          "table": "customer"
+        }
+      ]
+    ],
+    [
+      {
+        "column": "Temp",
+        "table": "AgilOne_Customer"
+      },
+      [
+        {
+          "column": "Title",
+          "table": "customer"
+        }
+      ]
+    ]
+  ]
+}

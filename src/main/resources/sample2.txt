@@ -1,0 +1,35 @@
+( SELECT *
+  FROM (
+	SELECT c.ID
+		, firstname, FirstNameWithBlank, lastname, email, PrimaryPhone, c_cardNo
+		, address1
+		, zip
+		, row_number() OVER(partition by c.ID ORDER BY c.RowModified) AS row
+	FROM (
+		SELECT ID
+			, FirstName
+			, COALESCE(firstname,'') AS FirstNameWithBlank
+			, lastname
+			, CASE WHEN COALESCE(FirstName,'') <> '' AND COALESCE(Cnt,1) > 3 THEN NULL ELSE c.Email END AS Email
+	        , CASE WHEN COALESCE(c_cardNo,'') IN ('BOS','','NULL') THEN NULL ELSE c_cardNo END AS c_cardNo
+			, CASE
+            	WHEN REGEXP_REPLACE(PrimaryPhone, '[^0-9]+', '') IN ('9661111111111','961111111111','96511111111','99999999999','9999999999','1111111111','0000000000','5555555555','0123456789')
+	                OR LENGTH(REGEXP_REPLACE(PrimaryPhone, '[^0-9]+', '')) < 8
+	                OR LENGTH(REGEXP_REPLACE(PrimaryPhone, '[^0-9]+', '')) > 13
+	            THEN NULL
+	            ELSE REGEXP_REPLACE(PrimaryPhone, '[^0-9]+', '') END
+	            AS PrimaryPhone
+	        , RowModified
+		FROM udm_pv_customer c
+		LEFT OUTER JOIN (
+			SELECT Email, COUNT(distinct FirstName) Cnt
+			FROM udm_pv_customer
+			WHERE COALESCE(FirstName,'') <> ''
+			GROUP BY Email
+		) em ON c.Email = em.Email
+	) c
+	LEFT OUTER JOIN udm_pv_customeraddressxref xr ON c.ID = xr.CustomerID
+	LEFT OUTER JOIN udm_pv_address a ON xr.addressid = a.id
+  ) c
+  WHERE row <= 3
+)

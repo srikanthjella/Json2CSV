@@ -74,45 +74,7 @@ public class JSON2CSV {
                 output = new JSONObject(jsonString);
             }
 
-            JSONArray mapArray = output.getJSONArray("content");
-
-            JSONObject udmTableObj;
-            JSONArray udmColumnsArr;
-
-            String tableName, columnName, columnType, displayName;
-
-            List<String> list = new ArrayList<>();
-
-            for( int i=0 ; i<mapArray.length() ; ++i) {
-                udmTableObj = mapArray.getJSONObject( i);
-                udmColumnsArr = udmTableObj.getJSONObject( "columns").getJSONArray("content");
-                tableName = udmTableObj.getString("name");
-//                System.out.println( "tableName : " + tableName);
-
-                for( int j=0 ; j<udmColumnsArr.length() ; ++j) {
-                    columnName = udmColumnsArr.getJSONObject( j).getString("name");
-                    columnType = udmColumnsArr.getJSONObject( j).getString("type");
-                    displayName = udmColumnsArr.getJSONObject( j).getString("displayName");
-
-                    list.add( tableName+","+columnName+","+columnType+","+displayName);
-                }
-
-/*
-                aIFMappingObj = innerArr.getJSONObject(0);
-                udfMappingArr = innerArr.getJSONArray(1);
-
-                String aifMappingStr = aIFMappingObj.getString("table") + "," + aIFMappingObj.getString("column");
-//                System.out.println(aifTable + ", " + aifColumn) ;
-
-                for( int j=0 ; j<udfMappingArr.length() ; ++j) {
-                    udfMappingObj = udfMappingArr.getJSONObject(j);
-                    String udfTable = udfMappingObj.getString("table");
-                    String udfColumn = udfMappingObj.getString("column");
-//                    System.out.println(udfTable + ", " + udfColumn) ;
-                    list.add( aifMappingStr + "," + udfTable + "," + udfColumn);
-                }
-*/
-            }
+            List<String> list = udm2( output);
 
             Path outputFilePath = Paths.get(outputFile);
             list.sort( Comparator.naturalOrder());
@@ -125,6 +87,33 @@ public class JSON2CSV {
             e.printStackTrace();
         }
 
+    }
+
+    public static List<String>  udm2( JSONObject output) {
+
+        JSONArray mapArray = output.getJSONArray("content");
+
+        JSONObject udmTableObj;
+        JSONArray udmColumnsArr;
+
+        String tableName, columnName, columnType, displayName;
+
+        List<String> list = new ArrayList<>();
+
+        for( int i=0 ; i<mapArray.length() ; ++i) {
+            udmTableObj = mapArray.getJSONObject( i);
+            udmColumnsArr = udmTableObj.getJSONObject( "columns").getJSONArray("content");
+            tableName = udmTableObj.getString("name");
+
+            for( int j=0 ; j<udmColumnsArr.length() ; ++j) {
+                columnName = udmColumnsArr.getJSONObject( j).getString("name");
+                columnType = udmColumnsArr.getJSONObject( j).getString("type");
+                displayName = udmColumnsArr.getJSONObject( j).getString("displayName");
+
+                list.add( tableName+","+columnName+","+columnType+","+displayName);
+            }
+        }
+        return list;
     }
 
     private static void mapping( String inputFile, String outputFile) {
@@ -149,32 +138,7 @@ public class JSON2CSV {
                 output = new JSONObject(jsonString);
             }
 
-            JSONArray mapArray = output.getJSONArray("mapping");
-            JSONArray innerArr;
-            JSONObject aIFMappingObj;
-            JSONObject udfMappingObj;
-            JSONArray udfMappingArr;
-
-            List<String> list = new ArrayList<>();
-//            list.add("AIFTable,AIFColumn,UDMTable,UDMColumn");
-
-            for( int i=0 ; i<mapArray.length() ; ++i) {
-                innerArr = mapArray.getJSONArray( i);
-
-                aIFMappingObj = innerArr.getJSONObject(0);
-                udfMappingArr = innerArr.getJSONArray(1);
-
-                String aifMappingStr = aIFMappingObj.getString("table") + "," + aIFMappingObj.getString("column");
-//                System.out.println(aifTable + ", " + aifColumn) ;
-
-                for( int j=0 ; j<udfMappingArr.length() ; ++j) {
-                    udfMappingObj = udfMappingArr.getJSONObject(j);
-                    String udfTable = udfMappingObj.getString("table");
-                    String udfColumn = udfMappingObj.getString("column");
-//                    System.out.println(udfTable + ", " + udfColumn) ;
-                    list.add( aifMappingStr + "," + udfTable + "," + udfColumn);
-                }
-            }
+            List<String> list = mapping2( output);
 
             Path outputFilePath = Paths.get(outputFile);
             list.sort( Comparator.naturalOrder());
@@ -189,7 +153,38 @@ public class JSON2CSV {
 
     }
 
-    private static void compare(List<String>  csCSV, List<String>  prodCSV, String udmOrMapping) {
+    public static List<String> mapping2( JSONObject output) {
+        JSONArray mapArray = output.getJSONArray("mapping");
+        JSONArray innerArr;
+        JSONObject aIFMappingObj;
+        JSONObject udfMappingObj;
+        JSONArray udfMappingArr;
+
+        List<String> list = new ArrayList<>();
+//            list.add("AIFTable,AIFColumn,UDMTable,UDMColumn");
+
+        for( int i=0 ; i<mapArray.length() ; ++i) {
+            innerArr = mapArray.getJSONArray( i);
+
+            aIFMappingObj = innerArr.getJSONObject(0);
+            udfMappingArr = innerArr.getJSONArray(1);
+
+            String aifMappingStr = aIFMappingObj.getString("table") + "," + aIFMappingObj.getString("column");
+//                System.out.println(aifTable + ", " + aifColumn) ;
+
+            for( int j=0 ; j<udfMappingArr.length() ; ++j) {
+                udfMappingObj = udfMappingArr.getJSONObject(j);
+                String udfTable = udfMappingObj.getString("table");
+                String udfColumn = udfMappingObj.getString("column");
+//                    System.out.println(udfTable + ", " + udfColumn) ;
+                list.add( aifMappingStr + "," + udfTable + "," + udfColumn);
+            }
+        }
+        return list;
+
+    }
+
+    public static void compare(List<String>  csCSV, List<String>  prodCSV, String udmOrMapping) {
         List<String> newItems = new ArrayList<>();
         List<String> updateItems = new ArrayList<>();
 
@@ -198,12 +193,12 @@ public class JSON2CSV {
 
         for( String item : csCSV) {
             String[] arr = item.split(",");
-            csMap.put( arr[0]+arr[1], item);
+            csMap.put( (arr[0]+arr[1]).toLowerCase(), item);
         }
 
         for( String item : prodCSV) {
             String[] arr = item.split(",");
-            prodMap.put( arr[0]+arr[1], item);
+            prodMap.put( (arr[0]+arr[1]).toLowerCase(), item);
         }
 
         for( Map.Entry<String,String> entry : csMap.entrySet()) {

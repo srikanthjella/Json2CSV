@@ -1,0 +1,2618 @@
+{
+  "connectorId": 41,
+  "name": "SFTP Standard Feeds",
+  "connectorIncrement": 1,
+  "parameters": [
+    {
+      "type": "PASSWORD",
+      "name": "sftp.password",
+      "value": "********",
+      "required": true
+    },
+    {
+      "type": "STRING",
+      "name": "sftp.null.values",
+      "value": "[\"\", \" \"]",
+      "required": true
+    },
+    {
+      "type": "STRING",
+      "name": "sftp.pattern",
+      "value": "^AgilOne_(.*?)_(\\d{1,}).tsv$",
+      "required": true
+    },
+    {
+      "type": "STRING",
+      "name": "sftp.encoding",
+      "value": "",
+      "required": true
+    },
+    {
+      "type": "NUMERIC",
+      "name": "sftp.port",
+      "value": "22",
+      "required": true
+    },
+    {
+      "type": "STRING",
+      "name": "custom.date.formats",
+      "value": "",
+      "required": true
+    },
+    {
+      "type": "STRING",
+      "name": "sftp.host",
+      "value": "eusftp.agilone.com",
+      "required": true
+    },
+    {
+      "type": "STRING",
+      "name": "sftp.default.timezone",
+      "value": "",
+      "required": true
+    },
+    {
+      "type": "STRING",
+      "name": "sftp.required.patterns",
+      "value": "",
+      "required": true
+    },
+    {
+      "type": "PASSWORD",
+      "name": "sftp.pem",
+      "value": "",
+      "required": true
+    },
+    {
+      "type": "STRING",
+      "name": "sftp.folder",
+      "value": "AgilOne_Feeds/Aydinli",
+      "required": true
+    },
+    {
+      "type": "PASSWORD",
+      "name": "encryption.pgp.password",
+      "value": "",
+      "required": true
+    },
+    {
+      "type": "STRING",
+      "name": "sftp.username",
+      "value": "Aydinli",
+      "required": true
+    },
+    {
+      "type": "STRING",
+      "name": "sftp.delimiter",
+      "value": "\\t",
+      "required": true
+    },
+    {
+      "type": "PASSWORD",
+      "name": "encryption.pgp.key",
+      "value": "",
+      "required": true
+    },
+    {
+      "type": "STRING",
+      "name": "sftp.csv",
+      "value": "false",
+      "required": true
+    },
+    {
+      "type": "NUMERIC",
+      "name": "max.connections",
+      "value": "10",
+      "required": true
+    }
+  ],
+  "active": true,
+  "dateStarted": 1509096821927,
+  "errorThreshold": 0.95,
+  "tenantId": 75,
+  "lastExecuted": 0,
+  "connectorDef": {
+    "connectorName": "SFTP CSV Connector",
+    "connectorClass": "com.agilone.aif.impl.SFtpConnector",
+    "connectorJar": "/jars/aif/aif-sftp.jar",
+    "ssidPrefix": "FTP_CSV",
+    "active": true,
+    "epochBacktrack": 126144000000,
+    "epochMaxInterval": 126144000000,
+    "epochMinInterval": 0,
+    "iconUrl": "icon.ico",
+    "parameters": [
+      {
+        "type": "PASSWORD",
+        "defaultValue": "",
+        "name": "sftp.password",
+        "required": true
+      },
+      {
+        "type": "STRING",
+        "defaultValue": "",
+        "name": "sftp.null.values",
+        "required": true
+      },
+      {
+        "type": "STRING",
+        "defaultValue": "",
+        "name": "sftp.pattern",
+        "required": true
+      },
+      {
+        "type": "STRING",
+        "defaultValue": "",
+        "name": "sftp.encoding",
+        "required": true
+      },
+      {
+        "type": "NUMERIC",
+        "defaultValue": "",
+        "name": "sftp.port",
+        "required": true
+      },
+      {
+        "type": "STRING",
+        "defaultValue": "",
+        "name": "custom.date.formats",
+        "required": true
+      },
+      {
+        "type": "STRING",
+        "defaultValue": "",
+        "name": "sftp.host",
+        "required": true
+      },
+      {
+        "type": "STRING",
+        "defaultValue": "",
+        "name": "sftp.default.timezone",
+        "required": true
+      },
+      {
+        "type": "STRING",
+        "defaultValue": "",
+        "name": "sftp.required.patterns",
+        "required": true
+      },
+      {
+        "type": "PASSWORD",
+        "defaultValue": "",
+        "name": "sftp.pem",
+        "required": true
+      },
+      {
+        "type": "STRING",
+        "defaultValue": "",
+        "name": "sftp.folder",
+        "required": true
+      },
+      {
+        "type": "PASSWORD",
+        "defaultValue": "",
+        "name": "encryption.pgp.password",
+        "required": true
+      },
+      {
+        "type": "STRING",
+        "defaultValue": "",
+        "name": "sftp.username",
+        "required": true
+      },
+      {
+        "type": "STRING",
+        "defaultValue": "",
+        "name": "sftp.delimiter",
+        "required": true
+      },
+      {
+        "type": "PASSWORD",
+        "defaultValue": "",
+        "name": "encryption.pgp.key",
+        "required": true
+      },
+      {
+        "type": "STRING",
+        "defaultValue": "",
+        "name": "sftp.csv",
+        "required": true
+      },
+      {
+        "type": "NUMERIC",
+        "defaultValue": "",
+        "name": "max.connections",
+        "required": true
+      }
+    ],
+    "tenantId": 0,
+    "mapping": [],
+    "id": 2
+  },
+  "ruleConfiguration": {
+    "enabled": true,
+    "alertEmails": [
+      "supportmanagement@agilone.com"
+    ],
+    "rules": [
+      {
+        "alertType": "WARNING",
+        "minRecordThreshold": 6000000,
+        "maxRecordThreshold": null,
+        "entityName": "customer"
+      },
+      {
+        "alertType": "WARNING",
+        "minRecordThreshold": 10000,
+        "maxRecordThreshold": null,
+        "entityName": "transaction"
+      }
+    ]
+  },
+  "mapping": [
+    [
+      {
+        "table": "ProductFeed",
+        "column": "DateCreated"
+      },
+      [
+        {
+          "table": "product",
+          "column": "DateCreated"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PCLingerie",
+        "column": "OrderLineNumber"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "SourceTransactionItemNumber"
+        },
+        {
+          "table": "transactionitem",
+          "column": "c_brand#'Pierre Cardin Lingerie'"
+        },
+        {
+          "table": "transactionitem",
+          "column": "Type#'Purchase'"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Cacharel",
+        "column": "Discount"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "Discount"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PC",
+        "column": "OrderLineNumber"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "SourceTransactionItemNumber"
+        },
+        {
+          "table": "transactionitem",
+          "column": "c_brand#'Pierre Cardin'"
+        },
+        {
+          "table": "transactionitem",
+          "column": "Type#'Purchase'"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "CustomerFeed",
+        "column": "DateModified"
+      },
+      [
+        {
+          "table": "customer",
+          "column": "DateModified"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PCLingerie",
+        "column": "Discount"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "Discount"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Aydinli",
+        "column": "OrderLineNumber"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "SourceTransactionItemNumber"
+        },
+        {
+          "table": "transactionitem",
+          "column": "Type#'Purchase'"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Cacharel",
+        "column": "ShippingRevenue"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "ShippingRevenue"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Aydinli",
+        "column": "ShipDate"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "ShipDate"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Aydinli",
+        "column": "OrderDate"
+      },
+      [
+        {
+          "table": "transaction",
+          "column": "TransactionTimeStamp"
+        },
+        {
+          "table": "transactionitem",
+          "column": "InvoiceDate"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PC",
+        "column": "OrderDate"
+      },
+      [
+        {
+          "table": "transaction",
+          "column": "TransactionTimeStamp"
+        },
+        {
+          "table": "transactionitem",
+          "column": "InvoiceDate"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Aydinli",
+        "column": "COGS"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "CostBasis"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Cacharel",
+        "column": "SaleRevenue"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "SaleRevenue"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed",
+        "column": "OrderLineNumber"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "SourceTransactionItemNumber"
+        },
+        {
+          "table": "transactionitem",
+          "column": "Type#\"Purchase\""
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed",
+        "column": "CustomerNumber"
+      },
+      [
+        {
+          "table": "transaction",
+          "column": "SourceCustomerNumber"
+        },
+        {
+          "table": "customer",
+          "column": "SourceCustomerNumber"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Cacharel",
+        "column": "DateCreated"
+      },
+      [
+        {
+          "table": "transaction",
+          "column": "DateCreated"
+        },
+        {
+          "table": "transactionitem",
+          "column": "DateCreated"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PC",
+        "column": "Discount"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "Discount"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed",
+        "column": "Discount"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "Discount"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_USPolo",
+        "column": "SaleRevenue"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "SaleRevenue"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "CustomerFeed",
+        "column": "CustomerAttribute2"
+      },
+      [
+        {
+          "table": "customer",
+          "column": "c_customerBrands"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_USPolo",
+        "column": "CustomerNumber"
+      },
+      [
+        {
+          "table": "customer",
+          "column": "SourceCustomerNumber"
+        },
+        {
+          "table": "transaction",
+          "column": "SourceCustomerNumber"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "CustomerFeed",
+        "column": "CustomerAttribute3"
+      },
+      [
+        {
+          "table": "customer",
+          "column": "c_cardNo"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "CustomerFeed",
+        "column": "CustomerAttribute1"
+      },
+      [
+        {
+          "table": "customer",
+          "column": "c_birthDateTextFormat"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PC",
+        "column": "OrderNumber"
+      },
+      [
+        {
+          "table": "transaction",
+          "column": "SourceTransactionNumber"
+        },
+        {
+          "table": "transaction",
+          "column": "c_brand#'Pierre Cardin'"
+        },
+        {
+          "table": "transactionitem",
+          "column": "SourceTransactionNumber"
+        },
+        {
+          "table": "transaction",
+          "column": "Type#'Purchase'"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Cacharel",
+        "column": "Tax"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "Tax"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed",
+        "column": "Tax"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "Tax"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "ProductFeed",
+        "column": "ImageURL"
+      },
+      [
+        {
+          "table": "product",
+          "column": "ImageURL"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed",
+        "column": "OrderNumber"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "SourceTransactionNumber"
+        },
+        {
+          "table": "transaction",
+          "column": "SourceTransactionNumber"
+        },
+        {
+          "table": "transaction",
+          "column": "Type#\"Purchase\""
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PC",
+        "column": "Quantity"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "Quantity"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_USPolo",
+        "column": "DateCreated"
+      },
+      [
+        {
+          "table": "transaction",
+          "column": "DateCreated"
+        },
+        {
+          "table": "transactionitem",
+          "column": "DateCreated"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PC",
+        "column": "SaleRevenue"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "SaleRevenue"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "CustomerFeed",
+        "column": "CustomerAttribute9"
+      },
+      [
+        {
+          "table": "customer",
+          "column": "c_webMembership"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "CustomerFeed",
+        "column": "Sal"
+      },
+      [
+        {
+          "table": "customer",
+          "column": "Sal"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_USPolo",
+        "column": "Tax"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "Tax"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "CustomerFeed",
+        "column": "CustomerAttribute6"
+      },
+      [
+        {
+          "table": "customer",
+          "column": "c_customerGroup"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "CustomerFeed",
+        "column": "CustomerAttribute7"
+      },
+      [
+        {
+          "table": "customer",
+          "column": "c_customerType"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PC",
+        "column": "OrderAttribute4"
+      },
+      [
+        {
+          "table": "transaction",
+          "column": "SourceTransactionNumberAlt"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_USPolo",
+        "column": "OrderAttribute3"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "c_saleSeason"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Cacharel",
+        "column": "Quantity"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "Quantity"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "CustomerFeed",
+        "column": "CustomerAttribute4"
+      },
+      [
+        {
+          "table": "customer",
+          "column": "Gender;{'Female':'F','Male':'M'}"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PC",
+        "column": "OrderAttribute3"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "c_saleSeason"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_USPolo",
+        "column": "OrderAttribute4"
+      },
+      [
+        {
+          "table": "transaction",
+          "column": "SourceTransactionNumberAlt"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "CustomerFeed",
+        "column": "CustomerAttribute5"
+      },
+      [
+        {
+          "table": "customer",
+          "column": "c_virtualCardInformation"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed",
+        "column": "DateCreated"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "DateCreated"
+        },
+        {
+          "table": "transaction",
+          "column": "DateCreated"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PC",
+        "column": "DateCreated"
+      },
+      [
+        {
+          "table": "transaction",
+          "column": "DateCreated"
+        },
+        {
+          "table": "transactionitem",
+          "column": "DateCreated"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed",
+        "column": "Quantity"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "Quantity"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Aydinli",
+        "column": "Tax"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "Tax"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "CustomerFeed",
+        "column": "Company"
+      },
+      [
+        {
+          "table": "customer",
+          "column": "Company"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "CustomerFeed",
+        "column": "Email"
+      },
+      [
+        {
+          "table": "customer",
+          "column": "Email"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PC",
+        "column": "OrderAttribute10"
+      },
+      [
+        {
+          "table": "transaction",
+          "column": "SourceOrganizationNumber"
+        },
+        {
+          "table": "transactionitem",
+          "column": "SourceOrganizationNumber"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed",
+        "column": "SaleRevenue"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "SaleRevenue"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Aydinli",
+        "column": "OrderAttribute4"
+      },
+      [
+        {
+          "table": "transaction",
+          "column": "SourceTransactionNumberAlt"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PCLingerie",
+        "column": "Quantity"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "Quantity"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Aydinli",
+        "column": "OrderAttribute3"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "c_saleSeason"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "CustomerFeed",
+        "column": "City"
+      },
+      [
+        {
+          "table": "address",
+          "column": "City"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_USPolo",
+        "column": "ShipDate"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "ShipDate"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_USPolo",
+        "column": "COGS"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "CostBasis"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PCLingerie",
+        "column": "OrderNumber"
+      },
+      [
+        {
+          "table": "transaction",
+          "column": "SourceTransactionNumber"
+        },
+        {
+          "table": "transaction",
+          "column": "c_brand#'Pierre Cardin Lingerie'"
+        },
+        {
+          "table": "transactionitem",
+          "column": "SourceTransactionNumber"
+        },
+        {
+          "table": "transaction",
+          "column": "Type#'Purchase'"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "ProductFeed",
+        "column": "Delete_Flag"
+      },
+      [
+        {
+          "table": "product",
+          "column": "DeleteFlag"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "ProductFeed",
+        "column": "SalePrice"
+      },
+      [
+        {
+          "table": "product",
+          "column": "SalePrice"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "ProductFeed",
+        "column": "ParentProductNumber"
+      },
+      [
+        {
+          "table": "product",
+          "column": "ParentProductNumber"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "ProductFeed",
+        "column": "ListPrice"
+      },
+      [
+        {
+          "table": "product",
+          "column": "ListPrice"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "ProductFeed",
+        "column": "ProductNumber"
+      },
+      [
+        {
+          "table": "product",
+          "column": "SourceProductNumber"
+        },
+        {
+          "table": "productcategoryxref",
+          "column": "SourceProductNumber"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_USPolo",
+        "column": "OrderLineNumber"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "SourceTransactionItemNumber"
+        },
+        {
+          "table": "transactionitem",
+          "column": "c_brand#'USPolo'"
+        },
+        {
+          "table": "transactionitem",
+          "column": "Type#'Purchase'"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "ProductFeed",
+        "column": "BrandID"
+      },
+      [
+        {
+          "table": "product",
+          "column": "SourceBrandNumber"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed",
+        "column": "OrderDate"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "InvoiceDate"
+        },
+        {
+          "table": "transaction",
+          "column": "TransactionTimeStamp"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_USPolo",
+        "column": "OrderDate"
+      },
+      [
+        {
+          "table": "transaction",
+          "column": "TransactionTimeStamp"
+        },
+        {
+          "table": "transactionitem",
+          "column": "InvoiceDate"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrganizationFeed",
+        "column": "OrganizationNumber"
+      },
+      [
+        {
+          "table": "organization",
+          "column": "SourceOrganizationNumber"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Cacharel",
+        "column": "DateModified"
+      },
+      [
+        {
+          "table": "transaction",
+          "column": "DateModified"
+        },
+        {
+          "table": "transactionitem",
+          "column": "DateModified"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "CustomerFeed",
+        "column": "Title"
+      },
+      [
+        {
+          "table": "customer",
+          "column": "Title"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Aydinli",
+        "column": "DateModified"
+      },
+      [
+        {
+          "table": "transaction",
+          "column": "DateModified"
+        },
+        {
+          "table": "transactionitem",
+          "column": "DateModified"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PC",
+        "column": "ProductNumber"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "SourceProductNumber"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "ProductFeed",
+        "column": "BrandName"
+      },
+      [
+        {
+          "table": "product",
+          "column": "BrandName"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PCLingerie",
+        "column": "OrderAttribute10"
+      },
+      [
+        {
+          "table": "transaction",
+          "column": "SourceOrganizationNumber"
+        },
+        {
+          "table": "transactionitem",
+          "column": "SourceOrganizationNumber"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Cacharel",
+        "column": "OrderNumber"
+      },
+      [
+        {
+          "table": "transaction",
+          "column": "SourceTransactionNumber"
+        },
+        {
+          "table": "transaction",
+          "column": "c_brand#'Cacharel'"
+        },
+        {
+          "table": "transactionitem",
+          "column": "SourceTransactionNumber"
+        },
+        {
+          "table": "transaction",
+          "column": "Type#'Purchase'"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PC",
+        "column": "CustomerNumber"
+      },
+      [
+        {
+          "table": "transaction",
+          "column": "SourceCustomerNumber"
+        },
+        {
+          "table": "customer",
+          "column": "SourceCustomerNumber"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "CustomerFeed",
+        "column": "DNC"
+      },
+      [
+        {
+          "table": "customer",
+          "column": "DoNotCall;{'1':'Y','0':'N'}"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Aydinli",
+        "column": "Discount"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "Discount"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "ProductFeed",
+        "column": "Availability"
+      },
+      [
+        {
+          "table": "product",
+          "column": "Availability"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Aydinli",
+        "column": "OrderAttribute10"
+      },
+      [
+        {
+          "table": "transaction",
+          "column": "SourceOrganizationNumber"
+        },
+        {
+          "table": "transactionitem",
+          "column": "SourceOrganizationNumber"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Aydinli",
+        "column": "ProductNumber"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "SourceProductNumber"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrganizationFeed",
+        "column": "Country"
+      },
+      [
+        {
+          "table": "organization",
+          "column": "Country#\"TR\""
+        }
+      ]
+    ],
+    [
+      {
+        "table": "ProductFeed",
+        "column": "ProductAttribute6"
+      },
+      [
+        {
+          "table": "product",
+          "column": "c_model"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_USPolo",
+        "column": "Discount"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "Discount"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "ProductFeed",
+        "column": "ProductAttribute2"
+      },
+      [
+        {
+          "table": "product",
+          "column": "c_productDrop"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "CustomerFeed",
+        "column": "Zip"
+      },
+      [
+        {
+          "table": "address",
+          "column": "Zip"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "ProductFeed",
+        "column": "ProductAttribute3"
+      },
+      [
+        {
+          "table": "product",
+          "column": "c_mainSize"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "CustomerFeed",
+        "column": "DateCreated"
+      },
+      [
+        {
+          "table": "customer",
+          "column": "DateCreated"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "ProductFeed",
+        "column": "ProductAttribute4"
+      },
+      [
+        {
+          "table": "product",
+          "column": "c_season"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_USPolo",
+        "column": "DateModified"
+      },
+      [
+        {
+          "table": "transaction",
+          "column": "DateModified"
+        },
+        {
+          "table": "transactionitem",
+          "column": "DateModified"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "ProductFeed",
+        "column": "ProductAttribute5"
+      },
+      [
+        {
+          "table": "product",
+          "column": "c_fabricCode"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrganizationFeed",
+        "column": "OrganizationAttribute1"
+      },
+      [
+        {
+          "table": "organization",
+          "column": "c_storeBrand"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrganizationFeed",
+        "column": "State"
+      },
+      [
+        {
+          "table": "organization",
+          "column": "State"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Cacharel",
+        "column": "ShipDate"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "ShipDate"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrganizationFeed",
+        "column": "OrganizationAttribute3"
+      },
+      [
+        {
+          "table": "organization",
+          "column": "c_storeMall"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "CustomerFeed",
+        "column": "DNE"
+      },
+      [
+        {
+          "table": "customer",
+          "column": "DoNotEmail;{'1':'Y','0':'N'}"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "ProductFeed",
+        "column": "ProductAttribute1"
+      },
+      [
+        {
+          "table": "product",
+          "column": "Color"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrganizationFeed",
+        "column": "OrganizationAttribute2"
+      },
+      [
+        {
+          "table": "organization",
+          "column": "c_sezonOutlet"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PCLingerie",
+        "column": "OrderAttribute4"
+      },
+      [
+        {
+          "table": "transaction",
+          "column": "SourceTransactionNumberAlt"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PCLingerie",
+        "column": "OrderAttribute3"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "c_saleSeason"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "CustomerFeed",
+        "column": "FirstName"
+      },
+      [
+        {
+          "table": "customer",
+          "column": "FirstName"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Cacharel",
+        "column": "COGS"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "CostBasis"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "CategoryFeed",
+        "column": "CategoryName"
+      },
+      [
+        {
+          "table": "productcategory",
+          "column": "Name"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed",
+        "column": "ShippingRevenue"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "ShippingRevenue"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "CustomerFeed",
+        "column": "PrimaryPhone"
+      },
+      [
+        {
+          "table": "customer",
+          "column": "PrimaryPhone"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "CustomerFeed",
+        "column": "DNM"
+      },
+      [
+        {
+          "table": "customer",
+          "column": "DoNotMail;{'1':'Y','0':'N'}"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PCLingerie",
+        "column": "ShipDate"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "ShipDate"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "CustomerFeed",
+        "column": "State"
+      },
+      [
+        {
+          "table": "address",
+          "column": "State"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Cacharel",
+        "column": "OrderAttribute10"
+      },
+      [
+        {
+          "table": "transaction",
+          "column": "SourceOrganizationNumber"
+        },
+        {
+          "table": "transactionitem",
+          "column": "SourceOrganizationNumber"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrganizationFeed",
+        "column": "Status"
+      },
+      [
+        {
+          "table": "organization",
+          "column": "Status;{'Active':'open','Other':'closed','New':'open','Closed':'closed'}"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "CustomerFeed",
+        "column": "MiddleName"
+      },
+      [
+        {
+          "table": "customer",
+          "column": "MiddleName"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PCLingerie",
+        "column": "CustomerNumber"
+      },
+      [
+        {
+          "table": "customer",
+          "column": "SourceCustomerNumber"
+        },
+        {
+          "table": "transaction",
+          "column": "SourceCustomerNumber"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "CustomerFeed",
+        "column": "CustomerNumber"
+      },
+      [
+        {
+          "table": "customer",
+          "column": "SourceCustomerNumber"
+        },
+        {
+          "table": "address",
+          "column": "SourceAddressNumber"
+        },
+        {
+          "table": "customeraddressxref",
+          "column": "SourceCustomerNumber"
+        },
+        {
+          "table": "customeraddressxref",
+          "column": "SourceAddressNumber"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "ProductFeed",
+        "column": "AvailableQty"
+      },
+      [
+        {
+          "table": "product",
+          "column": "AvailableQty"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PCLingerie",
+        "column": "LineType"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "Subtype"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Cacharel",
+        "column": "LineType"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "Subtype"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PC",
+        "column": "Tax"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "Tax"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_USPolo",
+        "column": "OrderAttribute10"
+      },
+      [
+        {
+          "table": "transaction",
+          "column": "SourceOrganizationNumber"
+        },
+        {
+          "table": "transactionitem",
+          "column": "SourceOrganizationNumber"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "CategoryFeed",
+        "column": "ParentCategoryNumber"
+      },
+      [
+        {
+          "table": "productcategory",
+          "column": "SourceParentCategoryNumber"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed",
+        "column": "OrderAttribute10"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "SourceOrganizationNumber"
+        },
+        {
+          "table": "transaction",
+          "column": "SourceOrganizationNumber"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PCLingerie",
+        "column": "COGS"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "CostBasis"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_USPolo",
+        "column": "LineType"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "Subtype"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Cacharel",
+        "column": "OrderLineNumber"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "SourceTransactionItemNumber"
+        },
+        {
+          "table": "transactionitem",
+          "column": "c_brand#'Cacharel'"
+        },
+        {
+          "table": "transactionitem",
+          "column": "Type#'Purchase'"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_USPolo",
+        "column": "ShippingRevenue"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "ShippingRevenue"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PCLingerie",
+        "column": "ShippingRevenue"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "ShippingRevenue"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Aydinli",
+        "column": "ShippingRevenue"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "ShippingRevenue"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PCLingerie",
+        "column": "SaleRevenue"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "SaleRevenue"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Aydinli",
+        "column": "LineType"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "Subtype"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed",
+        "column": "DateModified"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "DateModified"
+        },
+        {
+          "table": "transaction",
+          "column": "DateModified"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrganizationFeed",
+        "column": "Zipcode"
+      },
+      [
+        {
+          "table": "organization",
+          "column": "Zip"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Cacharel",
+        "column": "OrderAttribute3"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "c_saleSeason"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PC",
+        "column": "DateModified"
+      },
+      [
+        {
+          "table": "transaction",
+          "column": "DateModified"
+        },
+        {
+          "table": "transactionitem",
+          "column": "DateModified"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Cacharel",
+        "column": "OrderAttribute4"
+      },
+      [
+        {
+          "table": "transaction",
+          "column": "SourceTransactionNumberAlt"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "ProductFeed",
+        "column": "ProductURL"
+      },
+      [
+        {
+          "table": "product",
+          "column": "ProductURL"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "ProductFeed",
+        "column": "DateModified"
+      },
+      [
+        {
+          "table": "product",
+          "column": "DateModified"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PCLingerie",
+        "column": "DateCreated"
+      },
+      [
+        {
+          "table": "transaction",
+          "column": "DateCreated"
+        },
+        {
+          "table": "transactionitem",
+          "column": "DateCreated"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "CustomerFeed",
+        "column": "Address2"
+      },
+      [
+        {
+          "table": "address",
+          "column": "Address2"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PCLingerie",
+        "column": "DateModified"
+      },
+      [
+        {
+          "table": "transaction",
+          "column": "DateModified"
+        },
+        {
+          "table": "transactionitem",
+          "column": "DateModified"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_USPolo",
+        "column": "ProductNumber"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "SourceProductNumber"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "ProductFeed",
+        "column": "SaleCondition"
+      },
+      [
+        {
+          "table": "product",
+          "column": "SaleCondition"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Aydinli",
+        "column": "Quantity"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "Quantity"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "CustomerFeed",
+        "column": "Country"
+      },
+      [
+        {
+          "table": "address",
+          "column": "Country"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PC",
+        "column": "COGS"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "CostBasis"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PCLingerie",
+        "column": "Tax"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "Tax"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Cacharel",
+        "column": "OrderDate"
+      },
+      [
+        {
+          "table": "transaction",
+          "column": "TransactionTimeStamp"
+        },
+        {
+          "table": "transactionitem",
+          "column": "InvoiceDate"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed",
+        "column": "COGS"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "CostBasis"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed",
+        "column": "ProductNumber"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "SourceProductNumber"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PCLingerie",
+        "column": "ProductNumber"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "SourceProductNumber"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_USPolo",
+        "column": "OrderNumber"
+      },
+      [
+        {
+          "table": "transaction",
+          "column": "SourceTransactionNumber"
+        },
+        {
+          "table": "transaction",
+          "column": "c_brand#'USPolo'"
+        },
+        {
+          "table": "transactionitem",
+          "column": "SourceTransactionNumber"
+        },
+        {
+          "table": "transaction",
+          "column": "Type#'Purchase'"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "CustomerFeed",
+        "column": "Address1"
+      },
+      [
+        {
+          "table": "address",
+          "column": "Address1"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PC",
+        "column": "ShippingRevenue"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "ShippingRevenue"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PC",
+        "column": "ShipDate"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "ShipDate"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Aydinli",
+        "column": "CustomerNumber"
+      },
+      [
+        {
+          "table": "customer",
+          "column": "SourceCustomerNumber"
+        },
+        {
+          "table": "transaction",
+          "column": "SourceCustomerNumber"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed",
+        "column": "OrderAttribute4"
+      },
+      [
+        {
+          "table": "transaction",
+          "column": "SourceTransactionNumberAlt"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Cacharel",
+        "column": "CustomerNumber"
+      },
+      [
+        {
+          "table": "customer",
+          "column": "SourceCustomerNumber"
+        },
+        {
+          "table": "transaction",
+          "column": "SourceCustomerNumber"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed",
+        "column": "OrderAttribute3"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "c_saleSeason"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "ProductFeed",
+        "column": "MSRP"
+      },
+      [
+        {
+          "table": "product",
+          "column": "MSRP"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "CustomerFeed",
+        "column": "LastName"
+      },
+      [
+        {
+          "table": "customer",
+          "column": "LastName"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PCLingerie",
+        "column": "OrderDate"
+      },
+      [
+        {
+          "table": "transaction",
+          "column": "TransactionTimeStamp"
+        },
+        {
+          "table": "transactionitem",
+          "column": "InvoiceDate"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrganizationFeed",
+        "column": "Channel"
+      },
+      [
+        {
+          "table": "organization",
+          "column": "Type;{'physical store':'Physical','web':'Digital'}"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrganizationFeed",
+        "column": "OrganizationName"
+      },
+      [
+        {
+          "table": "organization",
+          "column": "Name"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrganizationFeed",
+        "column": "City"
+      },
+      [
+        {
+          "table": "organization",
+          "column": "City"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_PC",
+        "column": "LineType"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "Subtype"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Cacharel",
+        "column": "ProductNumber"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "SourceProductNumber"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "CategoryFeed",
+        "column": "HierarchyName"
+      },
+      [
+        {
+          "table": "productcategory",
+          "column": "c_hierarchyName"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed",
+        "column": "ShipDate"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "ShipDate"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Aydinli",
+        "column": "DateCreated"
+      },
+      [
+        {
+          "table": "transaction",
+          "column": "DateCreated"
+        },
+        {
+          "table": "transactionitem",
+          "column": "DateCreated"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Aydinli",
+        "column": "SaleRevenue"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "SaleRevenue"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_Aydinli",
+        "column": "OrderNumber"
+      },
+      [
+        {
+          "table": "transaction",
+          "column": "SourceTransactionNumber"
+        },
+        {
+          "table": "transactionitem",
+          "column": "SourceTransactionNumber"
+        },
+        {
+          "table": "transaction",
+          "column": "Type#'Purchase'"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrganizationFeed",
+        "column": "Address1"
+      },
+      [
+        {
+          "table": "organization",
+          "column": "Address1"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrganizationFeed",
+        "column": "Address2"
+      },
+      [
+        {
+          "table": "organization",
+          "column": "Address2"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed_USPolo",
+        "column": "Quantity"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "Quantity"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "ProductFeed",
+        "column": "ProductCategoryNumber"
+      },
+      [
+        {
+          "table": "productcategoryxref",
+          "column": "SourceProductCategoryNumber"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "ProductFeed",
+        "column": "ProductName"
+      },
+      [
+        {
+          "table": "product",
+          "column": "Name"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "OrderFeed",
+        "column": "LineType"
+      },
+      [
+        {
+          "table": "transactionitem",
+          "column": "Subtype"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "ProductFeed",
+        "column": "ProductDesc"
+      },
+      [
+        {
+          "table": "product",
+          "column": "Description"
+        }
+      ]
+    ],
+    [
+      {
+        "table": "CategoryFeed",
+        "column": "CategoryNumber"
+      },
+      [
+        {
+          "table": "productcategory",
+          "column": "SourceCategoryNumber"
+        }
+      ]
+    ]
+  ]
+}

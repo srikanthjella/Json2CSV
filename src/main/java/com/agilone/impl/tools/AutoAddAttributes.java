@@ -15,7 +15,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class AutoAddAttributes {
-    private static JSONObject udmEntities;
+    private static JSONObject jsonObject;
     private static final Logger log = LoggerFactory.getLogger( AutoAddAttributes.class);
 
     public static void main( String[] args) throws Exception {
@@ -81,7 +81,7 @@ public class AutoAddAttributes {
                     optsMap.get( Constants.USERNAME) + ":" + optsMap.get( Constants.PASSWORD)).getBytes());
 
         Util util = new Util();
-        String token = util.getToken( encoding);
+        String token = util.getToken( encoding, optsMap);
         optsMap.put( Constants.TOKEN, token);
         optsMap.remove( Constants.USERNAME);
         optsMap.remove( Constants.PASSWORD);
@@ -95,7 +95,7 @@ public class AutoAddAttributes {
             att.addMapping( optsMap);
         }
 
-//        System.out.println( udmEntities.toString());
+//        System.out.println( jsonObject.toString());
     }
 
     private void addMapping(Map<String,String> optsMap) throws IOException {
@@ -105,6 +105,14 @@ public class AutoAddAttributes {
 
         Path path = Paths.get( inputFile);
         csvList = Files.lines( path).collect( Collectors.toList());
+
+        jsonObject = util.getConnector( optsMap);
+
+        List<String> list = JSON2CSV.mapping2(jsonObject);
+
+        JSON2CSV.compare( csvList, list, "mapping");
+//        System.out.println( "CollectionUtils.subtract" + CollectionUtils.subtract( csvList, list));
+        System.exit( 1);
 
         String[] attrs;
         Map<String,List<String>> mappingMap = new HashMap<>();
@@ -122,9 +130,6 @@ public class AutoAddAttributes {
 
     private void buildAddMappingJSON( Map<String, List<String>> mappingMap, Map<String, String> optsMap) {
         Util util = new Util();
-        udmEntities = util.getConnector( optsMap.get( Constants.TOKEN)
-                , Integer.parseInt( optsMap.get( Constants.CONNECTORID))
-                , optsMap.get(Constants.TENANT_ID));
 
         List<Object> mappingListArray;
         List<Object> mappingListOuterArray = new ArrayList<>();
@@ -155,21 +160,21 @@ public class AutoAddAttributes {
             mappingListOuterArray.add( mappingListArray);
         }
 
-        udmEntities.put( "mapping", mappingListOuterArray);
+        jsonObject.put( "mapping", mappingListOuterArray);
 
-        int connectorDefId = udmEntities.getJSONObject( Constants.CONNECTORDEF).getInt("id");
+        int connectorDefId = jsonObject.getJSONObject( Constants.CONNECTORDEF).getInt("id");
         JSONObject connectorDef = new JSONObject();
         connectorDef.put("id", connectorDefId);
-        udmEntities.put( Constants.CONNECTORDEF, connectorDef);
-        int connectorIncrement = udmEntities.getInt( Constants.CONNECTORINCREMENT);
-//        udmEntities.put( Constants.CONNECTORINCREMENT, connectorIncrement);
-        udmEntities.remove( Constants.CONNECTORINCREMENT);
-        String jsonString = udmEntities.toString();
+        jsonObject.put( Constants.CONNECTORDEF, connectorDef);
+        int connectorIncrement = jsonObject.getInt( Constants.CONNECTORINCREMENT);
+//        jsonObject.put( Constants.CONNECTORINCREMENT, connectorIncrement);
+        jsonObject.remove( Constants.CONNECTORINCREMENT);
+        String jsonString = jsonObject.toString();
         jsonString = "{\"connectorIncrement\": " + connectorIncrement  + "," + jsonString.substring(1);
 
-        util.putConnector( optsMap.get( Constants.TOKEN), optsMap.get( Constants.TENANT_ID)
-                , jsonString, Integer.parseInt( optsMap.get( Constants.CONNECTORID)));
-//        System.out.println( udmEntities.toString());
+//        util.putConnector( optsMap.get( Constants.TOKEN), optsMap.get( Constants.TENANT_ID)
+//                , jsonString, Integer.parseInt( optsMap.get( Constants.CONNECTORID)));
+//        System.out.println( jsonObject.toString());
     }
 
     private void addAttributesOperation(Map<String, String> optsMap) throws IOException {
@@ -177,12 +182,16 @@ public class AutoAddAttributes {
         List<String> csvList;
 
         Util util = new Util();
-        udmEntities = util.retrieveAllEntities( optsMap.get( Constants.TOKEN)
-                , optsMap.get( Constants.TENANT_ID));
+//        jsonObject = util.retrieveAllEntities( optsMap.get( Constants.TOKEN)
+//                , optsMap.get( Constants.TENANT_ID));
 
         Path path = Paths.get( inputFile);
         csvList = Files.lines( path).collect( Collectors.toList());
 
+        List<String> list = JSON2CSV.udm2(jsonObject);
+
+        JSON2CSV.compare( csvList, list, "udm");
+        System.exit(1);
         String[] attrs;
         Map<String,List<String>> entitiesMap = new HashMap<>();
 
@@ -198,7 +207,7 @@ public class AutoAddAttributes {
     }
 /*
     private static void removeOtherEntities( Map<String,List<String>> entitiesMap) {
-        JSONArray entities = udmEntities.getJSONArray("content");
+        JSONArray entities = jsonObject.getJSONArray("content");
         JSONArray entitiesToModify = new JSONArray();
 
         Set<String> entitiesToBeModified = entitiesMap.keySet();
@@ -209,13 +218,13 @@ public class AutoAddAttributes {
                 entitiesToModify.put( entities.getJSONObject(i));
 //                toBeRemoved.add(i);
 
-        udmEntities.remove("content");
-        udmEntities.put("content", entitiesToModify);
+        jsonObject.remove("content");
+        jsonObject.put("content", entitiesToModify);
     }
 */
 
     private void buildAddAttributesJSON(Map<String, List<String>> inputEntitiesMap, Map<String, String> optsMap) {
-        JSONArray udmColumnsArr =  udmEntities.getJSONArray("content");
+        JSONArray udmColumnsArr =  jsonObject.getJSONArray("content");
         String entityName;
 
         for ( int i=0 ; i < udmColumnsArr.length() ; ++i) {
@@ -243,8 +252,8 @@ public class AutoAddAttributes {
 
                 Util util = new Util();
                 log.info( "Adding attributes to entity " + entityName);
-                util.putUdmPTable( optsMap.get( Constants.TOKEN), optsMap.get( Constants.TENANT_ID)
-                            , jsonObject.get(Constants.TABLE_ID).toString(), jsonObject.toString());
+//                util.putUdmPTable( optsMap.get( Constants.TOKEN), optsMap.get( Constants.TENANT_ID)
+//                            , jsonObject.get(Constants.TABLE_ID).toString(), jsonObject.toString());
             }
         }
     }
@@ -288,7 +297,7 @@ public class AutoAddAttributes {
     }
 
     private static String usage() {
-        return "Invalid option: Usage is \n java -jar ImplTools-X.X.jar " +
+        return "Usage is \n java -jar ImplTools-X.X.jar " +
                 "-operation <AddAttributes/Mapping/Compare> " +
                 "-env <CS/PROD> " +
                 "-location <US/EU> " +
