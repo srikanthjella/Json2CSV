@@ -24,6 +24,7 @@ public class JSON2CSV {
         }
 
         //This is a great comment.
+        // this is a second comment.
 
         if( new File(args[0]).isFile() == false) {
             System.out.println( "Input file does not exist. " + args[0]);
